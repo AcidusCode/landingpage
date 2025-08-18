@@ -1,0 +1,39 @@
+---
+import Image from "astro/components/Image.astro";
+import smileEmoji from "../../images/Emojis/smile.png";
+const email = "info@aciduslabs.com";
+---
+
+<main class="flex flex-col items-center justify-center max-w-80 gap-12 py-16">
+  <div class="flex flex-col items-center">
+    <div class="bg-radial-blue">
+      <Image
+        src={smileEmoji}
+        alt="Emoji de AcidusLabs sonriendo."
+        width="252"
+      />
+    </div>
+    <h1 class="text-green-500 text-xl text-center font-bold">AcidusLabs</h1>
+    <h2 class="text-[#ddd] text-3xl text-center py-2 text-medium">
+      Construyamos el sitio web que tu negocio necesita para escalar
+    </h2>
+    <p class="text-[#858585] text-center text-base font-light">
+      Diseños web a medida que combinan estética, funcionalidad y las mejores
+      practicas de conversión para superar tus objetivos.
+    </p>
+  </div>
+  <div class="flex flex-col items-center gap-4">
+    <a
+      href="#"
+      class="bg-[#0075C8] text-white px-8 py-4 rounded-full hover:bg-[#004080] transition-colors duration-300 font-light"
+    >
+      Hablemos de tu proyecto
+    </a>
+    <p
+      class="text-[#858585] text-center text-sm flex flex-col items-center font-light"
+    >
+      O enviame un correo directo a <a href="#" class="text-[#0075C8]"
+        >{email}</a>
+    </p>
+  </div>
+</main>
