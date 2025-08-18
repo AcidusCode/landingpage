@@ -8,9 +8,9 @@ import CentoAppIcon from "../projects/centoapp/CentoAppIcon.astro";
 const { title, description, tag, color } = Astro.props;
 ---
 
-<div class=`bg-[${color}] rounded-2xl flex flex-col justify-end items-start`>
+<div class={`bg-[${color}] rounded-2xl flex flex-col justify-end items-start`}>
   <div class="relative p-2 pb-20">
-    <div class=`absolute bg-[${color}] px-4 py-1 rounded-br-xl`>
+    <div class={`absolute bg-[${color}] px-4 py-1 rounded-br-xl`}>
       <span class="text-[#ddd] text-xs uppercase font-bold">{tag}</span>
     </div>
     <Image
