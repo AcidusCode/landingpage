@@ -1,12 +1,15 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroSection from '../components/home/HeroSection.astro';
-import ProjectsSection from '../components/home/ProjectsSection.astro';
-import ServicesSection from '../components/home/ServicesSection.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/home/HeroSection.astro";
+import ProjectsSection from "../components/home/ProjectsSection.astro";
+import ServicesSection from "../components/home/ServicesSection.astro";
+import MyProcessSection from "../components/home/MyProcessSection.astro";
 const pageTitle = "AcidusLabs";
 ---
+
 <BaseLayout pageTitle={pageTitle}>
   <HeroSection />
   <ProjectsSection />
   <ServicesSection />
+  <MyProcessSection />
 </BaseLayout>

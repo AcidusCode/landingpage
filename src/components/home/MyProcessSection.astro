@@ -1,0 +1,40 @@
+---
+import InterSectionText from "../../components/molecules/InterSectionText.astro";
+
+import step1 from "../../images/myprocess/step-one.png";
+import step2 from "../../images/myprocess/step-two.png";
+import step3 from "../../images/myprocess/step-three.png";
+import step4 from "../../images/myprocess/step-four.png";
+import MyProcessCard from "../organism/MyProcessCard.astro";
+---
+
+<InterSectionText
+  title="Tu visión, paso a paso."
+  description="Una metodología clara y transparente para convertir tu idea en un sitio web de alto impacto, sin complicaciones ni sorpresas."
+/>
+<div class="flex flex-col gap-18">
+  <MyProcessCard
+    step="Paso 1"
+    title="Descubrimiento y Estrategia"
+    description="Comenzamos con una conversación profunda sobre tu visión, objetivos de negocio y público ideal. Aceleramos este proceso con el análisis de datos asistido por herramientas de IA para encontrar las mejores oportunidades y definir una estrategia sólida para tu sitio web."
+    image={step1}
+  />
+  <MyProcessCard
+    step="Paso 2"
+    title="Diseño y Prototipado"
+    description="Traducimos la estrategia en un diseño visualmente impactante y una experiencia de usuario intuitiva. Te presentamos prototipos interactivos para que veas cómo funcionará tu sitio y puedas dar feedback en cada etapa, asegurando que el resultado cumpla con tus expectativas."
+    image={step2}
+  />
+  <MyProcessCard
+    step="Paso 3"
+    title="Desarrollo y Optimización"
+    description="Damos vida al diseño con código limpio y moderno. Tu sitio web será ultrarrápido, seguro y optimizado para el SEO fundamental, asegurando que te encuentren en los buscadores y que la experiencia de usuario sea impecable en todos los dispositivos."
+    image={step3}
+  />
+  <MyProcessCard
+    step="Paso 4"
+    title="Lanzamiento y Acompañamiento"
+    description="Lanzamos tu sitio web al mundo y nos aseguramos de que todo funcione a la perfección. Nuestro trabajo no termina ahí; te brindamos soporte para cualquier duda, asegurando que tu presencia online se mantenga impecable y lista para crecer."
+    image={step4}
+  />
+</div>

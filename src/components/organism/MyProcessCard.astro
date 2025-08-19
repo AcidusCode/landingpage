@@ -1,0 +1,22 @@
+---
+import Image from "astro/components/Image.astro";
+const {step, title, description, image} = Astro.props;
+---
+<div class="flex flex-col gap-4">
+  <div>
+    <p class="text-[rgba(133,133,133,1)] text-center">{step}</p>
+    <h3 class="text-[rgba(238,238,238,1)] text-center text-2xl text-bold px-16">
+      {title}
+    </h3>
+  </div>
+  <div class="bg-[#111] mx-8 p-6 rounded-2xl gap-4 flex flex-col items-center font-medium">
+    <Image
+      src={image}
+      alt="Imagen cover del proyecto CentoApp."
+      class="rounded-t-2xl"
+    />
+    <p class="text-[#858585] text-center text-medium">
+      {description}
+    </p>
+  </div>
+</div>
