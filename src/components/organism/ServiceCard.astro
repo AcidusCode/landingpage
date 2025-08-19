@@ -1,0 +1,20 @@
+---
+import Image from "astro/components/Image.astro";
+const { cover, title, description, color } = Astro.props;
+---
+
+<div class="rounded-2xl min-w-[80vw] md:min-w-[40vw]" style={{ background: color}}>
+  <Image
+    src={cover}
+    alt="Imagen cover del proyecto CentoApp."
+    class="rounded-t-2xl"
+  />
+  <div class="px-4 pb-4">
+    <h3 class="text-xl font-bold text-[#ddd]">
+      {title}
+    </h3>
+    <p class="font-light text-[rgba(250,250,250,0.7)] text-sm">
+      {description}
+    </p>
+  </div>
+</div>
