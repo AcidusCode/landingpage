@@ -9,6 +9,8 @@ import LensIcon from "../icons/myprocess/LensIcon.astro";
 import HighLightCard from "../organism/HighLightCard.astro";
 import laptopEmoji from "../../images/Emojis/laptop.png";
 import RocketIcon from "../icons/RocketIcon.astro";
+
+import Button from "../atoms/Button.astro";
 ---
 
 <InterSectionText
@@ -43,10 +45,5 @@ import RocketIcon from "../icons/RocketIcon.astro";
     footer={false}
     textAlign="center"
   />
-  <a
-    href="#"
-    class="bg-[rgba(250,250,250,.25)] flex items-center gap-2 justify-center text-white px-8 py-5 rounded-full hover:bg-[#004080] transition-colors duration-300"
-  >
-    Enviame un mensaje <RocketIcon />
-  </a>
+  <Button text="Enviame un mensaje" ariaLabel="Enviame un mensaje" icon={RocketIcon}/>
 </div>
