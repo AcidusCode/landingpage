@@ -1,0 +1,60 @@
+---
+import InterSectionText from "../molecules/InterSectionText.astro";
+const email = "info@aciduslabs.com"
+---
+<div class="mt-12">
+<InterSectionText
+  title="El futuro de tu negocio comienza aquí."
+  description="Ahora que conoces mi proceso, mi filosofía y mi trabajo, me encantaría conocer tu historia. Cuéntame tu idea sin compromiso y hablemos sobre cómo puedo ayudarte a construir tu éxito digital."
+  padding="40px"
+/>
+
+<form
+  action="https://formspree.io/f/xjvowzqk"
+  method="POST"
+  class="flex flex-col gap-6 mx-8"
+>
+  <div class="flex flex-col gap-1">
+    <label class="text-[#0075c8] px-2 text-lg font-light">Nombre</label>
+    <input
+      type="text"
+      name="name"
+      class="bg-[rgba(50,50,50,1)] text-white px-4 py-4 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300"
+      required
+    />
+  </div>
+  <div class="flex flex-col gap-2">
+    <label class="text-[#0075c8] px-2 text-lg font-light"
+      >Correo electrónico</label
+    >
+    <input
+      type="email"
+      name="email"
+      class="bg-[rgba(50,50,50,1)] text-white px-4 py-4 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300"
+      required
+    />
+  </div>
+  <div class="flex flex-col gap-2">
+    <label class="text-[#0075c8] px-2 text-lg font-light">Tu mensaje</label>
+    <textarea
+      name="message"
+      class="bg-[rgba(50,50,50,1)] text-white px-4 py-4 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300"
+      rows="4"
+      required></textarea>
+  </div>
+  <button
+    type="submit"
+    class="bg-[#0075C8] text-white px-8 py-4 mb-4 rounded-full hover:bg-[#004080] transition-colors duration-300 font-light"
+  >
+    Hablemos de tu proyecto
+  </button>
+</form>
+  <p
+    class="text-[#858585] text-center text-sm flex flex-col items-center font-light"
+  >
+    O enviame un correo directo a <a href="#" class="text-[#0075C8]">{email}</a>
+  </p>
+
+<p class="text-center text-[#ddd] px-16 py-12 text-lg">Tu idea es segura conmigo. Responderé a tu mensaje en menos de 24 horas.</p>
+<p class="text-center font-light text-sm text-[#858585] py-4">© 2025 AcidusLabs. Todos los derechos reservados.</p>
+</div>

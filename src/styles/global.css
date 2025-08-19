@@ -3,3 +3,17 @@
 .bg-radial-blue {
   background: radial-gradient(50% 50% at 50% 50%, #117A9A 0%, rgba(18, 88, 110, 0.68) 60.5%, rgba(18, 18, 18, 0) 100%);
 }
+
+.bg-radial-red {
+  background: radial-gradient(45% 45% at 50% 50%, rgba(248,75,128,1) 0%, rgba(0, 0, 0, 0) 110%);
+}
+
+@layer utilities {
+  .text-gradient {
+    background: radial-gradient(638.94% 107.79% at 1.58% 27.08%, #43CAF3 0%, #F105BE 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
