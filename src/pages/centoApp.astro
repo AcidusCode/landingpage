@@ -2,6 +2,7 @@
 import Image from "astro/components/Image.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import InterSectionText from "../components/molecules/InterSectionText.astro";
+import SectionTitle from "../components/molecules/SectionTitle.astro";
 
 import centoCover from "../images/centoapp/render_intro.png";
 import competitionUI from "../images/centoapp/competition-ui.png";
@@ -12,7 +13,17 @@ import gridColors from "../images/centoapp/grid_colors.png";
 import centoAppIconImage from "../images/centoapp/centoapp_icon_image.png";
 
 import MyProcessCard from "../components/organism/MyProcessCard.astro";
+import FeaturesCard from "../components/organism/FeaturesCard.astro";
 const pageTitle = "CentoApp | Controla tus finanzas sin estrés";
+
+import basicModeFeature1 from "../images/centoapp/basic_mode_feature_1.png"
+import basicModeFeature2 from "../images/centoapp/basic_mode_feature_2.png"
+import basicModeFeature3 from "../images/centoapp/basic_mode_feature_3.png"
+
+import advanceModeFeature1 from "../images/centoapp/advance_mode_feature_1.png"
+import advanceModeFeature2 from "../images/centoapp/advance_mode_feature_2.png"
+import advanceModeFeature3 from "../images/centoapp/advance_mode_feature_3.png"
+
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -74,6 +85,7 @@ const pageTitle = "CentoApp | Controla tus finanzas sin estrés";
         se sintiera moderna, atractiva y, sobre todo, fácil de usar.
       </p>
     </div>
+
     <div class="flex flex-col items-center gap-4">
       <InterSectionText
         preheading="Mi Rol"
@@ -94,18 +106,21 @@ const pageTitle = "CentoApp | Controla tus finanzas sin estrés";
         del proyecto.
       </p>
     </div>
+
     <div class="flex flex-col items-center gap-4">
       <InterSectionText
         preheading="El proceso"
         title="De la frustración a la solución estratégica"
         padding="40px"
       />
+
       <MyProcessCard
         step="Paso 1"
         title="Análisis de la Competencia y Descubrimiento del Usuario"
         description="Comenzamos con una conversación profunda sobre tu visión, objetivos de negocio y público ideal. Aceleramos este proceso con el análisis de datos asistido por herramientas de IA para encontrar las mejores oportunidades y definir una estrategia sólida para tu sitio web."
         image={competitionIcons}
       />
+
       <MyProcessCard
         step="Paso 2"
         title="La Estrategia de la Interfaz Dual"
@@ -113,6 +128,125 @@ const pageTitle = "CentoApp | Controla tus finanzas sin estrés";
         image={renderModes}
         color="rgba(5,190,172,1)"
       />
+
+      <div class="flex flex-col gap-8 mb-8">
+        <SectionTitle
+          title="Modo Básico"
+          description="Pensado para principiantes. Su interfaz principal es un gráfico de dona que muestra visualmente las categorías de gasto, acompañado de un widget de balance para un control simple y rápido."
+        />
+        <div class="flex overflow-hidden gap-4 max-w-[95vw]">
+          <FeaturesCard
+            image={basicModeFeature1}
+            description="Interfaz principal intuitiva, un gráfico tipo dona que muestra visualmente las categorías de gasto, facilitando la comprensión de dónde va el dinero."
+          />
+          <FeaturesCard
+            image={basicModeFeature2}
+            description="Navegación simplificada, una barra de navegación con dos botones (Ingreso y Gasto) para una experiencia sin distracciones."
+          />
+          <FeaturesCard
+            image={basicModeFeature3}
+            description="Registro ultrarrápido, el proceso de añadir un gasto está optimizado para tomar menos de 10 segundos."
+          />
+        </div>
+        <div class="flex gap-4 justify-end">
+          <div
+            class="flex items-center justify-center w-10 h-10 bg-[#222] rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+            >
+              <path
+                d="M14.375 5.85352L7.625 12.6035L14.375 19.3535"
+                stroke="#666666"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div
+            class="flex items-center justify-center w-10 h-10 bg-[#222] rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+            >
+              <path
+                d="M9.625 5.85352L16.375 12.6035L9.625 19.3535"
+                stroke="#BBBBBB"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-8 mb-8">
+        <SectionTitle
+          title="Modo Avanzado"
+          description="Dirigido a usuarios que necesitan más control. Esta interfaz ofrece estadísticas detalladas, presupuestos y gráficos, permitiendo una toma de decisiones más informada."
+        />
+        <div class="flex overflow-hidden gap-4 max-w-[95vw]">
+          <FeaturesCard
+            image={advanceModeFeature1}
+            description="Estadísticas completas, acceso a gráficos, presupuestos e informes detallados para un análisis en profundidad."
+          />
+          <FeaturesCard
+            image={advanceModeFeature2}
+            description="Formularios detallados, un formulario de ingreso y gasto con más campos para categorizar y etiquetar las transacciones de manera más específica."
+          />
+          <FeaturesCard
+            image={advanceModeFeature3}
+            description="Herramienta de decisión, la interfaz avanzada permite a los usuarios revisar su desempeño financiero y tomar decisiones más informadas."
+          />
+        </div>
+
+        <div class="flex gap-4 justify-end">
+          <div
+            class="flex items-center justify-center w-10 h-10 bg-[#222] rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+            >
+              <path
+                d="M14.375 5.85352L7.625 12.6035L14.375 19.3535"
+                stroke="#666666"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div
+            class="flex items-center justify-center w-10 h-10 bg-[#222] rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+            >
+              <path
+                d="M9.625 5.85352L16.375 12.6035L9.625 19.3535"
+                stroke="#BBBBBB"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
       <MyProcessCard
         step="Paso 3"
         title="Diseño Visual que Motiva"
@@ -121,6 +255,7 @@ const pageTitle = "CentoApp | Controla tus finanzas sin estrés";
         color="rgba(140,190,57,1)"
       />
     </div>
+
     <div class="flex flex-col items-center gap-6">
       <InterSectionText
         preheading="Resultados e Impacto"
@@ -140,6 +275,7 @@ const pageTitle = "CentoApp | Controla tus finanzas sin estrés";
         alt="CentoApp - Controla tus finanzas sin estrés"
         width="600"
         height="400"
+        class="max-w-[30vw]"
       />
       <p class="text-[#858585] text-center text-lg">
         El ícono de la app, una moneda con una hoja de crecimiento, simboliza
