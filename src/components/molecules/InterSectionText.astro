@@ -1,10 +1,20 @@
 ---
-const { title, description, padding = "80px" } = Astro.props;
+const { preheading, title, description, padding = "80px" } = Astro.props;
 ---
 
-<div class="flex flex-col items-center py-16 gap-2">
-  <h2 class="text-4xl font-bold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%] text-center" style={{ paddingLeft: padding, paddingRight: padding}}>{title}</h2>
-  <p class="text-center text-xl text-[#858585] px-10 font-light md:px-100">
-    {description}
-  </p>
+<div class="flex flex-col items-center py-10 gap-2">
+  {preheading && <span class="text-[#858585]">{preheading}</span>}
+  <h2
+    class="text-4xl font-bold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%] text-center"
+    style={{ paddingLeft: padding, paddingRight: padding }}
+  >
+    {title}
+  </h2>
+  {
+    description && (
+      <p class="text-center text-xl text-[#858585] px-10 font-light md:px-100">
+        {description}
+      </p>
+    )
+  }
 </div>

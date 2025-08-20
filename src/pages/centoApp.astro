@@ -1,0 +1,161 @@
+---
+import Image from "astro/components/Image.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import InterSectionText from "../components/molecules/InterSectionText.astro";
+
+import centoCover from "../images/centoapp/render_intro.png";
+import competitionUI from "../images/centoapp/competition-ui.png";
+import competitionIcons from "../images/centoapp/competition_icons.png";
+import laptopEmoji from "../images/Emojis/laptop.png";
+import renderModes from "../images/centoapp/render_modes.png";
+import gridColors from "../images/centoapp/grid_colors.png";
+import centoAppIconImage from "../images/centoapp/centoapp_icon_image.png";
+
+import MyProcessCard from "../components/organism/MyProcessCard.astro";
+const pageTitle = "CentoApp | Controla tus finanzas sin estrés";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <main
+    class="flex flex-col items-center justify-center gap-12 pt-20 pb-12 px-8"
+  >
+    <div>
+      <h1 class="text-green-500 text-xl text-center font-bold">CentoAPP</h1>
+      <h2
+        class="heading text-[#ddd] text-3xl text-center py-2 px-1 text-medium"
+      >
+        Creando un balance entre estética y funcionalidad para una salud
+        financiera positiva.
+      </h2>
+    </div>
+    <div class="flex flex-col items-center gap-4">
+      <Image
+        src={centoCover}
+        alt="CentoApp - Controla tus finanzas sin estrés"
+        width="600"
+        height="400"
+      />
+      <p class="text-[#858585] text-center text-lg">
+        El desafío era rediseñar la experiencia de las finanzas personales, a
+        menudo percibida como técnica y aburrida. Creé CentoApp, una aplicación
+        móvil con una interfaz de usuario dual (Modo Básico y Avanzado) para
+        adaptarse tanto a principiantes como a expertos. El diseño, basado en
+        una estética moderna y en micro-animaciones, no solo simplificó la
+        gestión del dinero, sino que también motivó a los usuarios a registrar
+        sus gastos, logrando así un control financiero más consciente y
+        positivo.
+      </p>
+    </div>
+    <div class="flex flex-col items-center gap-4">
+      <InterSectionText
+        preheading="El Desafio"
+        title="Cambiar la narrativa del dinero"
+        padding="40px"
+      />
+      <Image
+        src={competitionUI}
+        alt="CentoApp - Controla tus finanzas sin estrés"
+        width="600"
+        height="400"
+      />
+      <p class="text-[#858585] text-center text-lg">
+        Al analizar el mercado de aplicaciones de finanzas, descubrí un gran
+        punto de fricción: las opciones existentes se dividían en dos extremos.
+        Unas eran demasiado técnicas y complejas, dirigidas a usuarios avanzados
+        con gráficos y estadísticas difíciles de interpretar para la mayoría.
+        Otras eran demasiado básicas y se quedaban cortas en funcionalidades
+        clave.
+      </p>
+      <p class="text-[#858585] text-center text-lg">
+        Además, la estética era un problema recurrente. La mayoría de las
+        interfaces eran frías, aburridas y visualmente desactualizadas, lo que
+        en lugar de motivar, generaba desinterés y fatiga. Mi objetivo era
+        claro: crear una aplicación que hiciera que la gestión de las finanzas
+        se sintiera moderna, atractiva y, sobre todo, fácil de usar.
+      </p>
+    </div>
+    <div class="flex flex-col items-center gap-4">
+      <InterSectionText
+        preheading="Mi Rol"
+        title="Estratega y Diseñador  UX/UI"
+        padding="40px"
+      />
+      <Image
+        src={laptopEmoji}
+        alt="CentoApp - Controla tus finanzas sin estrés"
+        width="600"
+        height="400"
+      />
+      <p class="text-[#858585] text-center text-lg">
+        En este proyecto, asumí el rol de estratega y diseñador UX/UI completo.
+        Mi misión fue guiar el proyecto desde la fase inicial de análisis hasta
+        la creación de un prototipo de alta fidelidad, asegurando que cada
+        decisión de diseño estuviera alineada con los objetivos del usuario y
+        del proyecto.
+      </p>
+    </div>
+    <div class="flex flex-col items-center gap-4">
+      <InterSectionText
+        preheading="El proceso"
+        title="De la frustración a la solución estratégica"
+        padding="40px"
+      />
+      <MyProcessCard
+        step="Paso 1"
+        title="Análisis de la Competencia y Descubrimiento del Usuario"
+        description="Comenzamos con una conversación profunda sobre tu visión, objetivos de negocio y público ideal. Aceleramos este proceso con el análisis de datos asistido por herramientas de IA para encontrar las mejores oportunidades y definir una estrategia sólida para tu sitio web."
+        image={competitionIcons}
+      />
+      <MyProcessCard
+        step="Paso 2"
+        title="La Estrategia de la Interfaz Dual"
+        description="Aquí es donde nació la idea clave del proyecto. Me di cuenta de que un solo diseño no podía satisfacer a todos. Por ello, diseñé dos modos de interfaz:"
+        image={renderModes}
+        color="rgba(5,190,172,1)"
+      />
+      <MyProcessCard
+        step="Paso 3"
+        title="Diseño Visual que Motiva"
+        description="La estética fue una decisión crucial. Opté por un tema oscuro con una paleta de colores vibrante (magenta, púrpura y verde) para darle a la aplicación una sensación tecnológica y moderna. El flujo de registro de gastos se diseñó para tomar menos de 10 segundos, eliminando uno de los mayores puntos de fricción."
+        image={gridColors}
+        color="rgba(140,190,57,1)"
+      />
+    </div>
+    <div class="flex flex-col items-center gap-6">
+      <InterSectionText
+        preheading="Resultados e Impacto"
+        title="Un futuro financiero más brillante"
+        padding="40px"
+      />
+      <p class="text-[#858585] text-center text-lg">
+        El prototipo de CentoApp fue probado con usuarios, y los resultados
+        fueron extremadamente positivos. Se sintieron atraídos por la interfaz,
+        encontrándola "muy intuitiva" y "visualmente agradable". Lo más
+        importante es que el diseño y la simplicidad de uso los motivaron a
+        registrar sus gastos de manera consistente, un paso clave hacia una
+        mejor salud financiera.
+      </p>
+      <Image
+        src={centoAppIconImage}
+        alt="CentoApp - Controla tus finanzas sin estrés"
+        width="600"
+        height="400"
+      />
+      <p class="text-[#858585] text-center text-lg">
+        El ícono de la app, una moneda con una hoja de crecimiento, simboliza
+        perfectamente el impacto deseado, la aplicación como una herramienta que
+        fomenta el crecimiento financiero.
+      </p>
+    </div>
+    <div class="flex flex-col items-center">
+      <InterSectionText title="Conclusión" padding="40px" />
+      <p class="text-[#858585] text-center text-lg">
+        Este proyecto no fue solo sobre diseño de aplicaciones, sino sobre la
+        transformación de una tarea que muchos encuentran tediosa en una
+        experiencia motivadora y útil. CentoApp demuestra cómo la estrategia de
+        UX/UI, combinada con una estética moderna, puede resolver problemas
+        reales y tener un impacto positivo en la vida de los usuarios.
+      </p>
+    </div>
+  </main>
+</BaseLayout>
