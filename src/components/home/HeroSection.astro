@@ -17,8 +17,10 @@ const email = "info@aciduslabs.com";
       />
     </div>
     <div class="flex flex-col gap-12">
-      <div class="max-w-xl">
-        <h1 class="text-green-500 text-xl text-center font-bold">AcidusLabs</h1>
+      <div class="max-w-xl flex flex-col">
+        <div class="flex justify-center">
+          <h1 class="text-xl text-center font-bold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%]">AcidusLabs</h1>
+        </div>
         <h2 class="heading text-[#ddd] text-3xl text-center py-2 text-medium">
           Construyamos el sitio web que tu negocio necesita para escalar
         </h2>
@@ -50,16 +52,23 @@ const email = "info@aciduslabs.com";
 <script>
   import gsap from "gsap";
 
-  gsap.from(".heading", {
+  let tl = gsap.timeline();
+  tl.from(".bg-radial-blue", {
     duration: 1,
-    scale: 0.8,
+    scale: 1.2,
     opacity: 0,
-    ease: "power2.out",
-  });
-  gsap.from(".description", {
+    ease: "power3.out"
+  })
+  .from(".heading", {
     duration: 1,
-    scale: 0.8,
+    scale: 1.2,
     opacity: 0,
-    ease: "power2.out",
-  });
+    ease: "power3.out",
+  }, "-=0.75")
+  .from(".description", {
+    duration: 1,
+    scale: 1.2,
+    opacity: 0,
+    ease: "power3.out",
+  }, "-=0.75");
 </script>

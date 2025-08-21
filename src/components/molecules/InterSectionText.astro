@@ -5,7 +5,7 @@ const { preheading, title, description, padding = "80px" } = Astro.props;
 <div class="flex flex-col items-center py-10 gap-2">
   {preheading && <span class="text-[#858585]">{preheading}</span>}
   <h2
-    class="text-4xl font-bold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%] text-center"
+    class="text-4xl flex-grow-0 font-bold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%] text-center"
     style={{ paddingLeft: padding, paddingRight: padding }}
   >
     {title}
