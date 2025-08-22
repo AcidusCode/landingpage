@@ -9,12 +9,13 @@ const email = "info@aciduslabs.com";
   class="flex flex-col items-center justify-center gap-12 pt-20 pb-12 px-8 min-h-screen"
 >
   <div class="flex flex-col items-center">
-    <div class="bg-radial-blue">
-      <Image
+    <div class="relative">
+      <div class="bg-radial-blue absolute z-0 inset-0"></div>
+      <div class="emoji z-10"><Image
         src={smileEmoji}
         alt="Emoji de AcidusLabs sonriendo."
         width="252"
-      />
+      /></div>
     </div>
     <div class="flex flex-col gap-12">
       <div class="max-w-xl flex flex-col">
@@ -54,11 +55,17 @@ const email = "info@aciduslabs.com";
 
   let tl = gsap.timeline();
   tl.from(".bg-radial-blue", {
-    duration: 1,
-    scale: 1.2,
+    duration: 1.5,
+    scale: 0.8,
     opacity: 0,
     ease: "power3.out"
   })
+  .from(".emoji", {
+    duration: 1.5,
+    scale: 1.2,
+    opacity: 0,
+    ease: "power3.out",
+  }, "-=1.25")
   .from(".heading", {
     duration: 1,
     scale: 1.2,

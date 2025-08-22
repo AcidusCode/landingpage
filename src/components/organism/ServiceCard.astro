@@ -3,7 +3,7 @@ import Image from "astro/components/Image.astro";
 const { cover, title, description, color } = Astro.props;
 ---
 
-<div class="rounded-2xl min-w-[80vw] md:min-w-[40vw]" style={{ background: color}}>
+<div class="rounded-2xl w-[80vw] flex-shrink-0" style={{ background: color}}>
   <Image
     src={cover}
     alt="Imagen cover del proyecto CentoApp."
