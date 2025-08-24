@@ -3,7 +3,7 @@ import Image from "astro/components/Image.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import InterSectionText from "../components/molecules/InterSectionText.astro";
 import SectionTitle from "../components/molecules/SectionTitle.astro";
-import CtaButton from "../components/atoms/CtaButton.astro"
+import CtaButton from "../components/atoms/CtaButton.astro";
 
 import centoCover from "../images/centoapp/render_intro.png";
 import competitionUI from "../images/centoapp/competition-ui.png";
@@ -30,16 +30,16 @@ import advanceModeFeature3 from "../images/centoapp/advance_mode_feature_3.png";
   <main
     class="flex flex-col items-center justify-center gap-12 pt-20 pb-12 px-8"
   >
-    <div>
+    <div class="sectionHeroProject">
       <div class="flex justify-center">
         <h1
-          class="text-green-500 text-xl text-center font-bold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%]"
+          class="textIntroHeroProject text-green-500 text-xl text-center font-bold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%]"
         >
           CentoAPP
         </h1>
       </div>
       <h2
-        class="heading text-[#ddd] text-3xl text-center py-2 px-1 text-medium"
+        class="titleHeroProject heading text-[#ddd] text-3xl text-center py-2 px-1 text-medium"
       >
         Creando un balance entre estética y funcionalidad para una salud
         financiera positiva.
@@ -52,6 +52,7 @@ import advanceModeFeature3 from "../images/centoapp/advance_mode_feature_3.png";
         alt="CentoApp - Controla tus finanzas sin estrés"
         width="600"
         height="400"
+        class="imageHeroProject"
       />
       <p class="text-[#858585] text-center text-lg">
         El desafío era rediseñar la experiencia de las finanzas personales, a
@@ -64,136 +65,147 @@ import advanceModeFeature3 from "../images/centoapp/advance_mode_feature_3.png";
         positivo.
       </p>
     </div>
-    <div class="flex flex-col items-center gap-4">
+
+    <div class="sectionChallengeProject flex flex-col items-center gap-4">
       <InterSectionText
         preheading="El Desafio"
         title="Cambiar la narrativa del dinero"
         padding="40px"
+        classTitle="titleChallengeProject"
+        classDesc="descChallengeProject"
       />
-      <Image
-        src={competitionUI}
-        alt="CentoApp - Controla tus finanzas sin estrés"
-        width="600"
-        height="400"
-      />
-      <p class="text-[#858585] text-center text-lg">
-        Al analizar el mercado de aplicaciones de finanzas, descubrí un gran
-        punto de fricción: las opciones existentes se dividían en dos extremos.
-        Unas eran demasiado técnicas y complejas, dirigidas a usuarios avanzados
-        con gráficos y estadísticas difíciles de interpretar para la mayoría.
-        Otras eran demasiado básicas y se quedaban cortas en funcionalidades
-        clave.
-      </p>
-      <p class="text-[#858585] text-center text-lg">
-        Además, la estética era un problema recurrente. La mayoría de las
-        interfaces eran frías, aburridas y visualmente desactualizadas, lo que
-        en lugar de motivar, generaba desinterés y fatiga. Mi objetivo era
-        claro: crear una aplicación que hiciera que la gestión de las finanzas
-        se sintiera moderna, atractiva y, sobre todo, fácil de usar.
-      </p>
+      <div class="contentChallengeProject flex flex-col items-center gap-4">
+        <Image
+          src={competitionUI}
+          alt="CentoApp - Controla tus finanzas sin estrés"
+          width="600"
+          height="400"
+        />
+        <p class="text-[#858585] text-center text-lg">
+          Al analizar el mercado de aplicaciones de finanzas, descubrí un gran
+          punto de fricción: las opciones existentes se dividían en dos
+          extremos. Unas eran demasiado técnicas y complejas, dirigidas a
+          usuarios avanzados con gráficos y estadísticas difíciles de
+          interpretar para la mayoría. Otras eran demasiado básicas y se
+          quedaban cortas en funcionalidades clave.
+        </p>
+        <p class="text-[#858585] text-center text-lg">
+          Además, la estética era un problema recurrente. La mayoría de las
+          interfaces eran frías, aburridas y visualmente desactualizadas, lo que
+          en lugar de motivar, generaba desinterés y fatiga. Mi objetivo era
+          claro: crear una aplicación que hiciera que la gestión de las finanzas
+          se sintiera moderna, atractiva y, sobre todo, fácil de usar.
+        </p>
+      </div>
     </div>
 
-    <div class="flex flex-col items-center gap-4">
+    <div class="sectionRolProject flex flex-col items-center">
       <InterSectionText
         preheading="Mi Rol"
         title="Estratega y Diseñador  UX/UI"
         padding="40px"
+        classTitle="titleRolProject"
       />
-      <Image
-        src={laptopEmoji}
-        alt="CentoApp - Controla tus finanzas sin estrés"
-        width="600"
-        height="400"
-      />
-      <p class="text-[#858585] text-center text-lg">
-        En este proyecto, asumí el rol de estratega y diseñador UX/UI completo.
-        Mi misión fue guiar el proyecto desde la fase inicial de análisis hasta
-        la creación de un prototipo de alta fidelidad, asegurando que cada
-        decisión de diseño estuviera alineada con los objetivos del usuario y
-        del proyecto.
-      </p>
+      <div class="contentRolProject flex flex-col items-center gap-4">
+        <Image
+          src={laptopEmoji}
+          alt="CentoApp - Controla tus finanzas sin estrés"
+          width="600"
+          height="400"
+        />
+        <p class="text-[#858585] text-center text-lg">
+          En este proyecto, asumí el rol de estratega y diseñador UX/UI
+          completo. Mi misión fue guiar el proyecto desde la fase inicial de
+          análisis hasta la creación de un prototipo de alta fidelidad,
+          asegurando que cada decisión de diseño estuviera alineada con los
+          objetivos del usuario y del proyecto.
+        </p>
+      </div>
     </div>
 
-    <div class="flex flex-col items-center gap-4">
+    <div class="sectionProcessProject flex flex-col items-center gap-4">
       <InterSectionText
         preheading="El proceso"
         title="De la frustración a la solución estratégica"
         padding="40px"
+        classTitle="titleProcessProject"
       />
-
-      <MyProcessCard
-        step="Paso 1"
-        title="Análisis de la Competencia y Descubrimiento del Usuario"
-        description="Comenzamos con una conversación profunda sobre tu visión, objetivos de negocio y público ideal. Aceleramos este proceso con el análisis de datos asistido por herramientas de IA para encontrar las mejores oportunidades y definir una estrategia sólida para tu sitio web."
-        image={competitionIcons}
-      />
-
-      <MyProcessCard
-        step="Paso 2"
-        title="La Estrategia de la Interfaz Dual"
-        description="Aquí es donde nació la idea clave del proyecto. Me di cuenta de que un solo diseño no podía satisfacer a todos. Por ello, diseñé dos modos de interfaz:"
-        image={renderModes}
-        color="rgba(5,190,172,1)"
-      />
-
-      <div class="flex flex-col gap-8 mb-8">
-        <SectionTitle
-          title="Modo Básico"
-          description="Pensado para principiantes. Su interfaz principal es un gráfico de dona que muestra visualmente las categorías de gasto, acompañado de un widget de balance para un control simple y rápido."
+      <div class="contentProcessProject flex-col items-center gap-4">
+        <MyProcessCard
+          step="Paso 1"
+          title="Análisis de la Competencia y Descubrimiento del Usuario"
+          description="Comenzamos con una conversación profunda sobre tu visión, objetivos de negocio y público ideal. Aceleramos este proceso con el análisis de datos asistido por herramientas de IA para encontrar las mejores oportunidades y definir una estrategia sólida para tu sitio web."
+          image={competitionIcons}
         />
-        <div class="flex overflow-hidden gap-4 max-w-[95vw]">
-          <FeaturesCard
-            image={basicModeFeature1}
-            description="Interfaz principal intuitiva, un gráfico tipo dona que muestra visualmente las categorías de gasto, facilitando la comprensión de dónde va el dinero."
+
+        <MyProcessCard
+          step="Paso 2"
+          title="La Estrategia de la Interfaz Dual"
+          description="Aquí es donde nació la idea clave del proyecto. Me di cuenta de que un solo diseño no podía satisfacer a todos. Por ello, diseñé dos modos de interfaz:"
+          image={renderModes}
+          color="rgba(5,190,172,1)"
+        />
+
+        <div class="flex flex-col gap-8 mb-8 mt-6">
+          <SectionTitle
+            title="Modo Básico"
+            description="Pensado para principiantes. Su interfaz principal es un gráfico de dona que muestra visualmente las categorías de gasto, acompañado de un widget de balance para un control simple y rápido."
           />
-          <FeaturesCard
-            image={basicModeFeature2}
-            description="Navegación simplificada, una barra de navegación con dos botones (Ingreso y Gasto) para una experiencia sin distracciones."
-          />
-          <FeaturesCard
-            image={basicModeFeature3}
-            description="Registro ultrarrápido, el proceso de añadir un gasto está optimizado para tomar menos de 10 segundos."
-          />
-        </div>
-        <div class="flex gap-4 justify-end">
-          <div
-            class="flex items-center justify-center w-10 h-10 bg-[#222] rounded-full"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="25"
-              viewBox="0 0 24 25"
-              fill="none"
-            >
-              <path
-                d="M14.375 5.85352L7.625 12.6035L14.375 19.3535"
-                stroke="#666666"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
+          <div class="flex overflow-hidden gap-4 max-w-[95vw]">
+            <FeaturesCard
+              image={basicModeFeature1}
+              description="Interfaz principal intuitiva, un gráfico tipo dona que muestra visualmente las categorías de gasto, facilitando la comprensión de dónde va el dinero."
+            />
+            <FeaturesCard
+              image={basicModeFeature2}
+              description="Navegación simplificada, una barra de navegación con dos botones (Ingreso y Gasto) para una experiencia sin distracciones."
+            />
+            <FeaturesCard
+              image={basicModeFeature3}
+              description="Registro ultrarrápido, el proceso de añadir un gasto está optimizado para tomar menos de 10 segundos."
+            />
           </div>
-          <div
-            class="flex items-center justify-center w-10 h-10 bg-[#222] rounded-full"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="25"
-              viewBox="0 0 24 25"
-              fill="none"
+          <div class="flex gap-4 justify-end">
+            <div
+              class="flex items-center justify-center w-10 h-10 bg-[#222] rounded-full"
             >
-              <path
-                d="M9.625 5.85352L16.375 12.6035L9.625 19.3535"
-                stroke="#BBBBBB"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+              >
+                <path
+                  d="M14.375 5.85352L7.625 12.6035L14.375 19.3535"
+                  stroke="#666666"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div
+              class="flex items-center justify-center w-10 h-10 bg-[#222] rounded-full"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+              >
+                <path
+                  d="M9.625 5.85352L16.375 12.6035L9.625 19.3535"
+                  stroke="#BBBBBB"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="flex flex-col gap-8 mb-8">
         <SectionTitle
           title="Modo Avanzado"
@@ -263,43 +275,54 @@ import advanceModeFeature3 from "../images/centoapp/advance_mode_feature_3.png";
       />
     </div>
 
-    <div class="flex flex-col items-center gap-6">
+    <div class="sectionResultProject flex flex-col items-center">
       <InterSectionText
         preheading="Resultados e Impacto"
         title="Un futuro financiero más brillante"
         padding="40px"
+        classTitle="titleResultProject"
       />
-      <p class="text-[#858585] text-center text-lg">
-        El prototipo de CentoApp fue probado con usuarios, y los resultados
-        fueron extremadamente positivos. Se sintieron atraídos por la interfaz,
-        encontrándola "muy intuitiva" y "visualmente agradable". Lo más
-        importante es que el diseño y la simplicidad de uso los motivaron a
-        registrar sus gastos de manera consistente, un paso clave hacia una
-        mejor salud financiera.
-      </p>
-      <Image
-        src={centoAppIconImage}
-        alt="CentoApp - Controla tus finanzas sin estrés"
-        width="600"
-        height="400"
-        class="max-w-[30vw]"
+      <div class="contentResultProject flex flex-col items-center gap-4">
+        <p class="text-[#858585] text-center text-lg">
+          El prototipo de CentoApp fue probado con usuarios, y los resultados
+          fueron extremadamente positivos. Se sintieron atraídos por la
+          interfaz, encontrándola "muy intuitiva" y "visualmente agradable". Lo
+          más importante es que el diseño y la simplicidad de uso los motivaron
+          a registrar sus gastos de manera consistente, un paso clave hacia una
+          mejor salud financiera.
+        </p>
+        <Image
+          src={centoAppIconImage}
+          alt="CentoApp - Controla tus finanzas sin estrés"
+          width="600"
+          height="400"
+          class="max-w-[30vw]"
+        />
+        <p class="text-[#858585] text-center text-lg">
+          El ícono de la app, una moneda con una hoja de crecimiento, simboliza
+          perfectamente el impacto deseado, la aplicación como una herramienta
+          que fomenta el crecimiento financiero.
+        </p>
+      </div>
+    </div>
+
+    <div class="sectionConclusionProject flex flex-col items-center">
+      <InterSectionText
+        title="Conclusión"
+        padding="40px"
+        classTitle="titleConclusionProject"
       />
-      <p class="text-[#858585] text-center text-lg">
-        El ícono de la app, una moneda con una hoja de crecimiento, simboliza
-        perfectamente el impacto deseado, la aplicación como una herramienta que
-        fomenta el crecimiento financiero.
-      </p>
+      <div class="contentConclusionProject">
+        <p class="text-[#858585] text-center text-lg">
+          Este proyecto no fue solo sobre diseño de aplicaciones, sino sobre la
+          transformación de una tarea que muchos encuentran tediosa en una
+          experiencia motivadora y útil. CentoApp demuestra cómo la estrategia
+          de UX/UI, combinada con una estética moderna, puede resolver problemas
+          reales y tener un impacto positivo en la vida de los usuarios.
+        </p>
+      </div>
     </div>
-    <div class="flex flex-col items-center">
-      <InterSectionText title="Conclusión" padding="40px" />
-      <p class="text-[#858585] text-center text-lg">
-        Este proyecto no fue solo sobre diseño de aplicaciones, sino sobre la
-        transformación de una tarea que muchos encuentran tediosa en una
-        experiencia motivadora y útil. CentoApp demuestra cómo la estrategia de
-        UX/UI, combinada con una estética moderna, puede resolver problemas
-        reales y tener un impacto positivo en la vida de los usuarios.
-      </p>
-    </div>
+
     <div class="flex justify-center mt-8 mb-12">
       <CtaButton
         text="¿Tienes un proyecto en mente? Hablemos."
@@ -309,3 +332,155 @@ import advanceModeFeature3 from "../images/centoapp/advance_mode_feature_3.png";
     </div>
   </main>
 </BaseLayout>
+
+<script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".titleHeroProject", {
+    duration: 1.2,
+    scale: 0.8,
+    opacity: 0,
+    ease: "sine.out",
+  });
+
+  gsap.from(".imageHeroProject", {
+    duration: 1.2,
+    scale: 0.8,
+    opacity: 0,
+    ease: "sine.out",
+    delay: 0.6,
+  });
+
+  let tlSectionChallengeProject = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sectionChallengeProject",
+      start: "top 70%",
+      toggleActions: "restart none none reset",
+    },
+  });
+
+  tlSectionChallengeProject
+    .from(".titleChallengeProject", {
+      duration: 1.2,
+      scale: 0.8,
+      opacity: 0,
+      ease: "sine.out",
+    })
+    .from(
+      ".contentChallengeProject",
+      {
+        duration: 1.2,
+        y: 30,
+        opacity: 0,
+        ease: "sine.out",
+      },
+      "-=1"
+    );
+
+  let tlSectionRolProject = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sectionRolProject",
+      start: "top 70%",
+      toggleActions: "restart none none reset",
+    },
+  });
+
+  tlSectionRolProject
+    .from(".titleRolProject", {
+      duration: 1.2,
+      scale: 0.8,
+      opacity: 0,
+      ease: "sine.out",
+    })
+    .from(
+      ".contentRolProject",
+      {
+        duration: 1.2,
+        y: 30,
+        opacity: 0,
+        ease: "sine.out",
+      },
+      "-=1"
+    );
+
+  let tlSectionProcessProject = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sectionProcessProject",
+      start: "top 70%",
+      toggleActions: "restart none none reset",
+    },
+  });
+
+  tlSectionProcessProject
+    .from(".titleProcessProject", {
+      duration: 1.2,
+      scale: 0.8,
+      opacity: 0,
+      ease: "sine.out",
+    })
+    .from(
+      ".contentProcessProject",
+      {
+        duration: 1.2,
+        y: 30,
+        opacity: 0,
+        ease: "sine.out",
+      },
+      "-=1"
+    );
+
+  let tlSectionResultProject = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sectionResultProject",
+      start: "top 70%",
+      toggleActions: "restart none none reset",
+    },
+  });
+
+  tlSectionResultProject
+    .from(".titleResultProject", {
+      duration: 1.2,
+      scale: 0.8,
+      opacity: 0,
+      ease: "sine.out",
+    })
+    .from(
+      ".contentResultProject",
+      {
+        duration: 1.2,
+        y: 30,
+        opacity: 0,
+        ease: "sine.out",
+      },
+      "-=1"
+    );
+
+  let tlSectionConclusionProject = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sectionConclusionProject",
+      start: "top 70%",
+      toggleActions: "restart none none reset",
+    },
+  });
+
+  tlSectionConclusionProject
+    .from(".titleConclusionProject", {
+      duration: 1.2,
+      scale: 0.8,
+      opacity: 0,
+      ease: "sine.out",
+    })
+    .from(
+      ".contentConclusionProject",
+      {
+        duration: 1.2,
+        y: 30,
+        opacity: 0,
+        ease: "sine.out",
+      },
+      "-=1"
+    );
+</script>

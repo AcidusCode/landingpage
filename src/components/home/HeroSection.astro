@@ -2,6 +2,7 @@
 import Image from "astro/components/Image.astro";
 import smileEmoji from "../../images/Emojis/smile.png";
 import CtaButton from "../atoms/CtaButton.astro";
+import WhatsappIcon from "../icons/WhatsappIcon.astro";
 const email = "info@aciduslabs.com";
 ---
 
@@ -41,6 +42,7 @@ const email = "info@aciduslabs.com";
           text="Empieza tu sitio web hoy"
           ariaLabel="Empieza tu sitio web hoy"
           color="#0075C8"
+          icon={WhatsappIcon}
         />
         <p
           class="text-[#858585] text-center text-sm flex flex-col items-center font-light"
@@ -65,7 +67,7 @@ const email = "info@aciduslabs.com";
   let tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".sectionHero",
-      start: "top 20%",
+      start: "top 70%",
       toggleActions: "restart none none reset",
     },
   });
