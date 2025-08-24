@@ -1,6 +1,7 @@
 ---
 import SectionTitle from "../molecules/SectionTitle.astro";
 import HighLightCard from "../organism/HighLightCard.astro";
+import CtaButton from "../atoms/CtaButton.astro";
 
 import centoCover from "../../images/Mask group.png";
 import CentoAppIcon from "../projects/centoapp/CentoAppIcon.astro";
@@ -23,6 +24,13 @@ import CentoAppIcon from "../projects/centoapp/CentoAppIcon.astro";
       color="#8100B1"
       cover={centoCover}
       icon={CentoAppIcon}
+    />
+  </div>
+  <div class="flex justify-center">
+    <CtaButton
+      text="Transformemos tu presencia digital"
+      ariaLabel="Transformemos tu presencia digital"
+      color="#F105BE"
     />
   </div>
 </div>

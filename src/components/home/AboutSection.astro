@@ -10,40 +10,91 @@ import HighLightCard from "../organism/HighLightCard.astro";
 import laptopEmoji from "../../images/Emojis/laptop.png";
 import RocketIcon from "../icons/RocketIcon.astro";
 
-import Button from "../atoms/Button.astro";
+import CtaButton from "../atoms/CtaButton.astro";
 ---
 
-<InterSectionText
-  title="La mente detrás de los pixeles"
-  description="Diseñador. Desarrollador. Estratega. Buscando el balance entre estética y funcionalidad. Mi misión es ayudarte a construir experiencias digitales que no solo se vean increíbles, sino que también impulsen tus objetivos de negocio."
-  padding="60px"
-/>
-<div class="flex flex-col gap-16 pb-16">
-  <PhilosophyCard
-    icon={BrushIcon}
-    title="Diseño con Propósito"
-    description="Cada decisión de diseño tiene una razón de ser, enfocada en la experiencia del usuario y en los objetivos de tu negocio."
+<div class="sectionAbout">
+  <InterSectionText
+    title="La mente detrás de los pixeles"
+    classTitle="titleAbout"
+    description="Diseñador. Desarrollador. Estratega. Buscando el balance entre estética y funcionalidad. Mi misión es ayudarte a construir experiencias digitales que no solo se vean increíbles, sino que también impulsen tus objetivos de negocio."
+    classDesc="descAbout"
+    padding="60px"
   />
-  <PhilosophyCard
-    icon={PeopleIcon}
-    title="Socios, no Clientes"
-    description="Creo en un proceso de colaboración constante para que juntos podamos dar vida a una visión que te represente totalmente."
-  />
-  <PhilosophyCard
-    icon={LensIcon}
-    title="Balance Perfecto"
-    description="Mi objetivo es crear un sitio web que sea visualmente impactante y, a la vez, una herramienta de conversión eficiente."
-  />
+  <div class="aboutme flex flex-col gap-16 pb-16">
+    <PhilosophyCard
+      icon={BrushIcon}
+      title="Diseño con Propósito"
+      description="Cada decisión de diseño tiene una razón de ser, enfocada en la experiencia del usuario y en los objetivos de tu negocio."
+    />
+    <PhilosophyCard
+      icon={PeopleIcon}
+      title="Socios, no Clientes"
+      description="Creo en un proceso de colaboración constante para que juntos podamos dar vida a una visión que te represente totalmente."
+    />
+    <PhilosophyCard
+      icon={LensIcon}
+      title="Balance Perfecto"
+      description="Mi objetivo es crear un sitio web que sea visualmente impactante y, a la vez, una herramienta de conversión eficiente."
+    />
+  </div>
+  <div class="mx-8 flex flex-col gap-8">
+    <HighLightCard
+      heading="Construyamos algo sorprende juntos"
+      description="Cuéntame sobre tu proyecto y hagámoslo realidad."
+      tag={false}
+      color="linear-gradient(204deg, #4DDC00 27.86%, #297600 73.45%)"
+      cover={laptopEmoji}
+      footer={false}
+      textAlign="center"
+    />
+    <div class="flex justify-center">
+      <CtaButton
+        text="Contactame ahora"
+        ariaLabel="Enviame un mensaje"
+        icon={RocketIcon}
+        color="#3EB000"
+      />
+    </div>
+  </div>
 </div>
-<div class="mx-8 flex flex-col gap-8">
-  <HighLightCard
-    heading="Construyamos algo sorprende juntos"
-    description="Cuéntame sobre tu proyecto y hagámoslo realidad."
-    tag={false}
-    color="linear-gradient(204deg, #4DDC00 27.86%, #297600 73.45%)"
-    cover={laptopEmoji}
-    footer={false}
-    textAlign="center"
-  />
-  <Button text="Enviame un mensaje" ariaLabel="Enviame un mensaje" icon={RocketIcon}/>
-</div>
+
+<script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sectionAbout",
+      start: "top 70%",
+      toggleActions: "restart none none reset",
+    },
+  });
+
+  tl.from(".titleAbout", {
+    duration: 1,
+    scale: 0.8,
+    opacity: 0,
+    ease: "sine.out",
+  }).from(
+    ".descAbout",
+    {
+      duration: 1,
+      scale: 0.9,
+      opacity: 0,
+      ease: "sine.out",
+    },
+    "-=.5"
+  ).from(
+    ".aboutme",
+    {
+      duration: 1.2,
+      y: 20,
+      opacity: 0,
+      ease: "sine.out",
+    },
+    "-=.5"
+  );
+</script>

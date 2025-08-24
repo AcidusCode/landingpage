@@ -3,6 +3,7 @@ import Image from "astro/components/Image.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import InterSectionText from "../components/molecules/InterSectionText.astro";
 import SectionTitle from "../components/molecules/SectionTitle.astro";
+import CtaButton from "../components/atoms/CtaButton.astro"
 
 import centoCover from "../images/centoapp/render_intro.png";
 import competitionUI from "../images/centoapp/competition-ui.png";
@@ -16,14 +17,13 @@ import MyProcessCard from "../components/organism/MyProcessCard.astro";
 import FeaturesCard from "../components/organism/FeaturesCard.astro";
 const pageTitle = "CentoApp | Controla tus finanzas sin estrés";
 
-import basicModeFeature1 from "../images/centoapp/basic_mode_feature_1.png"
-import basicModeFeature2 from "../images/centoapp/basic_mode_feature_2.png"
-import basicModeFeature3 from "../images/centoapp/basic_mode_feature_3.png"
+import basicModeFeature1 from "../images/centoapp/basic_mode_feature_1.png";
+import basicModeFeature2 from "../images/centoapp/basic_mode_feature_2.png";
+import basicModeFeature3 from "../images/centoapp/basic_mode_feature_3.png";
 
-import advanceModeFeature1 from "../images/centoapp/advance_mode_feature_1.png"
-import advanceModeFeature2 from "../images/centoapp/advance_mode_feature_2.png"
-import advanceModeFeature3 from "../images/centoapp/advance_mode_feature_3.png"
-
+import advanceModeFeature1 from "../images/centoapp/advance_mode_feature_1.png";
+import advanceModeFeature2 from "../images/centoapp/advance_mode_feature_2.png";
+import advanceModeFeature3 from "../images/centoapp/advance_mode_feature_3.png";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -31,7 +31,13 @@ import advanceModeFeature3 from "../images/centoapp/advance_mode_feature_3.png"
     class="flex flex-col items-center justify-center gap-12 pt-20 pb-12 px-8"
   >
     <div>
-      <h1 class="text-green-500 text-xl text-center font-bold">CentoAPP</h1>
+      <div class="flex justify-center">
+        <h1
+          class="text-green-500 text-xl text-center font-bold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%]"
+        >
+          CentoAPP
+        </h1>
+      </div>
       <h2
         class="heading text-[#ddd] text-3xl text-center py-2 px-1 text-medium"
       >
@@ -39,6 +45,7 @@ import advanceModeFeature3 from "../images/centoapp/advance_mode_feature_3.png"
         financiera positiva.
       </h2>
     </div>
+
     <div class="flex flex-col items-center gap-4">
       <Image
         src={centoCover}
@@ -292,6 +299,13 @@ import advanceModeFeature3 from "../images/centoapp/advance_mode_feature_3.png"
         UX/UI, combinada con una estética moderna, puede resolver problemas
         reales y tener un impacto positivo en la vida de los usuarios.
       </p>
+    </div>
+    <div class="flex justify-center mt-8 mb-12">
+      <CtaButton
+        text="¿Tienes un proyecto en mente? Hablemos."
+        ariaLabel="¿Tienes un proyecto en mente? Hablemos."
+        color="#0075C8"
+      />
     </div>
   </main>
 </BaseLayout>

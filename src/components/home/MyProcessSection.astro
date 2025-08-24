@@ -1,5 +1,6 @@
 ---
 import InterSectionText from "../../components/molecules/InterSectionText.astro";
+import CtaButton from "../atoms/CtaButton.astro";
 
 import step1 from "../../images/myprocess/step-one.png";
 import step2 from "../../images/myprocess/step-two.png";
@@ -8,36 +9,87 @@ import step4 from "../../images/myprocess/step-four.png";
 import MyProcessCard from "../organism/MyProcessCard.astro";
 ---
 
-<InterSectionText
-  title="Tu visión, paso a paso."
-  description="Una metodología clara y transparente para convertir tu idea en un sitio web de alto impacto, sin complicaciones ni sorpresas."
-/>
-<div class="flex flex-col gap-18">
-  <MyProcessCard
-    step="Paso 1"
-    title="Descubrimiento y Estrategia"
-    description="Comenzamos con una conversación profunda sobre tu visión, objetivos de negocio y público ideal. Aceleramos este proceso con el análisis de datos asistido por herramientas de IA para encontrar las mejores oportunidades y definir una estrategia sólida para tu sitio web."
-    image={step1}
+<div class="sectionMyProcess">
+  <InterSectionText
+    title="Tu visión, paso a paso."
+    classTitle="titleMyProcess"
+    description="Una metodología clara y transparente para convertir tu idea en un sitio web de alto impacto, sin complicaciones ni sorpresas."
+    classDesc="descMyProcess"
   />
-  <MyProcessCard
-    step="Paso 2"
-    title="Diseño y Prototipado"
-    description="Traducimos la estrategia en un diseño visualmente impactante y una experiencia de usuario intuitiva. Te presentamos prototipos interactivos para que veas cómo funcionará tu sitio y puedas dar feedback en cada etapa, asegurando que el resultado cumpla con tus expectativas."
-    image={step2}
-    color="rgba(53,93,255,1)"
-  />
-  <MyProcessCard
-    step="Paso 3"
-    title="Desarrollo y Optimización"
-    description="Damos vida al diseño con código limpio y moderno. Tu sitio web será ultrarrápido, seguro y optimizado para el SEO fundamental, asegurando que te encuentren en los buscadores y que la experiencia de usuario sea impecable en todos los dispositivos."
-    image={step3}
-    color="rgba(5,190,172,1)"
-  />
-  <MyProcessCard
-    step="Paso 4"
-    title="Lanzamiento y Acompañamiento"
-    description="Lanzamos tu sitio web al mundo y nos aseguramos de que todo funcione a la perfección. Nuestro trabajo no termina ahí; te brindamos soporte para cualquier duda, asegurando que tu presencia online se mantenga impecable y lista para crecer."
-    image={step4}
-    color="rgba(140,190,57,1)"
-  />
+  <div class="myprocess flex flex-col gap-18">
+    <MyProcessCard
+      step="Paso 1"
+      title="Descubrimiento y Estrategia"
+      description="Comenzamos con una conversación profunda sobre tu visión, objetivos de negocio y público ideal. Aceleramos este proceso con el análisis de datos asistido por herramientas de IA para encontrar las mejores oportunidades y definir una estrategia sólida para tu sitio web."
+      image={step1}
+    />
+    <MyProcessCard
+      step="Paso 2"
+      title="Diseño y Prototipado"
+      description="Traducimos la estrategia en un diseño visualmente impactante y una experiencia de usuario intuitiva. Te presentamos prototipos interactivos para que veas cómo funcionará tu sitio y puedas dar feedback en cada etapa, asegurando que el resultado cumpla con tus expectativas."
+      image={step2}
+      color="rgba(53,93,255,1)"
+    />
+    <MyProcessCard
+      step="Paso 3"
+      title="Desarrollo y Optimización"
+      description="Damos vida al diseño con código limpio y moderno. Tu sitio web será ultrarrápido, seguro y optimizado para el SEO fundamental, asegurando que te encuentren en los buscadores y que la experiencia de usuario sea impecable en todos los dispositivos."
+      image={step3}
+      color="rgba(5,190,172,1)"
+    />
+    <MyProcessCard
+      step="Paso 4"
+      title="Lanzamiento y Acompañamiento"
+      description="Lanzamos tu sitio web al mundo y nos aseguramos de que todo funcione a la perfección. Nuestro trabajo no termina ahí; te brindamos soporte para cualquier duda, asegurando que tu presencia online se mantenga impecable y lista para crecer."
+      image={step4}
+      color="rgba(140,190,57,1)"
+    />
+  </div>
+  <div class="flex justify-center mt-8 mb-12">
+    <CtaButton
+      text="Vamos paso a paso, empieza aquí"
+      ariaLabel="Empieza tu sitio web hoy"
+      color="#8100B1"
+    />
+  </div>
 </div>
+
+<script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sectionMyProcess",
+      start: "top 70%",
+      toggleActions: "restart none none reset",
+    },
+  });
+
+  tl.from(".titleMyProcess", {
+    duration: 1,
+    scale: 0.8,
+    opacity: 0,
+    ease: "sine.out",
+  }).from(
+    ".descMyProcess",
+    {
+      duration: 1,
+      scale: 0.9,
+      opacity: 0,
+      ease: "sine.out",
+    },
+    "-=.5"
+  ).from(
+    ".myprocess",
+    {
+      duration: 1.2,
+      y: 20,
+      opacity: 0,
+      ease: "sine.out",
+    },
+    "-=.5"
+  );
+</script>

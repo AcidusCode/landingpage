@@ -7,6 +7,7 @@ import webAMedidaCover from "../../images/service-web-a-medida.png";
 import eCommerceCover from "../../images/service-ecommerce.png";
 import auditCover from "../../images/service-audit.png";
 import PlayIcon from "../icons/PlayIcon.astro";
+import CtaButton from "../atoms/CtaButton.astro";
 ---
 
 <div class="sectionServices flex flex-col py-8 gap-6">
@@ -100,25 +101,27 @@ import PlayIcon from "../icons/PlayIcon.astro";
     y: 20,
     duration: 1,
     ease: "sine.out",
-  }).from(
-    ".descServices",
-    {
-      opacity: 0,
-      y: 20,
-      duration: 1,
-      ease: "sine.out",
-    },
-    "-=0.5"
-  ).from(
-    ".slides",
-    {
-      opacity: 0,
-      y: 20,
-      duration: 1,
-      ease: "sine.out",
-    },
-    "-=0.5"
-  );;
+  })
+    .from(
+      ".descServices",
+      {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+        ease: "sine.out",
+      },
+      "-=0.5"
+    )
+    .from(
+      ".slides",
+      {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+        ease: "sine.out",
+      },
+      "-=0.5"
+    );
 
   const slidesCount = document.querySelectorAll(".slide").length;
   const slide = document.querySelector(".slide") as HTMLElement;
