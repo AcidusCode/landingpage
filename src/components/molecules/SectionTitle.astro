@@ -2,9 +2,45 @@
 const { title, description } = Astro.props;
 ---
 
-<div class="flex flex-col mx-6">
-  <h2 class="text-[#ddd] text-2xl font-bold">{title}</h2>
-  <p class="text-[#858585] font-light">
+<div class=".sectionTitle flex flex-col mx-6">
+  <h2 class="heading text-[#ddd] text-2xl font-bold">{title}</h2>
+  <p class="subheading text-[#858585] font-light">
     {description}
   </p>
 </div>
+
+<script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sectionTitle",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+      pin: true,
+      markers: true,
+    },
+  });
+
+  tl.from(".heading", {
+    duration: 1.5,
+    scale: 0.8,
+    opacity: 0,
+    y: -20,
+    ease: "power3.out",
+  }).from(
+    ".subheading",
+    {
+      duration: 1.5,
+      scale: 1.2,
+      opacity: 0,
+      y: -20,
+      ease: "power3.out",
+    },
+    "-=1.25"
+  );
+</script>
