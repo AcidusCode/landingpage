@@ -6,12 +6,12 @@ const email = "info@aciduslabs.com";
 ---
 
 <main
-  class="flex flex-col items-center justify-center gap-12 pt-8 pb-12 px-8 min-h-screen"
+  class="sectionHero flex flex-col items-center justify-center gap-12 pt-8 pb-12 px-8 min-h-screen"
 >
   <div class="flex flex-col items-center">
     <div class="relative">
-      <div class="bg-radial-blue absolute z-0 inset-0"></div>
-      <div class="emoji z-10 pb-4">
+      <div class="gradientEmojiHero bg-radial-blue absolute z-0 inset-0"></div>
+      <div class="emojiHero z-10 pb-4">
         <Image
           src={smileEmoji}
           alt="Emoji de AcidusLabs sonriendo."
@@ -23,16 +23,16 @@ const email = "info@aciduslabs.com";
       <div class="max-w-xl flex flex-col">
         <div class="flex justify-center">
           <h1
-            class="textIntro text-base text-center font-bold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%]"
+            class="textIntroHero text-base text-center font-bold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%]"
           >
-            Studio de Diseño y Desarrollo Web
+            Studio de Diseño & Desarrollo Web
           </h1>
         </div>
-        <h2 class="heading text-[#ddd] text-3xl leading-xs text-center py-2 text-medium">
+        <h2 class="headingHero text-[#ddd] text-3xl leading-xs text-center py-2 text-medium">
           Construyamos el sitio web que tu negocio necesita para escalar
         </h2>
-        <p class="description text-[#858585] text-center text-sm font-light">
-          Paginas web a medida que combinan estética, funcionalidad y las
+        <p class="descriptionHero text-[#858585] text-center text-sm font-light">
+          Proyectos a medida que combinan estética, funcionalidad y las
           mejores practicas de conversión para superar tus objetivos.
         </p>
       </div>
@@ -62,15 +62,22 @@ const email = "info@aciduslabs.com";
 
   gsap.registerPlugin(ScrollTrigger);
 
-  let tl = gsap.timeline();
-  tl.from(".bg-radial-blue", {
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sectionHero",
+      start: "top 20%",
+      toggleActions: "restart none none reset",
+    },
+  });
+
+  tl.from(".gradientEmojiHero", {
     duration: 1.5,
     scale: 0.8,
     opacity: 0,
     ease: "power3.out",
   })
     .from(
-      ".emoji",
+      ".emojiHero",
       {
         duration: 1.5,
         scale: 1.2,
@@ -80,7 +87,7 @@ const email = "info@aciduslabs.com";
       "-=1.25"
     )
     .from(
-      ".textIntro",
+      ".textIntroHero",
       {
         duration: 1.5,
         scale: 1.2,
@@ -90,7 +97,7 @@ const email = "info@aciduslabs.com";
       "-=1.25"
     )
     .from(
-      ".heading",
+      ".headingHero",
       {
         duration: 1.5,
         scale: 1.2,
@@ -100,7 +107,7 @@ const email = "info@aciduslabs.com";
       "-=1.25"
     )
     .from(
-      ".description",
+      ".descriptionHero",
       {
         duration: 1.5,
         scale: 1.2,

@@ -6,12 +6,14 @@ import centoCover from "../../images/Mask group.png";
 import CentoAppIcon from "../projects/centoapp/CentoAppIcon.astro";
 ---
 
-<div class="flex flex-col py-8 gap-6">
+<div class="sectionProjects flex flex-col py-8 gap-6">
   <SectionTitle
     title="Proyectos Destacados"
+    classTitle="titleProjects"
     description="Convirtiendo ideas en experiencias digitales"
+    classDesc="descProjects"
   />
-  <div class="mx-6">
+  <div class="cardProjects mx-6">
     <HighLightCard
       title="CentoApp"
       subtitle="Controla tus finanzas sin estrés"
@@ -24,3 +26,43 @@ import CentoAppIcon from "../projects/centoapp/CentoAppIcon.astro";
     />
   </div>
 </div>
+
+<script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sectionProjects",
+      start: "top 70%",
+      toggleActions: "restart none none reset",
+    },
+  });
+
+  tl.from(".titleProjects", {
+    opacity: 0,
+    y: 20,
+    duration: 1,
+    ease: "sine.out",
+  }).from(
+    ".descProjects",
+    {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      ease: "sine.out",
+    },
+    "-=0.5"
+  ).from(
+    ".cardProjects",
+    {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      ease: "sine.out",
+    },
+    "-=0.5"
+  );;
+</script>
