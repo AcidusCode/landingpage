@@ -68,21 +68,44 @@ function setHamburgerIcon() {
   >`;
 }
 
-btn?.addEventListener("click", () => {
+function closeMenu() {
+  // Reversa la animación
+  tl.reverse();
+  isOpen = false;
+
+  setTimeout(() => {
+    menu.style.pointerEvents = "none";
+    setHamburgerIcon();
+  }, 500);
+}
+
+function openMenu() {
+  // Reproduce la animación
+  tl.play();
+  isOpen = true;
+
+  setTimeout(() => {
+    setCloseIcon();
+  }, 500);
+}
+
+export function toggleMenu() {
   if (isOpen) {
-    // animacion inversa
-    tl.reverse();
-    isOpen = false;
-    setTimeout(() => {
-      menu.style.pointerEvents = "none";
-      setHamburgerIcon();
-    }, 500); // cuando termine la animacion se desactivan los clicks
+    closeMenu();
   } else {
-    // reproduce el timeline
-    tl.play();
-    isOpen = true;
-    setTimeout(() => {
-      setCloseIcon();
-    }, 500);
+    // Activar interacción antes de abrir si es necesario
+    menu.style.pointerEvents = "auto";
+    openMenu();
   }
+}
+
+// Asignar evento al botón
+btn?.addEventListener("click", toggleMenu);
+
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    if (isOpen) {
+      closeMenu();
+    }
+  });
 });
