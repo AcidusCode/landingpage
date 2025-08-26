@@ -4,20 +4,20 @@ const {step, title, description, image, color = "rgba(248,75,128,1)"} = Astro.pr
 const gradient = `radial-gradient(45% 45% at 50% 50%, ${color} 0%, rgba(0, 0, 0, 0) 110%)`;
 ---
 <div class="relative flex flex-col gap-4">
-  <div class="absolute min-w-[96vw] min-h-[96vw] overflow-hidden top-3 left-1/2 transform -translate-x-1/2" style={{background: gradient}}></div>
+  <div class="absolute min-w-[96vw] min-h-[96vw] overflow-hidden top-3 left-1/2 transform -translate-x-1/2 md:min-w-[50vw] md:min-h-[40vw] md:top-0" style={{background: gradient}}></div>
   <div class="z-10">
     <p class="text-[rgba(133,133,133,1)] text-center">{step}</p>
     <h3 class="text-[rgba(238,238,238,1)] text-center text-2xl font-bold px-24">
       {title}
     </h3>
   </div>
-  <div class="bg-[#111] mx-8 p-6 rounded-2xl gap-4 flex flex-col items-center font-medium z-10">
+  <div class="bg-[#111] mx-8 p-6 rounded-2xl gap-4 flex flex-col items-center font-medium z-10 md:flex-row">
     <Image
       src={image}
       alt="Imagen cover del proyecto CentoApp."
-      class="rounded-t-2xl"
+      class="rounded-t-2xl max-w-[480px]"
     />
-    <p class="text-[#858585] text-center text-medium">
+    <p class="text-[#858585] text-center text-medium md:text-xl">
       {description}
     </p>
   </div>
