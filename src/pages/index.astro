@@ -1,19 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeroSection from "../components/home/HeroSection.astro";
+import AdvantageSection from "../components/home/AdvantageSection.astro"
 import ProjectsSection from "../components/home/ProjectsSection.astro";
 import ServicesSection from "../components/home/ServicesSection.astro";
 import MyProcessSection from "../components/home/MyProcessSection.astro";
 import AboutSection from "../components/home/AboutSection.astro";
+import PricingSection from "../components/home/PricingSection.astro"
 import ContactSection from "../components/home/ContactSection.astro";
 const pageTitle = "AcidusLabs";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <HeroSection/>
+  <AdvantageSection />
   <ProjectsSection/>
   <ServicesSection/>
   <MyProcessSection/>
   <AboutSection/>
+  <PricingSection />
   <ContactSection/>
 </BaseLayout>

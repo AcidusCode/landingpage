@@ -1,0 +1,114 @@
+---
+import CtaButton from "../atoms/CtaButton.astro";
+import InterSectionText from "../molecules/InterSectionText.astro";
+---
+
+<section class="mx-6">
+  <InterSectionText
+    title="Elige el plan que mejor se adapta a tu proyecto"
+    classTitle="titlePricing"
+    description="Todos incluyen: diseño 100% a medida · adaptable · carga ultra-rápida · SEO inicial · soporte post-lanzamiento."
+    classDesc="descPricing"
+    padding="40px"
+  />
+  <div>
+    <div
+      class="flex flex-col p-5 justify-center gap-5 bg-[#202020] rounded-3xl"
+    >
+      <div class="flex flex-col gap-2">
+        <p class="text-[#eee] text-xl font-bold">Starter</p>
+        <p class="text-md font-light text-[#bbb] italic">
+          Ideal para profesionales independientes y pequeños emprendedores
+        </p>
+      </div>
+      <p class="text-6xl text-[#eee] text-center py-3">
+        400<span class="text-base">USD</span>
+      </p>
+      <div class="flex flex-col gap-3">
+        <ul class="flex flex-col gap-3">
+          <li class="flex items-center gap-3 text-sm text-[#ddd]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M13 4L6 12L3 9"
+                stroke="#00B3FF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            Tu web lista en 5 días, sin complicaciones.
+          </li>
+          <li class="flex items-center gap-3 text-sm text-[#ddd]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M13 4L6 12L3 9"
+                stroke="#00B3FF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            1-2 páginas esenciales para tu negocio.
+          </li>
+          <li class="flex items-center gap-3 text-sm text-[#ddd]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M13 4L6 12L3 9"
+                stroke="#00B3FF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            Diseño personalizado a tu marca.
+          </li>
+          <li class="flex items-center gap-3 text-sm text-[#ddd]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M13 4L6 12L3 9"
+                stroke="#00B3FF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            SEO básico para que te encuentren en Google.
+          </li>
+        </ul>
+        <p class="text-sm text-[#888] underline italic">
+          Quiero conocer más beneficios
+        </p>
+      </div>
+      <div class="flex flex-col gap-3 items-center justify-center mt-4">
+        <CtaButton
+          text="Quiero mi web lista en 5 días"
+          ariaLabel="Empieza tu sitio web hoy"
+          color="#444"
+        />
+        <p class="text-sm text-[#666] italic">
+          Pago en 2 partes · Sin costos ocultos
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
