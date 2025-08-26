@@ -1,0 +1,47 @@
+---
+import CtaButton from "../atoms/CtaButton.astro";
+const {
+  packName,
+  packDescription,
+  packPrice,
+  packCta,
+  ctaColor = "#444444",
+  packNote,
+  colorStyle = "#202020",
+  scaleStyle = "scale(.98)",
+  tag=false,
+} = Astro.props;
+---
+
+<div
+  class="relative flex flex-col p-5 justify-center gap-5 rounded-3xl w-[320px] md:w-[350px] transform"
+  style={{
+    background: colorStyle,
+    transform: scaleStyle,
+  }}
+>
+  { tag && <span class="absolute left-1/2 top-0 px-4 py-2 bg-[#00B2FF] trasnform -translate-y-1/2 -translate-x-1/2 rounded-3xl text-sm font-bold">Recomendado</span>}
+  <div class="flex flex-col gap-2">
+    <p class="text-[#eee] text-xl font-bold">{packName}</p>
+    <p class="text-sm font-light text-[rgba(250,250,250,.5)] italic">
+      {packDescription}
+    </p>
+  </div>
+  <p class="text-6xl text-[#eee] text-center py-3">
+    {packPrice}<span class="text-base">USD</span>
+  </p>
+  <div class="flex flex-col gap-3">
+    <ul class="flex flex-col gap-3">
+      <slot />
+    </ul>
+    <p class="text-sm text-[rgba(250,250,250,.5)] underline italic">
+      Quiero conocer más beneficios
+    </p>
+  </div>
+  <div class="flex flex-col gap-3 items-centermt-4">
+    <CtaButton text={packCta} ariaLabel={packCta} color={ctaColor} />
+    <p class="text-sm text-[rgba(250,250,250,.3)] italic w-full text-center">
+      {packNote}
+    </p>
+  </div>
+</div>

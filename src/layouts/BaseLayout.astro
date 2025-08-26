@@ -15,7 +15,7 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body class="flex flex-col">
+  <body class="flex flex-col max-w-[1080px] md:mx-auto">
     <Header />
     <slot />
     <script>

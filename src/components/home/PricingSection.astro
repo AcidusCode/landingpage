@@ -1,114 +1,64 @@
 ---
 import CtaButton from "../atoms/CtaButton.astro";
 import InterSectionText from "../molecules/InterSectionText.astro";
+import PricingCard from "../organism/PricingCard.astro";
+import PricingFeature from "../molecules/PricingFeature.astro";
 ---
 
-<section class="mx-6">
+<section class="mx-6 mt-16 flex flex-col gap-4 md:gap-12">
   <InterSectionText
-    title="Elige el plan que mejor se adapta a tu proyecto"
+    title="Elige tu  plan ideal"
     classTitle="titlePricing"
     description="Todos incluyen: diseño 100% a medida · adaptable · carga ultra-rápida · SEO inicial · soporte post-lanzamiento."
     classDesc="descPricing"
-    padding="40px"
+    padding="20px"
   />
-  <div>
-    <div
-      class="flex flex-col p-5 justify-center gap-5 bg-[#202020] rounded-3xl"
+  <div class="flex flex-col items-center justify-center gap-12 md:flex-row">
+    <PricingCard
+      packName="Starter"
+      packDescription="Ideal para profesionales independientes y pequeños emprendedores"
+      packPrice="400"
+      packCta="Quiero mi web lista en 5 días"
+      packNote="Pago en 2 partes · Sin costos ocultos"
     >
-      <div class="flex flex-col gap-2">
-        <p class="text-[#eee] text-xl font-bold">Starter</p>
-        <p class="text-md font-light text-[#bbb] italic">
-          Ideal para profesionales independientes y pequeños emprendedores
-        </p>
-      </div>
-      <p class="text-6xl text-[#eee] text-center py-3">
-        400<span class="text-base">USD</span>
-      </p>
-      <div class="flex flex-col gap-3">
-        <ul class="flex flex-col gap-3">
-          <li class="flex items-center gap-3 text-sm text-[#ddd]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path
-                d="M13 4L6 12L3 9"
-                stroke="#00B3FF"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
-            Tu web lista en 5 días, sin complicaciones.
-          </li>
-          <li class="flex items-center gap-3 text-sm text-[#ddd]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path
-                d="M13 4L6 12L3 9"
-                stroke="#00B3FF"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
-            1-2 páginas esenciales para tu negocio.
-          </li>
-          <li class="flex items-center gap-3 text-sm text-[#ddd]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path
-                d="M13 4L6 12L3 9"
-                stroke="#00B3FF"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
-            Diseño personalizado a tu marca.
-          </li>
-          <li class="flex items-center gap-3 text-sm text-[#ddd]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path
-                d="M13 4L6 12L3 9"
-                stroke="#00B3FF"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
-            SEO básico para que te encuentren en Google.
-          </li>
-        </ul>
-        <p class="text-sm text-[#888] underline italic">
-          Quiero conocer más beneficios
-        </p>
-      </div>
-      <div class="flex flex-col gap-3 items-center justify-center mt-4">
-        <CtaButton
-          text="Quiero mi web lista en 5 días"
-          ariaLabel="Empieza tu sitio web hoy"
-          color="#444"
-        />
-        <p class="text-sm text-[#666] italic">
-          Pago en 2 partes · Sin costos ocultos
-        </p>
-      </div>
-    </div>
+      <PricingFeature featureText="Tu web lista en 5 días." />
+      <PricingFeature featureText="1-2 páginas esenciales para tu negocio." />
+      <PricingFeature featureText="Diseño personalizado a tu marca." />
+      <PricingFeature
+        featureText="SEO básico para que te encuentren en Google."
+      />
+    </PricingCard>
+    <PricingCard
+      packName="Business"
+      packDescription="Ideal para startups y PYMEs que quieren presencia fuerte"
+      packPrice="1200"
+      packCta="Elijo el plan ideal"
+      ctaColor="#008DCA"
+      packNote="Pago en 2-3 partes · Sin costos ocultos"
+      colorStyle="linear-gradient(199deg, #0066C5 1%, #001958 98.05%), #202020;"
+      scaleStyle="scale(1.08, 1.04)"
+      tag="true"
+    >
+      <PricingFeature featureText="Sitio de 5-7 páginas estratégicas." />
+      <PricingFeature featureText="Diseño avanzado para tu marca." />
+      <PricingFeature featureText="SEO intermedio para mejorar tu visibilidad." />
+      <PricingFeature
+        featureText="Formulario de contacto y Google Analytics."
+      />
+    </PricingCard>
+    <PricingCard
+      packName="Premium"
+      packDescription="Ideal para empresas en expansión o marcas que quieren destacar"
+      packPrice="3000"
+      packCta="Quiero mi web premium"
+      packNote="Pago en 2 partes · Sin costos ocultos"
+    >
+      <PricingFeature featureText="Sitio de 10+ páginas adaptadas a tus necesidades." />
+      <PricingFeature featureText="Diseño premium con animaciones." />
+      <PricingFeature featureText="SEO avanzado con keywords estratégicas para posicionarte mejor." />
+      <PricingFeature
+        featureText="Integraciones + automatizaciones para ahorrar tiempo."
+      />
+    </PricingCard>
   </div>
 </section>

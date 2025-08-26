@@ -2,10 +2,10 @@
 
 ---
 
-<section class="advantageSection flex flex-col items-center gap-6 mx-12 py-12">
+<section class="sectionAdvantage flex flex-col items-center gap-6 mx-12 py-12 md:flex-row">
   <!--p class="text-[#999]">¿Por qué elegirnos?</p-->
   <div
-    class="flex flex-col w-full justify-center items-center bg-[#202020] p-5 gap-5 rounded-xl"
+    class="advantage1 flex flex-col w-full justify-center items-center bg-[#202020] p-5 gap-5 rounded-xl"
   >
     <div>
       <svg
@@ -25,7 +25,7 @@
     </div>
     <p class="text-[#ccc] text-center px-8">Lanzamiento rápido sin dolores de cabeza</p>
   </div>
-  <div class="flex flex-col w-full items-center bg-[#202020] p-5 gap-5 rounded-xl">
+  <div class="advantage2 flex flex-col w-full items-center bg-[#202020] p-5 gap-5 rounded-xl">
     <div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@
     </div>
     <p class="text-[#ccc] text-center">Sitios creados para <br />convertir</p>
   </div>
-  <div class="flex flex-col w-full items-center bg-[#202020] p-5 gap-5 rounded-xl">
+  <div class="advantage3 flex flex-col w-full items-center bg-[#202020] p-5 gap-5 rounded-xl">
     <div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -67,3 +67,43 @@
     <p class="text-[#ccc] text-center">Soporte humano y <br />cercano, no bots</p>
   </div>
 </section>
+
+<script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sectionAdvantage",
+      start: "top 70%",
+      toggleActions: "restart none none reset",
+    },
+  });
+
+  tl.from(".advantage1", {
+    opacity: 0,
+    y: 20,
+    duration: 1,
+    ease: "sine.out",
+  }).from(
+    ".advantage2",
+    {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      ease: "sine.out",
+    },
+    "-=0.5"
+  ).from(
+    ".advantage3",
+    {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      ease: "sine.out",
+    },
+    "-=0.5"
+  );;
+</script>

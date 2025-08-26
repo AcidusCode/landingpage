@@ -21,7 +21,7 @@ import CtaButton from "../atoms/CtaButton.astro";
     classDesc="descAbout"
     padding="60px"
   />
-  <div class="aboutme flex flex-col gap-16 pb-16">
+  <div class="aboutme flex flex-col gap-16 pb-16 md:flex-row">
     <PhilosophyCard
       icon={BrushIcon}
       title="Diseño con Propósito"
@@ -78,23 +78,25 @@ import CtaButton from "../atoms/CtaButton.astro";
     scale: 0.8,
     opacity: 0,
     ease: "sine.out",
-  }).from(
-    ".descAbout",
-    {
-      duration: 1,
-      scale: 0.9,
-      opacity: 0,
-      ease: "sine.out",
-    },
-    "-=.5"
-  ).from(
-    ".aboutme",
-    {
-      duration: 1.2,
-      y: 20,
-      opacity: 0,
-      ease: "sine.out",
-    },
-    "-=.5"
-  );
+  })
+    .from(
+      ".descAbout",
+      {
+        duration: 1,
+        scale: 0.9,
+        opacity: 0,
+        ease: "sine.out",
+      },
+      "-=.5"
+    )
+    .from(
+      ".aboutme",
+      {
+        duration: 1.2,
+        y: 20,
+        opacity: 0,
+        ease: "sine.out",
+      },
+      "-=.5"
+    );
 </script>

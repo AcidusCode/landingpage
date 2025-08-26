@@ -1,0 +1,21 @@
+---
+const {featureText} = Astro.props
+---
+
+<li class="flex items-center gap-3 text-sm text-[#ddd]">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+  >
+    <path
+      d="M13 4L6 12L3 9"
+      stroke="#00B3FF"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"></path>
+  </svg>
+  {featureText}
+</li>
