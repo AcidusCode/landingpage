@@ -3,6 +3,7 @@ import SectionTitle from "../molecules/SectionTitle.astro";
 import InterSectionText from "../molecules/InterSectionText.astro";
 import HighLightCard from "../organism/HighLightCard.astro";
 import CtaButton from "../atoms/CtaButton.astro";
+import CentoApp from "../projects/centoApp.astro";
 
 import centoCover from "../../images/Mask group.png";
 import CentoAppIcon from "../projects/centoapp/CentoAppIcon.astro";
@@ -43,6 +44,22 @@ import CentoAppIcon from "../projects/centoapp/CentoAppIcon.astro";
   </div>
 </section>
 
+<div
+  id="caso-overlay"
+  class="hidden fixed pt-4 top-0 left-0 right-0 bottom-0 rounded-t-3xl bg-[rgba(0,0,0,.8)] z-150 flex items-start justify-center"
+>
+  <div
+    id="caso-content"
+    class="bg-[#202020] max-h-full overflow-y-auto rounded-t-xl p-6"
+  >
+    <button id="cerrar-overlay" class="text-right w-full text-sm text-gray-500">Cerrar</button>
+    <div id="caso-detalle">
+      <!-- Aquí se inyectará el contenido del caso -->
+       <CentoApp />
+    </div>
+  </div>
+</div>
+
 <script>
   import gsap from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
@@ -52,7 +69,7 @@ import CentoAppIcon from "../projects/centoapp/CentoAppIcon.astro";
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".sectionProjects",
-      start: "top 70%",
+      start: "top 80%",
       toggleActions: "restart none none reset",
     },
   });

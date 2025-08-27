@@ -5,7 +5,7 @@ import PricingCard from "../organism/PricingCard.astro";
 import PricingFeature from "../molecules/PricingFeature.astro";
 ---
 
-<section class="mx-6 mt-16 flex flex-col gap-4 md:gap-12 md:pt-16" id="pricingSection">
+<section class="pricingSection mx-6 mt-16 flex flex-col gap-4 md:gap-12 md:pt-16" id="pricingSection">
   <InterSectionText
     title="Elige tu  plan ideal"
     classTitle="titlePricing"
@@ -71,7 +71,7 @@ import PricingFeature from "../molecules/PricingFeature.astro";
 
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: ".sectionProjects",
+      trigger: ".pricingSection",
       start: "top 70%",
       toggleActions: "restart none none reset",
     },
