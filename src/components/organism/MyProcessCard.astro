@@ -4,7 +4,7 @@ const {step, title, description, image, color = "rgba(248,75,128,1)"} = Astro.pr
 const gradient = `radial-gradient(45% 45% at 50% 50%, ${color} 0%, rgba(0, 0, 0, 0) 110%)`;
 ---
 <div class="relative flex flex-col gap-4">
-  <div class="absolute min-w-[96vw] min-h-[96vw] overflow-hidden top-3 left-1/2 transform -translate-x-1/2 md:min-w-[50vw] md:min-h-[40vw] md:top-0" style={{background: gradient}}></div>
+  <div class="absolute min-w-[96vw] min-h-[96vw] overflow-hidden top-3 left-1/2 transform -translate-x-1/2 md:min-w-[50vw] md:min-h-[40vw] lg:min-w-[650px] lg:min-h-[450px] md:top-0" style={{background: gradient}}></div>
   <div class="z-10">
     <p class="text-[rgba(133,133,133,1)] text-center">{step}</p>
     <h3 class="text-[rgba(238,238,238,1)] text-center text-2xl font-bold px-24">
