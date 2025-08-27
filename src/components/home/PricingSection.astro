@@ -5,7 +5,7 @@ import PricingCard from "../organism/PricingCard.astro";
 import PricingFeature from "../molecules/PricingFeature.astro";
 ---
 
-<section class="mx-6 mt-16 flex flex-col gap-4 md:gap-12">
+<section class="mx-6 mt-16 flex flex-col gap-4 md:gap-12 md:pt-16" id="pricingSection">
   <InterSectionText
     title="Elige tu  plan ideal"
     classTitle="titlePricing"
@@ -13,7 +13,7 @@ import PricingFeature from "../molecules/PricingFeature.astro";
     classDesc="descPricing"
     padding="20px"
   />
-  <div class="flex flex-col items-center justify-center gap-12 md:flex-row">
+  <div class="flex pricingCards flex-col items-center justify-center gap-12 md:flex-row">
     <PricingCard
       packName="Starter"
       packDescription="Ideal para profesionales independientes y pequeños emprendedores"
@@ -62,3 +62,43 @@ import PricingFeature from "../molecules/PricingFeature.astro";
     </PricingCard>
   </div>
 </section>
+
+<script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sectionProjects",
+      start: "top 70%",
+      toggleActions: "restart none none reset",
+    },
+  });
+
+  tl.from(".titlePricing", {
+    opacity: 0,
+    scale: 0.8,
+    duration: 1,
+    ease: "sine.out",
+  }).from(
+    ".descPricing",
+    {
+      opacity: 0,
+      scale: 0.9,
+      duration: 1,
+      ease: "sine.out",
+    },
+    "-=0.5"
+  ).from(
+    ".pricingCards",
+    {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      ease: "sine.out",
+    },
+    "-=0.5"
+  );;
+</script>

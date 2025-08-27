@@ -1,5 +1,6 @@
 ---
 import SectionTitle from "../molecules/SectionTitle.astro";
+import InterSectionText from "../molecules/InterSectionText.astro";
 import HighLightCard from "../organism/HighLightCard.astro";
 import CtaButton from "../atoms/CtaButton.astro";
 
@@ -7,12 +8,19 @@ import centoCover from "../../images/Mask group.png";
 import CentoAppIcon from "../projects/centoapp/CentoAppIcon.astro";
 ---
 
-<section class="sectionProjects flex flex-col py-8 gap-6 md:items-center" id="projectSection">
-  <SectionTitle
+<section class="sectionProjects flex flex-col py-8 gap-6 md:items-center md:pt-16" id="projectSection">
+  <!--SectionTitle
     title="Proyectos Destacados"
     classTitle="titleProjects"
     description="Convirtiendo ideas en experiencias digitales"
     classDesc="descProjects"
+  /-->
+  <InterSectionText
+    title="Proyectos Destacados"
+    classTitle="titleProjects"
+    description="Convirtiendo ideas en experiencias digitales"
+    classDesc="descProjects"
+    padding="20px"
   />
   <div class="cardProjects mx-6">
     <HighLightCard
@@ -51,14 +59,14 @@ import CentoAppIcon from "../projects/centoapp/CentoAppIcon.astro";
 
   tl.from(".titleProjects", {
     opacity: 0,
-    y: 20,
+    scale: 0.8,
     duration: 1,
     ease: "sine.out",
   }).from(
     ".descProjects",
     {
       opacity: 0,
-      y: 20,
+      scale: 0.9,
       duration: 1,
       ease: "sine.out",
     },
