@@ -1,7 +1,7 @@
 ---
 import SectionTitle from "../molecules/SectionTitle.astro";
 import InterSectionText from "../molecules/InterSectionText.astro";
-import HighLightCard from "../organism/HighLightCard.astro";
+import ProjectCard from "../organism/ProjectCard.astro";
 import CtaButton from "../atoms/CtaButton.astro";
 import CentoApp from "../projects/centoApp.astro";
 
@@ -9,7 +9,10 @@ import centoCover from "../../images/Mask group.png";
 import CentoAppIcon from "../projects/centoapp/CentoAppIcon.astro";
 ---
 
-<section class="sectionProjects flex flex-col py-8 gap-6 md:items-center md:pt-16" id="projectSection">
+<section
+  class="sectionProjects flex flex-col py-8 gap-6 md:items-center md:pt-16"
+  id="projectSection"
+>
   <!--SectionTitle
     title="Proyectos Destacados"
     classTitle="titleProjects"
@@ -23,8 +26,8 @@ import CentoAppIcon from "../projects/centoapp/CentoAppIcon.astro";
     classDesc="descProjects"
     padding="20px"
   />
-  <div class="cardProjects mx-6">
-    <HighLightCard
+  <div class="cardProjects flex px-6 w-full justify-center">
+    <ProjectCard
       title="CentoApp"
       subtitle="Controla tus finanzas sin estrés"
       heading="Simplificando tus finanzas personales"
@@ -45,22 +48,48 @@ import CentoAppIcon from "../projects/centoapp/CentoAppIcon.astro";
 </section>
 
 <div
-  id="caso-overlay"
-  class="hidden fixed pt-4 top-0 left-0 right-0 bottom-0 rounded-t-3xl bg-[rgba(0,0,0,.8)] z-150 flex items-start justify-center"
+  id="project-overlay"
+  class="hidden fixed pt-4 top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,.5)] z-150 flex items-center justify-center backdrop-blur-xl"
 >
   <div
-    id="caso-content"
-    class="bg-[#202020] max-h-full overflow-y-auto rounded-t-xl p-6"
+    id="project-content"
+    class="relative h-full bg-[#202020] max-h-full overflow-y-auto rounded-t-3xl flex flex-col md:max-w-[1024px] md:max-h-[80vh] md:rounded-b-3xl translate-y-full"
   >
-    <button id="cerrar-overlay" class="text-right w-full text-sm text-gray-500">Cerrar</button>
-    <div id="caso-detalle">
+    <div class="sticky top-0 z-155 rounded-t-3xl w-full bg-[rgba(32,32,32,.6)] flex justify-center items-center p-6 backdrop-blur-xl md:max-w-[1024px]">
+      <h2
+        class="textIntroHeroProject text-green-500 text-xl text-center font-bold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%]"
+      >
+        CentoAPP
+      </h2>
+      <button
+        id="close-overlay"
+        class="absolute right-4 text-right text-sm text-gray-500 bg-[#404040] p-2 rounded-full"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-x"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M18 6l-12 12"></path><path d="M6 6l12 12"></path></svg
+        >
+      </button>
+    </div>
+    <div id="project-details">
       <!-- Aquí se inyectará el contenido del caso -->
-       <CentoApp />
+      <CentoApp />
     </div>
   </div>
 </div>
 
 <script>
+  import "../../scripts/overlayProject.js";
   import gsap from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -79,23 +108,25 @@ import CentoAppIcon from "../projects/centoapp/CentoAppIcon.astro";
     scale: 0.8,
     duration: 1,
     ease: "sine.out",
-  }).from(
-    ".descProjects",
-    {
-      opacity: 0,
-      scale: 0.9,
-      duration: 1,
-      ease: "sine.out",
-    },
-    "-=0.5"
-  ).from(
-    ".cardProjects",
-    {
-      opacity: 0,
-      y: 20,
-      duration: 1,
-      ease: "sine.out",
-    },
-    "-=0.5"
-  );;
+  })
+    .from(
+      ".descProjects",
+      {
+        opacity: 0,
+        scale: 0.9,
+        duration: 1,
+        ease: "sine.out",
+      },
+      "-=0.5"
+    )
+    .from(
+      ".cardProjects",
+      {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+        ease: "sine.out",
+      },
+      "-=0.5"
+    );
 </script>

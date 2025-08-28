@@ -102,7 +102,7 @@ export function toggleMenu() {
 // Asignar evento al botón
 btn?.addEventListener("click", toggleMenu);
 
-links.forEach(link => {
+links.forEach((link) => {
   link.addEventListener("click", () => {
     if (isOpen) {
       closeMenu();
