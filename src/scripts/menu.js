@@ -34,7 +34,7 @@ tl.from(
     x: 50,
     opacity: 0,
     stagger: 0.15,
-    duration: 0.45,
+    duration: 0.3,
     ease: "power2.out",
     delay: 0.15,
   },

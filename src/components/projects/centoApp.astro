@@ -24,16 +24,54 @@ import basicModeFeature3 from "../../images/centoapp/basic_mode_feature_3.png";
 import advanceModeFeature1 from "../../images/centoapp/advance_mode_feature_1.png";
 import advanceModeFeature2 from "../../images/centoapp/advance_mode_feature_2.png";
 import advanceModeFeature3 from "../../images/centoapp/advance_mode_feature_3.png";
+
+import renderLogin from "../../images/centoapp/render login.png";
+
+import CentoAppIcon from "./centoapp/CentoAppIcon.astro";
+import ExternalLinkIcon from "../icons/ExternalLinkIcon.astro";
 ---
 
-<main class="flex flex-col items-center justify-center gap-12 pt-16 pb-12 px-8">
-  <div class="sectionHeroProject">
+<main class="flex flex-col items-center justify-center gap-12">
+  <div
+    class="bg-gradient-to-b from-purple-500 via-pink-500 to-[#8100B1] text-white shadow-lg"
+  >
+    <Image
+      src={centoCover}
+      alt="CentoApp - Controla tus finanzas sin estrés"
+      class="imageHeroProject md:max-h-[40vw] mt-12"
+    />
+    <div
+      class="flex flex-row p-4 gap-2 bg-[rgba(250,250,250,0.2)] w-full justify-between md:flex-row backdrop-blur-3xl"
+    >
+      <div class="flex gap-2 items-center">
+        <div
+          class="flex items-center justify-center bg-[rgba(0,0,0,0.8)] w-14 h-14 rounded-lg"
+        >
+          <CentoAppIcon />
+        </div>
+        <div>
+          <h3 class="text-[#ddd] font-bold">CentoApp</h3>
+          <p class="text-xs text-[rgba(250,250,250,0.7)] pr-2">
+            Controla tus finanzas sin estrés
+          </p>
+        </div>
+      </div>
+      <button
+        class="btn-show-project flex items-center justify-center px-2 py-2 rounded-full text-xs font-medium text-[#ddd] gap-2 md:bg-[rgba(250,250,250,0.15)] md:px-8"
+      >
+        <ExternalLinkIcon />
+        <span class="hidden md:inline">Ver Proyecto</span>
+      </button>
+    </div>
+  </div>
+
+  <!--div class="sectionHeroProject px-6">
     <div class="flex justify-center">
-      <!--h1
+      <h1
         class="textIntroHeroProject text-green-500 text-xl text-center font-bold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%]"
       >
         CentoAPP
-      </h1-->
+      </h1>
     </div>
     <h2
       class="titleHeroProject heading text-[#ddd] text-3xl text-center py-2 px-1 text-medium"
@@ -41,26 +79,185 @@ import advanceModeFeature3 from "../../images/centoapp/advance_mode_feature_3.pn
       Creando un balance entre estética y funcionalidad para una salud
       financiera positiva.
     </h2>
-  </div>
+  </div-->
 
-  <div class="flex flex-col items-center gap-4">
-    <Image
-      src={centoCover}
-      alt="CentoApp - Controla tus finanzas sin estrés"
-      class="imageHeroProject md:max-w-[40vw]"
-    />
-    <p class="text-[#858585] text-center text-lg">
-      El desafío era rediseñar la experiencia de las finanzas personales, a
-      menudo percibida como técnica y aburrida. Creé CentoApp, una aplicación
-      móvil con una interfaz de usuario dual (Modo Básico y Avanzado) para
-      adaptarse tanto a principiantes como a expertos. El diseño, basado en una
-      estética moderna y en micro-animaciones, no solo simplificó la gestión del
-      dinero, sino que también motivó a los usuarios a registrar sus gastos,
-      logrando así un control financiero más consciente y positivo.
+  <div class="flex flex-col gap-2 px-10">
+    <h3 class="text-[#eee] font-semibold text-xl">El problema</h3>
+    <p class="text-[#959595] text-lg font-light">
+      Las apps de finanzas personales suelen caer en dos extremos: son
+      aburridas, feas y abrumadoras, o tan simples que dejan de ser útiles. El
+      resultado: los usuarios las abandonan rápido porque sienten que controlar
+      sus gastos es más un castigo que un hábito saludable.
     </p>
+    <Image
+      src={competitionUI}
+      alt="CentoApp - Controla tus finanzas sin estrés"
+      width="600"
+      height="400"
+      class="pt-8"
+    />
   </div>
 
-  <div class="sectionChallengeProject flex flex-col items-center gap-4">
+  <div class="flex flex-col gap-2 px-10 items-center overflow-hidden w-full">
+    <h3 class="text-[#eee] font-semibold text-xl w-full">La idea</h3>
+    <p class="text-[#959595] text-lg font-light">
+      CentoApp surge como un concepto de diseño que busca resolver este reto:
+      una experiencia financiera clara, atractiva y tan rápida de usar que
+      registrar un gasto sea tan natural como enviar un mensaje.
+    </p>
+    <Image
+      src={renderLogin}
+      alt="CentoApp - Controla tus finanzas sin estrés"
+      class="min-w-[750px]"
+    />
+  </div>
+
+  <div class="flex flex-col gap-2 px-10">
+    <h3 class="text-[#eee] font-semibold text-xl">
+      Investigación & aprendizajes
+    </h3>
+    <p class="text-[#959595] text-lg font-light">
+      Al analizar apps existentes y escuchar a usuarios jóvenes y digitales,
+      identifiqué tres necesidades clave:
+    </p>
+    <ul class="text-[#959595] text-lg font-light">
+      <li>
+        <span class="text-[#eee]">Rapidez:</span> “Quiero registrar un gasto en segundos.”
+      </li>
+      <li>
+        <span class="text-[#eee]">Claridad:</span> “Necesito ver mi balance sin perderme
+        en menús.”
+      </li>
+      <li>
+        <span class="text-[#eee]">Estilo:</span> “La app debería sentirse moderna,
+        no como un Excel disfrazado.”
+      </li>
+    </ul>
+  </div>
+
+  <div class="flex flex-col gap-2 w-full px-10">
+    <h3 class="text-[#eee] font-semibold text-xl">La solución de diseño</h3>
+    <div class="pt-4 flex overflow-hidden gap-4">
+      <FeaturesCard
+        image={basicModeFeature1}
+        description="Interfaz principal intuitiva, un gráfico tipo dona que muestra visualmente las categorías de gasto, facilitando la comprensión de dónde va el dinero."
+      />
+      <FeaturesCard
+        image={basicModeFeature2}
+        description="Navegación simplificada, una barra de navegación con dos botones (Ingreso y Gasto) para una experiencia sin distracciones."
+      />
+      <FeaturesCard
+        image={basicModeFeature3}
+        description="Registro ultrarrápido, el proceso de añadir un gasto está optimizado para tomar menos de 10 segundos."
+      />
+    </div>
+    <!--div class="flex flex-col gap-8 mb-8 mt-6 pl-6">
+      <SectionTitle
+        title="Modo Básico"
+        description="Pensado para principiantes. Su interfaz principal es un gráfico de dona que muestra visualmente las categorías de gasto, acompañado de un widget de balance para un control simple y rápido."
+      />
+      <div class="flex overflow-hidden gap-4 max-w-[95vw]">
+        <FeaturesCard
+          image={basicModeFeature1}
+          description="Interfaz principal intuitiva, un gráfico tipo dona que muestra visualmente las categorías de gasto, facilitando la comprensión de dónde va el dinero."
+        />
+        <FeaturesCard
+          image={basicModeFeature2}
+          description="Navegación simplificada, una barra de navegación con dos botones (Ingreso y Gasto) para una experiencia sin distracciones."
+        />
+        <FeaturesCard
+          image={basicModeFeature3}
+          description="Registro ultrarrápido, el proceso de añadir un gasto está optimizado para tomar menos de 10 segundos."
+        />
+      </div>
+      <div class="flex gap-4 justify-end">
+        <div
+          class="flex items-center justify-center w-10 h-10 bg-[#222] rounded-full"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="25"
+            viewBox="0 0 24 25"
+            fill="none"
+          >
+            <path
+              d="M14.375 5.85352L7.625 12.6035L14.375 19.3535"
+              stroke="#666666"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div
+          class="flex items-center justify-center w-10 h-10 bg-[#222] rounded-full"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="25"
+            viewBox="0 0 24 25"
+            fill="none"
+          >
+            <path
+              d="M9.625 5.85352L16.375 12.6035L9.625 19.3535"
+              stroke="#BBBBBB"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </div>
+      </div>
+    </div-->
+    <!--ul class="text-[#959595] text-lg font-light px-10">
+      <li>
+        <span class="text-[#eee]">Flujo optimizado:</span> de 5 pasos a solo 2 para
+        registrar gastos.
+      </li>
+      <li>
+        <span class="text-[#eee]">Dos modos de uso:</span> rápido (diario) y avanzado
+        (analítico).
+      </li>
+      <li>
+        <span class="text-[#eee]">Atajos flotantes:</span> ingreso/gasto en un solo
+        toque.
+      </li>
+      <li>
+        <span class="text-[#eee]">Dashboard visual:</span> balance claro y gráficos
+        simples.
+      </li>
+      <li>
+        <span class="text-[#eee]">Modo oscuro:</span> diseñado para la comodidad
+        nocturna.
+      </li>
+    </ul-->
+  </div>
+
+  <div class="flex flex-col gap-2 px-10 w-full">
+    <h3 class="text-[#eee] font-semibold text-xl">
+      Impacto esperado (simulado)
+    </h3>
+    <ul class="text-[#959595] text-lg font-light">
+      <li>-60% pasos en el flujo de registro.</li>
+      <li>Tiempo promedio: 25s → 8s (-68%).</li>
+      <li>92% de usuarios de prueba completaron la tarea en menos de 15s.</li>
+      <li>+38% intención de uso diario.</li>
+      <li>SUS (System Usability Score): 82 — Excelente.</li>
+    </ul>
+  </div>
+
+  <div class="flex flex-col gap-2 px-10 w-full">
+    <h3 class="text-[#eee] font-semibold text-xl">Lo que aprendí</h3>
+    <ul class="text-[#959595] text-lg font-light">
+      <li>La velocidad percibida importa más que la cantidad de funciones.</li>
+      <li>Separar modos rápido y avanzado reduce la carga cognitiva.</li>
+      <li>
+        El feedback visual inmediato genera confianza y motiva al usuario.
+      </li>
+    </ul>
+  </div>
+
+  <!--div class="sectionChallengeProject flex flex-col items-center gap-4">
     <InterSectionText
       preheading="El Desafio"
       title="Cambiar la narrativa del dinero"
@@ -315,7 +512,7 @@ import advanceModeFeature3 from "../../images/centoapp/advance_mode_feature_3.pn
         reales y tener un impacto positivo en la vida de los usuarios.
       </p>
     </div>
-  </div>
+  </div-->
 
   <div class="flex justify-center mt-8 mb-12">
     <CtaButton

@@ -8,6 +8,16 @@
   background: radial-gradient(45% 45% at 50% 50%, rgba(248,75,128,1) 0%, rgba(0, 0, 0, 0) 110%);
 }
 
+.glass-effect {
+  border-radius: 9999px; /* rounded-full */
+  background-color: rgba(60, 60, 60, 0.3); /* bg-[rgba(60,60,60,.3)] */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-xl */
+  backdrop-filter: blur(40px); /* backdrop-blur-3xl */
+  -webkit-backdrop-filter: blur(40px); /* Safari support */
+  border: 1px solid rgba(250, 250, 250, 0.1); /* border-[rgba(...)] */
+}
+
 @layer utilities {
   .text-gradient {
     background: radial-gradient(638.94% 107.79% at 1.58% 27.08%, #43CAF3 0%, #F105BE 100%);
