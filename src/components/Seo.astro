@@ -1,0 +1,43 @@
+---
+const {
+  title = "Título por defecto",
+  description = "Descripción por defecto",
+  url = "https://tudominio.com",
+  image = "https://tudominio.com/imagen-preview.jpg",
+  type = "website",
+  lang = "es",
+  creator = "Tu Marca",
+} = Astro.props;
+---
+
+<!-- Básico -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta http-equiv="Content-Language" content={lang} />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href={url} />
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:url" content={url} />
+<meta property="og:type" content={type} />
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+
+<!-- Dublin Core -->
+<meta name="DC.title" content={title} />
+<meta name="DC.language" content={lang} />
+<meta name="DC.creator" content={creator} />
+<meta name="DC.description" content={description} />
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />

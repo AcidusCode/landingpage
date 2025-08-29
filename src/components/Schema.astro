@@ -1,0 +1,49 @@
+---
+const { localBusiness, faq } = Astro.props;
+
+// Construcción dinámica de JSON-LD
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": []
+};
+
+// LocalBusiness
+if (localBusiness) {
+  schemaData["@graph"].push({
+    "@type": "LocalBusiness",
+    "name": localBusiness.name,
+    "image": localBusiness.image,
+    "url": localBusiness.url,
+    "telephone": localBusiness.telephone,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": localBusiness.address.street,
+      "addressLocality": localBusiness.address.city,
+      "addressRegion": localBusiness.address.region,
+      "postalCode": localBusiness.address.postalCode,
+      "addressCountry": localBusiness.address.country
+    },
+    "priceRange": localBusiness.priceRange,
+    "sameAs": localBusiness.sameAs || []
+  });
+}
+
+// FAQ
+if (faq && faq.length > 0) {
+  schemaData["@graph"].push({
+    "@type": "FAQPage",
+    "mainEntity": faq.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  });
+}
+---
+
+<script type="application/ld+json">
+  {JSON.stringify(schemaData, null, 2)}
+</script>
