@@ -4,10 +4,27 @@ import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
 const { pageTitle } = Astro.props;
+
+const isProduction = import.meta.env.MODE === "production";
 ---
 
 <html lang="es" class="bg-[#151515]">
   <head>
+    {isProduction && (
+    <>
+    <script
+        is:inline
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-ZY4JSH3L6H"
+    ></script>
+    <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {{ dataLayer.push(arguments); }}
+        gtag("js", new Date());
+        gtag("config", "G-ZY4JSH3L6H");
+    </script>
+    </>
+)}
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link
