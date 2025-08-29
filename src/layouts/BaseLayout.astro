@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Seo from "../components/Seo.astro";
+import Schema from "../components/Schema.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
@@ -32,6 +33,37 @@ const isProduction = import.meta.env.MODE === "production";
     url="https://www.aciduslabs.com"
     image="https://www.aciduslabs.com/images/og-image.jpg"
     creator="AcidusLabs"
+  />
+    <Schema 
+    localBusiness={{
+      name: "AcidusLabs - Diseño Web Profesional",
+      image: "https://www.aciduslabs.com/images/og-image.jpg",
+      url: "https://www.aciduslabs.com",
+      telephone: "+57-300-000-0000",
+      address: {
+        street: "Calle 123 #45-67",
+        city: "Bogotá",
+        region: "Cundinamarca",
+        postalCode: "110111",
+        country: "CO"
+      },
+      priceRange: "$$",
+      sameAs: [
+        "https://facebook.com/tumarca",
+        "https://instagram.com/tumarca",
+        "https://linkedin.com/company/tumarca"
+      ]
+    }}
+    faq={[
+      {
+        question: "¿Cuánto cuesta un diseño web profesional en Colombia?",
+        answer: "Nuestros planes inician desde $1.200.000 COP, optimizados para móviles y SEO."
+      },
+      {
+        question: "¿Cuánto tiempo tarda el desarrollo de una página web?",
+        answer: "Entre 2 a 4 semanas según la complejidad del proyecto."
+      }
+    ]}
   />
   </head>
   <body class="flex flex-col max-w-[1080px] md:mx-auto">
