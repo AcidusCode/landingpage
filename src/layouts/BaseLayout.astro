@@ -31,10 +31,13 @@ const isProduction = import.meta.env.MODE === "production";
       href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
       rel="stylesheet"
     />
-
+    <meta name="description" content="Creamos páginas web modernas y rápidas en Colombia. Sitios optimizados que convierten visitas en clientes. Cotiza hoy mismo.">
+    <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta http-equiv="Content-Language" content="es">
 
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.aciduslabs.com/" />
     <meta
@@ -47,8 +50,6 @@ const isProduction = import.meta.env.MODE === "production";
     />
     <meta property="og:site_name" content="Acidus Labs" />
     <meta property="og:locale" content="es_CO" />
-
-    <!-- Imagen: ajustar con una imagen adecuada del sitio web -->
     <meta
       property="og:image"
       content="https://www.aciduslabs.com/images/og-image.jpg"
