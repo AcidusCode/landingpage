@@ -14,7 +14,7 @@ import { faqData } from "../../data/faqData.js";
     {
       faqData.map((faq, i) => (
         <div
-          class="flex bg-[#222] rounded-xl py-2 px-4 items-start border-b border-[#222]"
+          class="flex rounded-xl py-2 px-4 items-start border border-[#222]"
           id={`faq-${i}`}
         >
           <button
@@ -25,8 +25,8 @@ import { faqData } from "../../data/faqData.js";
             <RightArrow />
           </button>
           <div class="flex flex-col gap-2">
-            <h4 class="text-[#eee] font-semibold">{faq.question}</h4>
-            <p class="hidden text-[#959595] pr-4 transition-all duration-300 text-md font-light">
+            <h4 class="text-[#ddd] font-regular">{faq.question}</h4>
+            <p class="hidden text-[#858585] pr-4 transition-all duration-300 text-md font-light">
               {faq.description}
             </p>
           </div>

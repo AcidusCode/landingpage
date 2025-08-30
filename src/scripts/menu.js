@@ -67,7 +67,7 @@ function setHamburgerIcon() {
     ></path></svg
   >`;
 
-  btn.setAttribute('aria-label', 'Cerrar menú');
+  btn.setAttribute("aria-label", "Cerrar menú");
 }
 
 function closeMenu() {
@@ -76,13 +76,15 @@ function closeMenu() {
   isOpen = false;
 
   setTimeout(() => {
+    menu.classList.add("hidden");
     menu.style.pointerEvents = "none";
     setHamburgerIcon();
-  }, 500);
+  }, 800);
 }
 
 function openMenu() {
   // Reproduce la animación
+  menu.classList.remove("hidden");
   tl.play();
   isOpen = true;
 

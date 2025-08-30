@@ -31,9 +31,10 @@ import CentoAppIcon from "./centoapp/CentoAppIcon.astro";
 import ExternalLinkIcon from "../icons/ExternalLinkIcon.astro";
 import ManualSlider from "../organism/ManualSlider.astro";
 import SliderSection from "../SliderSection.astro";
+import RocketIcon from "../icons/RocketIcon.astro";
 ---
 
-<main class="flex flex-col items-center justify-center gap-12">
+<main class="flex flex-col items-center justify-center gap-12 pb-20">
   <div
     class="bg-gradient-to-b from-purple-500 via-pink-500 to-[#8100B1] text-white shadow-lg"
   >
@@ -122,7 +123,9 @@ import SliderSection from "../SliderSection.astro";
   </div>
 
   <div class="flex flex-col gap-2 w-full">
-    <h3 class="text-[#eee] font-semibold text-xl px-6">La solución de diseño</h3>
+    <h3 class="text-[#eee] font-semibold text-xl px-6">
+      La solución de diseño
+    </h3>
     <ManualSlider
       features={[
         {
@@ -131,12 +134,11 @@ import SliderSection from "../SliderSection.astro";
         },
         {
           image: basicModeFeature2,
-          description:
-            `<span class="text-[#eee]">Dos modos de uso:</span> rápido (diario) y avanzado (analítico).`,
+          description: `<span class="text-[#eee]">Dos modos de uso:</span> rápido (diario) y avanzado (analítico).`,
         },
         {
           image: basicModeFeature3,
-          description:`<span class="text-[#eee]">Atajos flotantes:</span> ingreso/gasto en un solo toque.`,
+          description: `<span class="text-[#eee]">Atajos flotantes:</span> ingreso/gasto en un solo toque.`,
         },
         {
           image: basicModeFeature2,
@@ -144,7 +146,7 @@ import SliderSection from "../SliderSection.astro";
         },
         {
           image: basicModeFeature3,
-          description:`<span class="text-[#eee]">Modo oscuro:</span> diseñado para la comodidad nocturna.`,
+          description: `<span class="text-[#eee]">Modo oscuro:</span> diseñado para la comodidad nocturna.`,
         },
       ]}
     />
@@ -154,12 +156,41 @@ import SliderSection from "../SliderSection.astro";
     <h3 class="text-[#eee] font-semibold text-xl">
       Impacto esperado (simulado)
     </h3>
-    <ul class="text-[#959595] text-lg font-light">
-      <li>-60% pasos en el flujo de registro.</li>
-      <li>Tiempo promedio: 25s → 8s (-68%).</li>
-      <li>92% de usuarios de prueba completaron la tarea en menos de 15s.</li>
-      <li>+38% intención de uso diario.</li>
-      <li>SUS (System Usability Score): 82 — Excelente.</li>
+    <ul class="text-[#959595] text-lg font-light flex flex-col gap-4">
+      <div class="flex gap-4">
+        <li
+          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-4 px-4 rounded-xl"
+        >
+          <span class="text-[#ddd] text-5xl font-semibold">60%</span> reduccion de pasos en el
+          flujo de registro.
+        </li>
+        <li
+          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-4 px-4 rounded-xl"
+        >
+          <span class="text-[#ddd] text-5xl font-semibold">68%</span> reduccion de tiempo
+          promedio: 25s → 8s.
+        </li>
+      </div>
+      <li
+        class="flex flex-col gap-2 text-center items-center text-sm bg-[#151515] py-4 px-4 rounded-xl"
+      >
+        <span class="text-[#ddd] text-5xl font-semibold">92%</span>de usuarios
+        de prueba completaron la tarea en menos de 15s.
+      </li>
+      <div class="flex gap-4">
+        <li
+          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-4 px-4 rounded-xl"
+        >
+          <span class="text-[#ddd] text-5xl font-semibold">38%</span>subio la intención
+          de uso diario.
+        </li>
+        <li
+          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-4 px-4 rounded-xl"
+        >
+          <span class="text-[#ddd] text-5xl font-semibold">82</span>(System
+          Usability Score): Excelente.
+        </li>
+      </div>
     </ul>
   </div>
 
@@ -173,3 +204,11 @@ import SliderSection from "../SliderSection.astro";
       </li>
     </ul>
   </div>
+
+  <CtaButton
+    text="Quiero un sitio web como este"
+    ariaLabel="quiero un sitio web como este"
+    color="#0075C8"
+    icon={RocketIcon}
+  />
+</main>
