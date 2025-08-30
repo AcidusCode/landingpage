@@ -59,23 +59,34 @@ cerrarBtn.addEventListener("click", () => {
 });
 
 /*buttons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    projectCard.classList.remove("relative");
-    projectCard.classList.add("fixed");
+ btn?.addEventListener("click", () => {
+    // 1. Medimos posición y tamaño original
+    const rect = projectCard.getBoundingClientRect();
 
+    // 2. Convertimos a fixed en la misma posición que tenía
+    projectCard.style.position = "fixed";
+    projectCard.style.top = `${rect.top}px`;
+    projectCard.style.left = `${rect.left}px`;
+    projectCard.style.width = `${rect.width}px`;
+    projectCard.style.height = `${rect.height}px`;
+    projectCard.style.margin = 0; // importante para evitar desplazamiento
+
+    // 3. Forzamos el z-index para que se vea arriba
+    projectCard.style.zIndex = 999;
+
+    // 4. Animamos al tamaño de la pantalla
     gsap.to(projectCard, {
-      height: "100vh",
-      width: "100vw",
       top: 0,
-      bottom: 0,
+      left: 0,
+      width: "100vw",
+      height: "100vh",
       duration: 0.6,
       ease: "power2.out",
+      onStart: () => {
+        document.body.style.overflow = "hidden";
+      },
     });
-
-    // Bloquear scroll del fondo
-    document.body.style.overflow = "hidden";
   });
-});
 
 cerrarBtn.addEventListener("click", () => {
   gsap.to(content, {
@@ -88,4 +99,5 @@ cerrarBtn.addEventListener("click", () => {
       //detalle.innerHTML = ""; // limpiar contenido
     },
   });
-});*/
+});
+})*/

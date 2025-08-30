@@ -1,0 +1,48 @@
+---
+import RightArrow from "../icons/RightArrow.astro";
+import SectionTitle from "../molecules/SectionTitle.astro";
+
+import { faqData } from "../../data/faqdata.js";
+---
+
+<div class="flex flex-col gap-4 mt-8 mx-8">
+  <SectionTitle title="Preguntas frecuentes" />
+  <div class="flex flex-col">
+    {
+      faqData.map((faq, i) => (
+        <div
+          class="flex bg-[#151515] py-2 items-start border-b border-[#222]"
+          id={`faq-${i}`}
+        >
+          <button
+            class="pr-1 transition-transform duration-300"
+            aria-label={`Abrir pregunta frecuente no ${i}`}
+            data-toggle={`faq-${i}`}
+          >
+            <RightArrow />
+          </button>
+          <div class="flex flex-col">
+            <h4 class="text-[#bbb]">{faq.question}</h4>
+            <p class="hidden text-[#757575] pr-4 transition-all duration-300 text-sm">
+              {faq.description}
+            </p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("button[data-toggle]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const id = button.getAttribute("data-toggle");
+        const faq = document.querySelector(`#${id} p`);
+        if (faq) {
+            button.classList.toggle("rotate-90")
+          faq.classList.toggle("hidden");
+        }
+      });
+    });
+  });
+</script>
