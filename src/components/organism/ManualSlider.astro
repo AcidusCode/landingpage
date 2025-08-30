@@ -1,0 +1,51 @@
+---
+import FeaturesCard from "../../components/organism/FeaturesCard.astro";
+import SectionTitle from "../molecules/SectionTitle.astro";
+
+import basicModeFeature1 from "../../images/centoapp/basic_mode_feature_1.png";
+import basicModeFeature2 from "../../images/centoapp/basic_mode_feature_2.png";
+import basicModeFeature3 from "../../images/centoapp/basic_mode_feature_3.png";
+
+import LeftArrow from "../icons/LeftArrow.astro";
+import RightArrow from "../icons/RightArrow.astro";
+
+const { title, description, features } = Astro.props;
+
+const pageTitle = "CentoApp | Controla tus finanzas sin estrés";
+---
+
+<div class="slider flex flex-col overflow-hidden gap-8">
+  <!--SectionTitle
+    title={title}
+    description={description}
+  /-->
+  <div class="slides flex gap-4 pl-6">
+    {
+      features.map((feature: any) => (
+        <FeaturesCard
+          image={feature.image}
+          description={feature.description}
+          customClass={`slide`}
+        />
+      ))
+    }
+  </div>
+  <div class="flex gap-4 justify-end px-6">
+    <button
+      class="leftArrow flex items-center justify-center w-10 h-10 bg-[#151515] rounded-full transition duration-300"
+      aria-label="Mostrar card anterior"
+    >
+      <LeftArrow id="sliderLeftArrow" color="#444" />
+    </button>
+    <button
+      class="rightArrow flex items-center justify-center w-10 h-10 bg-[#333] rounded-full transition duration-300"
+      aria-label="Mostrar card siguiente"
+    >
+      <RightArrow id="sliderRightArrow" color="#999" />
+    </button>
+  </div>
+</div>
+
+<script>
+    import "../../scripts/initSlider.js"
+</script>
