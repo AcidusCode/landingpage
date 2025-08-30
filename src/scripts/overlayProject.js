@@ -41,7 +41,7 @@ buttons.forEach((btn) => {
     });
     initSlider();
     // Bloquear scroll del fondo
-    //document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
   });
 });
 
