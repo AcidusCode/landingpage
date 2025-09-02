@@ -10,10 +10,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://aciduslabs.com/",
-  integrations: [preact(), sitemap({
-      changefreq: 'monthly', // opcional
-      lastmod: true          // ✅ activa lastmod
-    })],
+  integrations: [preact(), sitemap()],
 
   vite: {
     plugins: [tailwindcss()]
