@@ -9,7 +9,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://landingpage-wine-ten.vercel.app/",
+  site: "https://aciduslabs.com/",
   integrations: [preact(), sitemap()],
 
   vite: {
