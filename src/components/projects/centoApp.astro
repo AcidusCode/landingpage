@@ -62,7 +62,7 @@ import RocketIcon from "../icons/RocketIcon.astro";
       <button
         class="btn-show-project flex items-center justify-center px-2 py-2 rounded-full text-xs font-medium text-[#ddd] gap-2 md:bg-[rgba(250,250,250,0.15)] md:px-8"
       >
-        <ExternalLinkIcon />
+        <!--ExternalLinkIcon /-->
         <span class="hidden md:inline">Ver Proyecto</span>
       </button>
     </div>
@@ -82,20 +82,6 @@ import RocketIcon from "../icons/RocketIcon.astro";
       width="600"
       height="400"
       class="pt-8"
-    />
-  </div>
-
-  <div class="flex flex-col gap-2 px-6 items-center overflow-hidden w-full">
-    <h3 class="text-[#eee] font-semibold text-xl w-full">La idea</h3>
-    <p class="text-[#959595] text-lg font-light">
-      CentoApp surge como un concepto de diseño que busca resolver este reto:
-      una experiencia financiera clara, atractiva y tan rápida de usar que
-      registrar un gasto sea tan natural como enviar un mensaje.
-    </p>
-    <Image
-      src={renderLogin}
-      alt="CentoApp - Controla tus finanzas sin estrés"
-      class="min-w-[750px]"
     />
   </div>
 
@@ -122,6 +108,20 @@ import RocketIcon from "../icons/RocketIcon.astro";
     </ul>
   </div>
 
+  <div class="flex flex-col gap-2 px-6 items-center overflow-hidden w-full">
+    <h3 class="text-[#eee] font-semibold text-xl w-full">La idea</h3>
+    <p class="text-[#959595] text-lg font-light">
+      CentoApp surge como un concepto de diseño que busca resolver este reto:
+      una experiencia financiera clara, atractiva y tan rápida de usar que
+      registrar un gasto sea tan natural como enviar un mensaje.
+    </p>
+    <Image
+      src={renderLogin}
+      alt="CentoApp - Controla tus finanzas sin estrés"
+      class="min-w-[750px]"
+    />
+  </div>
+
   <div class="flex flex-col gap-2 w-full">
     <h3 class="text-[#eee] font-semibold text-xl px-6">
       La solución de diseño
@@ -129,24 +129,24 @@ import RocketIcon from "../icons/RocketIcon.astro";
     <ManualSlider
       features={[
         {
+          image: basicModeFeature3,
+          description: `Flujo optimizado: de 5 pasos a solo 2 para registrar gastos.`,
+        },
+        {
+          image: advanceModeFeature1,
+          description: `Dos modos de uso: rápido (diario) y avanzado (analítico).`,
+        },
+        {
+          image: basicModeFeature2,
+          description: `Atajos flotantes: ingreso/gasto en un solo toque.`,
+        },
+        {
           image: basicModeFeature1,
-          description: `<span class="text-[#eee]">Flujo optimizado:</span> de 5 pasos a solo 2 para registrar gastos.`,
+          description: `Dashboard visual: balance claro y gráficos simples.`,
         },
         {
-          image: basicModeFeature2,
-          description: `<span class="text-[#eee]">Dos modos de uso:</span> rápido (diario) y avanzado (analítico).`,
-        },
-        {
-          image: basicModeFeature3,
-          description: `<span class="text-[#eee]">Atajos flotantes:</span> ingreso/gasto en un solo toque.`,
-        },
-        {
-          image: basicModeFeature2,
-          description: `<span class="text-[#eee]">Dashboard visual:</span> balance claro y gráficos simples.`,
-        },
-        {
-          image: basicModeFeature3,
-          description: `<span class="text-[#eee]">Modo oscuro:</span> diseñado para la comodidad nocturna.`,
+          image: advanceModeFeature2,
+          description: `Modo oscuro: diseñado para la comodidad nocturna.`,
         },
       ]}
     />
@@ -159,35 +159,35 @@ import RocketIcon from "../icons/RocketIcon.astro";
     <ul class="text-[#959595] text-lg font-light flex flex-col gap-4">
       <div class="flex gap-4">
         <li
-          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-4 px-4 rounded-xl"
+          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-8 px-4 rounded-xl"
         >
-          <span class="text-[#ddd] text-5xl font-semibold">60%</span> reduccion de pasos en el
+          <span class="text-[#ddd] text-5xl font-regular">60%</span> reduccion de pasos en el
           flujo de registro.
         </li>
         <li
-          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-4 px-4 rounded-xl"
+          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-8 px-4 rounded-xl"
         >
-          <span class="text-[#ddd] text-5xl font-semibold">68%</span> reduccion de tiempo
+          <span class="text-[#ddd] text-5xl font-regular">68%</span> reduccion de tiempo
           promedio: 25s → 8s.
         </li>
       </div>
       <li
-        class="flex flex-col gap-2 text-center items-center text-sm bg-[#151515] py-4 px-4 rounded-xl"
+        class="flex flex-col gap-2 text-center items-center text-sm bg-[#151515] py-8 px-4 rounded-xl"
       >
-        <span class="text-[#ddd] text-5xl font-semibold">92%</span>de usuarios
+        <span class="text-[#ddd] text-5xl font-regular">92%</span>de usuarios
         de prueba completaron la tarea en menos de 15s.
       </li>
       <div class="flex gap-4">
         <li
-          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-4 px-4 rounded-xl"
+          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-8 px-4 rounded-xl"
         >
-          <span class="text-[#ddd] text-5xl font-semibold">38%</span>subio la intención
+          <span class="text-[#ddd] text-5xl font-regular">38%</span>subio la intención
           de uso diario.
         </li>
         <li
-          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-4 px-4 rounded-xl"
+          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-8 px-4 rounded-xl"
         >
-          <span class="text-[#ddd] text-5xl font-semibold">82</span>(System
+          <span class="text-[#ddd] text-5xl font-regular">82</span>(System
           Usability Score): Excelente.
         </li>
       </div>
