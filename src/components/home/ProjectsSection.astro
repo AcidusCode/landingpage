@@ -7,42 +7,86 @@ import CentoApp from "../projects/centoApp.astro";
 
 import centoCover from "../../images/Mask group.png";
 import CentoAppIcon from "../projects/centoapp/CentoAppIcon.astro";
+import { getLangFromUrl } from "../../i18n/utils";
+
+interface IndexData {
+  projects: {
+    title: string;
+    titleClass: string;
+    subtitle: string;
+    subtitleClass: string;
+    padding: string;
+    cta: string;
+    project1: {
+      title: string;
+      subtitle: string;
+      heading: string;
+      subheading: string;
+      tag: string;
+      color: string;
+      cover: string;
+      icon: string;
+      cta: string;
+    };
+  };
+}
+
+const lang = getLangFromUrl(Astro.url);
+const allData = import.meta.glob<IndexData>("../../data/*/indexData.json", {
+  eager: true,
+});
+const matchedEntry = Object.entries(allData).find(([path]) =>
+  path.includes(`/${lang}/`)
+);
+const indexData = matchedEntry?.[1];
+
+const title = indexData?.projects?.title;
+const titleClass = indexData?.projects?.titleClass;
+const subtitle = indexData?.projects?.subtitle;
+const subtitleClass = indexData?.projects?.subtitleClass;
+const padding = indexData?.projects?.padding;
+const cta = indexData?.projects?.cta;
+
+const projects = {
+  title: indexData?.projects?.project1?.title,
+  subtitle: indexData?.projects?.project1?.subtitle,
+  heading: indexData?.projects?.project1?.heading,
+  subheading: indexData?.projects?.project1?.subheading,
+  tag: indexData?.projects?.project1?.tag,
+  color: indexData?.projects?.project1?.color,
+  cta: indexData?.projects?.project1?.cta,
+}
 ---
 
 <section
   class="sectionProjects flex flex-col py-8 gap-6 md:items-center md:pt-16"
   id="projectSection"
 >
-  <!--SectionTitle
-    title="Proyectos Destacados"
-    classTitle="titleProjects"
-    description="Convirtiendo ideas en experiencias digitales"
-    classDesc="descProjects"
-  /-->
   <InterSectionText
-    title="Proyectos Destacados"
-    classTitle="titleProjects"
-    description="Convirtiendo ideas en experiencias digitales"
-    classDesc="descProjects"
-    padding="20px"
+    title={title}
+    classTitle={titleClass}
+    description={subtitle}
+    classDesc={subtitleClass}
+    padding={padding}
   />
   <div class="cardProjects flex px-6 w-full justify-center">
     <ProjectCard
       id="projectCard"
-      title="CentoApp"
-      subtitle="Controla tus finanzas sin estrés"
-      heading="Simplificando tus finanzas personales"
-      description="Diseño de una experiencia de UX/UI intuitiva para ayudar a los usuarios a gestionar gastos y alcanzar sus metas de ahorro."
-      tag="estrategia + diseño ux"
-      color="#8100B1"
+      title={projects.title}
+      subtitle={projects.subtitle}
+      heading={projects.heading}
+      description={projects.subheading}
+      tag={projects.tag}
+      color={projects.color}
       cover={centoCover}
       icon={CentoAppIcon}
+      projectCta={projects.cta}
     />
   </div>
   <div class="flex justify-center">
     <CtaButton
-      text="Transformemos tu presencia digital"
-      ariaLabel="Transformemos tu presencia digital"
+      text={cta}
+      ariaLabel={cta}
       color="#5105B5"
     />
   </div>

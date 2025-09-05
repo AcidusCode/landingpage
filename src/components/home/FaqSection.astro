@@ -2,32 +2,64 @@
 import RightArrow from "../icons/RightArrow.astro";
 import SectionTitle from "../molecules/SectionTitle.astro";
 
-import { faqData } from "../../data/faqData.js";
+import { getLangFromUrl } from "../../i18n/utils";
+
+interface Title {
+  title: string;
+  subtitle: string;
+}
+
+interface FaqItem {
+  question: string;
+  description: string;
+}
+
+interface FaqSection {
+  title: Title;
+  faq: {
+    [key: string]: FaqItem; // faq1, faq2, etc.
+  };
+}
+
+interface IndexData {
+  faqSection: FaqSection
+}
+
+const lang = getLangFromUrl(Astro.url);
+const allData = import.meta.glob<IndexData>("../../data/*/indexData.json", {
+  eager: true,
+});
+const matchedEntry = Object.entries(allData).find(([path]) =>
+  path.includes(`/${lang}/`)
+);
+const indexData = matchedEntry?.[1];
+
+const faq = indexData?.faqSection.faq ?? {};
 ---
 
 <div class="flex flex-col gap-8 mt-12 mx-8">
   <SectionTitle
-    title="Preguntas frecuentes"
-    description="Todo lo que necesitas saber antes de comenzar"
+    title={indexData?.faqSection?.title?.title}
+    description={indexData?.faqSection?.title?.subtitle}
   />
   <div class="flex flex-col gap-4">
     {
-      faqData.map((faq, i) => (
+      Object.entries(faq).map(([key, item]) => (
         <div
           class="flex rounded-xl py-2 px-4 items-start border border-[#222]"
-          id={`faq-${i}`}
+          id={`faq-${key}`}
         >
           <button
             class="pr-2 transition-all duration-300"
-            aria-label={`Abrir pregunta frecuente no ${i}`}
-            data-toggle={`faq-${i}`}
+            aria-label={`Abrir pregunta frecuente no ${key}`}
+            data-toggle={`faq-${key}`}
           >
             <RightArrow />
           </button>
           <div class="flex flex-col gap-2">
-            <h4 class="text-[#ddd] font-regular">{faq.question}</h4>
+            <h4 class="text-[#ddd] font-regular">{item.question}</h4>
             <p class="hidden text-[#858585] pr-4 transition-all duration-300 text-md font-light">
-              {faq.description}
+              {item.description}
             </p>
           </div>
         </div>
@@ -40,9 +72,9 @@ import { faqData } from "../../data/faqData.js";
     document.querySelectorAll("button[data-toggle]").forEach((button) => {
       button.addEventListener("click", () => {
         const id = button.getAttribute("data-toggle");
-        const arrow = button.querySelector('svg');
+        const arrow = button.querySelector("svg");
         const faq = document.querySelector(`#${id} p`);
-        if (faq) {
+        if (faq && arrow) {
           arrow.classList.add("transition-all");
           arrow.classList.add("duration-300");
           arrow.classList.toggle("rotate-90");

@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 import preact from "@astrojs/preact";
 
@@ -10,9 +10,11 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://aciduslabs.com/",
-  integrations: [preact(), sitemap()],
-
+  integrations: [preact(), sitemap()],  i18n: {
+    defaultLocale: "en",
+    locales: ["es", "en"],
+  },
   vite: {
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+  },
 });

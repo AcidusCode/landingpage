@@ -30,184 +30,160 @@ import renderLogin from "../../images/centoapp/render login.png";
 import CentoAppIcon from "./centoapp/CentoAppIcon.astro";
 import ExternalLinkIcon from "../icons/ExternalLinkIcon.astro";
 import ManualSlider from "../organism/ManualSlider.astro";
-import SliderSection from "../SliderSection.astro";
 import RocketIcon from "../icons/RocketIcon.astro";
+
+import {CentoAppInterface} from "../../data/interfaces/projects/centoAppInterface"
+
+import { getLangFromUrl } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const allData = import.meta.glob<CentoAppInterface>("../../data/*/projects/centoData.json", {
+  eager: true,
+});
+const matchedEntry = Object.entries(allData).find(([path]) =>
+  path.includes(`/${lang}/`)
+);
+const content = matchedEntry?.[1] as CentoAppInterface;
+
 ---
 
 <main class="flex flex-col items-center justify-center gap-12 pb-20">
-  <div
-    class="bg-gradient-to-b from-purple-500 via-pink-500 to-[#8100B1] text-white shadow-lg"
-  >
+  <!-- HERO -->
+  <div class="bg-gradient-to-b from-purple-500 via-pink-500 to-[#8100B1] text-white shadow-lg">
     <Image
       src={centoCover}
-      alt="CentoApp - Controla tus finanzas sin estrés"
+      alt={content?.hero?.altHero}
       class="imageHeroProject md:max-h-[40vw] mt-12"
     />
-    <div
-      class="flex flex-row p-4 gap-2 bg-[rgba(250,250,250,0.2)] w-full justify-between md:flex-row backdrop-blur-3xl"
-    >
+    <div class="flex flex-row p-4 gap-2 bg-[rgba(250,250,250,0.2)] w-full justify-between md:flex-row backdrop-blur-3xl">
       <div class="flex gap-2 items-center">
-        <div
-          class="flex items-center justify-center bg-[rgba(0,0,0,0.8)] w-14 h-14 rounded-lg"
-        >
+        <div class="flex items-center justify-center bg-[rgba(0,0,0,0.8)] w-14 h-14 rounded-lg">
           <CentoAppIcon />
         </div>
         <div>
-          <h3 class="text-[#ddd] font-bold">CentoApp</h3>
+          <h3 class="text-[#ddd] font-bold">{content?.hero?.projectName}</h3>
           <p class="text-xs text-[rgba(250,250,250,0.7)] pr-2">
-            Controla tus finanzas sin estrés
+            {content?.hero?.projectTagline}
           </p>
         </div>
       </div>
-      <button
-        class="btn-show-project flex items-center justify-center px-2 py-2 rounded-full text-xs font-medium text-[#ddd] gap-2 md:bg-[rgba(250,250,250,0.15)] md:px-8"
-      >
-        <!--ExternalLinkIcon /-->
-        <span class="hidden md:inline">Ver Proyecto</span>
+      <button class="btn-show-project flex items-center justify-center px-2 py-2 rounded-full text-xs font-medium text-[#ddd] gap-2 md:bg-[rgba(250,250,250,0.15)] md:px-8">
+        <span class="hidden md:inline">{content?.hero?.viewProject}</span>
       </button>
     </div>
   </div>
 
+  <!-- PROBLEM -->
   <div class="flex flex-col gap-2 px-6">
-    <h3 class="text-[#eee] font-semibold text-xl">El problema</h3>
-    <p class="text-[#959595] text-lg font-light">
-      Las apps de finanzas personales suelen caer en dos extremos: son
-      aburridas, feas y abrumadoras, o tan simples que dejan de ser útiles. El
-      resultado: los usuarios las abandonan rápido porque sienten que controlar
-      sus gastos es más un castigo que un hábito saludable.
-    </p>
+    <h3 class="text-[#eee] font-semibold text-xl">{content?.theProblem?.title}</h3>
+    <p class="text-[#959595] text-lg font-light">{content?.theProblem?.text}</p>
     <Image
       src={competitionUI}
-      alt="CentoApp - Controla tus finanzas sin estrés"
+      alt={content?.hero?.altHero}
       width="600"
       height="400"
       class="pt-8"
     />
   </div>
 
+  <!-- RESEARCH -->
   <div class="flex flex-col gap-2 px-6">
-    <h3 class="text-[#eee] font-semibold text-xl">
-      Investigación & aprendizajes
-    </h3>
-    <p class="text-[#959595] text-lg font-light">
-      Al analizar apps existentes y escuchar a usuarios jóvenes y digitales,
-      identifiqué tres necesidades clave:
-    </p>
+    <h3 class="text-[#eee] font-semibold text-xl">{content?.researchAndLearnings?.title}</h3>
+    <p class="text-[#959595] text-lg font-light">{content?.researchAndLearnings?.text}</p>
     <ul class="text-[#959595] text-lg font-light">
-      <li>
-        <span class="text-[#eee]">Rapidez:</span> “Quiero registrar un gasto en segundos.”
-      </li>
-      <li>
-        <span class="text-[#eee]">Claridad:</span> “Necesito ver mi balance sin perderme
-        en menús.”
-      </li>
-      <li>
-        <span class="text-[#eee]">Estilo:</span> “La app debería sentirse moderna,
-        no como un Excel disfrazado.”
-      </li>
+      {content.researchAndLearnings.items.map((item, index) => (
+        <li>
+          <span class="text-[#eee]">{item.label}</span> {item.text}
+        </li>
+      ))}
     </ul>
   </div>
 
+  <!-- IDEA -->
   <div class="flex flex-col gap-2 px-6 items-center overflow-hidden w-full">
-    <h3 class="text-[#eee] font-semibold text-xl w-full">La idea</h3>
-    <p class="text-[#959595] text-lg font-light">
-      CentoApp surge como un concepto de diseño que busca resolver este reto:
-      una experiencia financiera clara, atractiva y tan rápida de usar que
-      registrar un gasto sea tan natural como enviar un mensaje.
-    </p>
+    <h3 class="text-[#eee] font-semibold text-xl w-full">{content?.theIdea?.title}</h3>
+    <p class="text-[#959595] text-lg font-light">{content.theIdea.text}</p>
     <Image
       src={renderLogin}
-      alt="CentoApp - Controla tus finanzas sin estrés"
+      alt={content.hero.altHero}
       class="min-w-[750px]"
     />
   </div>
 
+  <!-- SOLUTION -->
   <div class="flex flex-col gap-2 w-full">
-    <h3 class="text-[#eee] font-semibold text-xl px-6">
-      La solución de diseño
-    </h3>
+    <h3 class="text-[#eee] font-semibold text-xl px-6">{content.designSolution.title}</h3>
     <ManualSlider
       features={[
         {
           image: basicModeFeature3,
-          description: `Flujo optimizado: de 5 pasos a solo 2 para registrar gastos.`,
+          description: content.designSolution.features[0],
         },
         {
           image: advanceModeFeature1,
-          description: `Dos modos de uso: rápido (diario) y avanzado (analítico).`,
+          description: content.designSolution.features[1],
         },
         {
           image: basicModeFeature2,
-          description: `Atajos flotantes: ingreso/gasto en un solo toque.`,
+          description: content.designSolution.features[2],
         },
         {
           image: basicModeFeature1,
-          description: `Dashboard visual: balance claro y gráficos simples.`,
+          description: content.designSolution.features[3],
         },
         {
           image: advanceModeFeature2,
-          description: `Modo oscuro: diseñado para la comodidad nocturna.`,
+          description: content.designSolution.features[4],
         },
       ]}
     />
   </div>
 
+  <!-- IMPACT -->
   <div class="flex flex-col gap-2 px-10 w-full">
-    <h3 class="text-[#eee] font-semibold text-xl">
-      Impacto esperado (simulado)
-    </h3>
+    <h3 class="text-[#eee] font-semibold text-xl">{content.expectedImpact.title}</h3>
     <ul class="text-[#959595] text-lg font-light flex flex-col gap-4">
       <div class="flex gap-4">
-        <li
-          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-8 px-4 rounded-xl"
-        >
-          <span class="text-[#ddd] text-5xl font-regular">60%</span> reduccion de pasos en el
-          flujo de registro.
+        <li class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-8 px-4 rounded-xl">
+          <span class="text-[#ddd] text-5xl font-regular">{content.expectedImpact.items[0].value}</span>
+          {content.expectedImpact.items[0].description}
         </li>
-        <li
-          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-8 px-4 rounded-xl"
-        >
-          <span class="text-[#ddd] text-5xl font-regular">68%</span> reduccion de tiempo
-          promedio: 25s → 8s.
+        <li class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-8 px-4 rounded-xl">
+          <span class="text-[#ddd] text-5xl font-regular">{content.expectedImpact.items[1].value}</span>
+          {content.expectedImpact.items[1].description}
         </li>
       </div>
-      <li
-        class="flex flex-col gap-2 text-center items-center text-sm bg-[#151515] py-8 px-4 rounded-xl"
-      >
-        <span class="text-[#ddd] text-5xl font-regular">92%</span>de usuarios
-        de prueba completaron la tarea en menos de 15s.
+      <li class="flex flex-col gap-2 text-center items-center text-sm bg-[#151515] py-8 px-4 rounded-xl">
+        <span class="text-[#ddd] text-5xl font-regular">{content.expectedImpact.items[2].value}</span>
+        {content.expectedImpact.items[2].description}
       </li>
       <div class="flex gap-4">
-        <li
-          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-8 px-4 rounded-xl"
-        >
-          <span class="text-[#ddd] text-5xl font-regular">38%</span>subio la intención
-          de uso diario.
+        <li class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-8 px-4 rounded-xl">
+          <span class="text-[#ddd] text-5xl font-regular">{content.expectedImpact.items[3].value}</span>
+          {content.expectedImpact.items[3].description}
         </li>
-        <li
-          class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-8 px-4 rounded-xl"
-        >
-          <span class="text-[#ddd] text-5xl font-regular">82</span>(System
-          Usability Score): Excelente.
+        <li class="flex flex-1 flex-col gap-2 text-center items-center text-sm bg-[#151515] py-8 px-4 rounded-xl">
+          <span class="text-[#ddd] text-5xl font-regular">{content.expectedImpact.items[4].value}</span>
+          {content.expectedImpact.items[4].description}
         </li>
       </div>
     </ul>
   </div>
 
+  <!-- LEARNINGS -->
   <div class="flex flex-col gap-2 px-10 w-full">
-    <h3 class="text-[#eee] font-semibold text-xl">Lo que aprendí</h3>
+    <h3 class="text-[#eee] font-semibold text-xl">{content.learnings.title}</h3>
     <ul class="text-[#959595] text-lg font-light">
-      <li>La velocidad percibida importa más que la cantidad de funciones.</li>
-      <li>Separar modos rápido y avanzado reduce la carga cognitiva.</li>
-      <li>
-        El feedback visual inmediato genera confianza y motiva al usuario.
-      </li>
+      {content.learnings.items.map((item, index) => (
+        <li>{item}</li>
+      ))}
     </ul>
   </div>
 
+  <!-- CTA -->
   <CtaButton
-    text="Quiero un sitio web como este"
-    ariaLabel="quiero un sitio web como este"
+    text={content.cta.text}
+    ariaLabel={content.cta.ariaLabel}
     color="#0075C8"
     icon={RocketIcon}
   />

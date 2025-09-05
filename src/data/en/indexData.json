@@ -1,0 +1,275 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre nosotros",
+    "contact": "Contacto",
+    "services": "Servicios"
+  },
+  "hero": {
+    "title": "Web Design & Developer Agency",
+    "subtitle": "Together, we’ll create the website your business needs to thrive and scale.",
+    "description": "Custom projects that combine aesthetics, functionality, and best conversion practices to help you exceed your goals.",
+    "cta": "Launch your website today",
+    "altCta": "Or feel free to email me directly at",
+    "email": "info@aciduslabs.com"
+  },
+  "advantage": {
+    "first": {
+      "text": "Quick launch, hassle-free."
+    },
+    "second": {
+      "text": "Websites built to convert."
+    },
+    "third": {
+      "text": "Human, friendly support — no bots."
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "titleClass": "titleProjects",
+    "subtitle": "Turning ideas into digital experiences",
+    "subtitleClass": "descProjects",
+    "padding": "20px",
+    "cta": "Let's transform your digital presence.",
+    "project1": {
+      "title": "CentoApp",
+      "subtitle": "Manage your finances stress-free",
+      "heading": "Simplifying your personal finances",
+      "subheading": "Designed an intuitive UX/UI experience to help users manage expenses and reach their savings goals.",
+      "tag": "strategy + UX design",
+      "color": "#8100B1",
+      "cover": "{centoCover}",
+      "icon": "{CentoAppIcon}",
+      "cta": "See Project"
+    }
+  },
+  "designProcess": {
+    "title": "Your vision, step by step.",
+    "titleClass": "titleMyProcess",
+    "subtitle": "A clear and transparent methodology to turn your idea into a high-impact website — without complications or surprises.",
+    "subtitleClass": "descMyProcess",
+    "cta": "Let's take it step by step, start here",
+    "steps": {
+      "step1": {
+        "stepName": "Step 1",
+        "title": "Discovery & Strategy",
+        "description": "We start with an in-depth conversation about your vision, business goals, and ideal audience. We accelerate this process using AI-powered data analysis to uncover the best opportunities and define a solid strategy for your website.",
+        "color": "Let's take it step by step, start here"
+      },
+      "step2": {
+        "stepName": "Step 2",
+        "title": "Design & Prototyping",
+        "description": "We turn the strategy into a visually impactful design and an intuitive user experience. You'll receive interactive prototypes so you can see how your site will work and provide feedback at every stage, ensuring the final result meets your expectations.",
+        "color": "rgba(53,93,255,1)"
+      },
+      "step3": {
+        "stepName": "Step 3",
+        "title": "Development & Optimization",
+        "description": "We bring the design to life with clean, modern code. Your website will be lightning-fast, secure, and optimized with essential SEO so users can find you easily — and enjoy a seamless experience across all devices.",
+        "color": "rgba(5,190,172,1)"
+      },
+      "step4": {
+        "stepName": "Step 4",
+        "title": "Launch & Ongoing Support",
+        "description": "We launch your website to the world and ensure everything runs smoothly. But our work doesn’t stop there — we provide continued support to answer any questions and keep your online presence polished and ready to grow.",
+        "color": "rgba(140,190,57,1)"
+      }
+    }
+  },
+  "about": {
+    "title": "The mind behind the pixels",
+    "titleClass": "titleAbout",
+    "subtitle": "Designer. Developer. Strategist. Always seeking the balance between aesthetics and functionality. My mission is to help you build digital experiences that not only look amazing but also drive your business goals.",
+    "subtitleClass": "descAbout",
+    "padding": "40px",
+    "philosophy": {
+      "card1": {
+        "title": "Design with Purpose",
+        "description": "Every design decision has a reason — focused on user experience and your business goals."
+      },
+      "card2": {
+        "title": "Partners, Not Clients",
+        "description": "I believe in a truly collaborative process so we can bring to life a vision that fully represents you."
+      },
+      "card3": {
+        "title": "The Perfect Balance",
+        "description": "My goal is to create a website that’s both visually striking and an effective conversion tool."
+      }
+    },
+    "highlightCard": {
+      "heading": "Let’s build something amazing together",
+      "subheading": "Tell me about your project and let’s bring it to life.",
+      "color": "linear-gradient(204deg, #4DDC00 27.86%, #297600 73.45%)",
+      "textAlign": "center"
+    },
+    "cta": "Contact me now",
+    "ctaColor": "#297D00"
+  },
+  "pricing": {
+    "interSectionText": {
+      "title": "Choose Your Ideal Plan",
+      "classTitle": "titlePricing",
+      "description": "All plans include: 100% custom design · responsive · ultra-fast loading · basic SEO · post-launch support.",
+      "classDesc": "descPricing",
+      "padding": "20px"
+    },
+    "cards": {
+      "card1": {
+        "packName": "Starter",
+        "packDescription": "Ideal for freelancers and small entrepreneurs",
+        "packPrice": "400",
+        "packCta": "I want my website in 5 days",
+        "packNote": "Payment in 2 installments · No hidden fees",
+        "features": [
+          "Your website ready in 5 days.",
+          "1-2 essential pages for your business.",
+          "Custom design tailored to your brand.",
+          "Basic SEO to help you get found on Google."
+        ]
+      },
+      "card2": {
+        "packName": "Business",
+        "packDescription": "Ideal for startups and SMEs seeking a strong presence",
+        "packPrice": "1200",
+        "packCta": "I choose the ideal plan",
+        "ctaColor": "#008DCA",
+        "packNote": "Payment in 2-3 installments · No hidden fees",
+        "colorStyle": "linear-gradient(199deg, #0066C5 1%, #001958 98.05%), #202020;",
+        "scaleStyle": "scale(1.08, 1.04)",
+        "tag": "true",
+        "features": [
+          "5-7 strategic pages website.",
+          "Advanced design for your brand.",
+          "Intermediate SEO to improve your visibility.",
+          "Contact form and Google Analytics."
+        ]
+      },
+      "card3": {
+        "packName": "Premium",
+        "packDescription": "Ideal for growing companies or brands that want to stand out",
+        "packPrice": "3000",
+        "packCta": "I want my premium website",
+        "packNote": "Payment in 2 installments · No hidden fees",
+        "features": [
+          "10+ pages website tailored to your needs.",
+          "Premium design with animations.",
+          "Advanced SEO with strategic keywords to rank better.",
+          "Integrations + automations to save time."
+        ]
+      }
+    }
+  },
+  "faqSection": {
+    "title": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know before getting started"
+    },
+    "faq": {
+      "faq1": {
+        "question": "What exactly is included in each plan?",
+        "description": "All plans include custom design, responsive layout, fast loading speed, basic SEO, and post-launch support. The differences lie in the number of pages, level of customization, revision rounds, and advanced integrations."
+      },
+      "faq2": {
+        "question": "How long will it take to have my website ready?",
+        "description": "Starter: 5 days, Business: 2–3 weeks, Premium: 4–6 weeks depending on scope. We adapt to your schedule so you don't lose valuable time."
+      },
+      "faq3": {
+        "question": "Do I have to pay everything upfront?",
+        "description": "No. You can split the payment into 2 or 3 parts depending on the plan. This lowers the barrier and keeps the process smooth."
+      },
+      "faq4": {
+        "question": "Can I request changes if I don’t like the result?",
+        "description": "Yes. Each plan includes revisions (1, 2, or 3 depending on the package). Plus, we work closely with you step by step to ensure the website reflects your vision."
+      },
+      "faq5": {
+        "question": "What happens after the website is delivered?",
+        "description": "You’ll receive included support (7, 30, or 90 days depending on the plan). During this time, we handle questions, minor adjustments, and make sure everything runs smoothly."
+      },
+      "faq6": {
+        "question": "Will my website look good on mobile and load fast?",
+        "description": "Absolutely. We design with a mobile-first approach and speed optimization to ensure your site looks great on every device."
+      },
+      "faq7": {
+        "question": "Can I add more pages or features later?",
+        "description": "Yes. You can always scale your website with new sections, integrations, or features whenever you need."
+      },
+      "faq8": {
+        "question": "Why choose you over another agency?",
+        "description": "Because I combine strategic design, user experience (UX) focus, and clear timelines. You won’t just get a beautiful site — you’ll get a tool that converts and grows with your business."
+      }
+    }
+  },
+  "contactSection": {
+    "interSectionText": {
+      "title": "The future of your business starts here.",
+      "classTitle": "titleContact",
+      "description": "Now that you know my process, philosophy, and work, I would love to hear your story. Share your idea with no obligation, and let’s discuss how I can help you build your digital success.",
+      "padding": "40px",
+      "classDesc": "descContact"
+    },
+    "form": {
+      "action": "https://formspree.io/f/xzzvlaqr",
+      "method": "POST",
+      "fields": [
+        {
+          "label": "Name",
+          "for": "name",
+          "type": "text",
+          "name": "name",
+          "id": "name",
+          "class": "bg-[rgba(50,50,50,1)] text-white px-4 py-4 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300",
+          "required": true
+        },
+        {
+          "label": "Email",
+          "for": "email",
+          "type": "email",
+          "name": "email",
+          "id": "email",
+          "class": "bg-[rgba(50,50,50,1)] text-white px-4 py-4 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300",
+          "required": true
+        },
+        {
+          "label": "Your message",
+          "for": "message",
+          "type": "textarea",
+          "name": "message",
+          "id": "message",
+          "class": "bg-[rgba(50,50,50,1)] text-white px-4 py-4 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300",
+          "rows": 4,
+          "required": true
+        }
+      ],
+      "submitButton": {
+        "type": "submit",
+        "text": "Request Your Free Quote",
+        "class": "bg-[#0075C8] text-white px-8 py-4 mb-4 rounded-full hover:bg-[#004080] transition-colors duration-300 font-light"
+      }
+    },
+    "additionalInfo": {
+      "contactEmailText": "Or send me a direct email at",
+      "contactEmailLink": {
+        "href": "#",
+        "ariaLabel": "Send direct email to info@aciduslabs.com",
+        "class": "text-[#4DA2DA]",
+        "text": "info@aciduslabs.com"
+      },
+      "securityMessage": "Your idea is safe with me. I will respond to your message within 24 hours.",
+      "copyrightYear": "© 2025 AcidusLabs.",
+      "copyrightText": "All rights reserved."
+    }
+  },
+
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "privacy": "Política de privacidad",
+    "terms": "Términos y condiciones"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "save": "Guardar"
+  }
+}

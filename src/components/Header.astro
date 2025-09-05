@@ -2,6 +2,10 @@
 import Navigation from "./Navigation.astro";
 import Hamburguer from "./Hamburguer.astro";
 import ThemeIcon from "./ThemeIcon.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils.js";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header>
@@ -17,12 +21,13 @@ import ThemeIcon from "./ThemeIcon.astro";
           class="text-[rgb(250,250,250)]"
           style="text-shadow: 0px 0px 4px rgba(0,0,0,0.6);"
         >
-          Solicita tu sitio web hoy
+          {t('nav.mobileStickyText')}
         </p>
         <a
           href="https://wa.me/message/TAWFTQC2LL3FB1"
           class="bg-[rgba(0,102,197,1)] px-2 py-2 rounded-full"
-          aria-label="Solicita tu sitio web hoy"
+          aria-label=
+          {t('nav.mobileStickyText')}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

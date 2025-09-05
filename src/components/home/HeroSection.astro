@@ -3,7 +3,33 @@ import Image from "astro/components/Image.astro";
 import smileEmoji from "../../images/Emojis/smile.png";
 import CtaButton from "../atoms/CtaButton.astro";
 import WhatsappIcon from "../icons/WhatsappIcon.astro";
-const email = "info@aciduslabs.com";
+
+import { getLangFromUrl } from "../../i18n/utils";
+
+interface IndexData {
+  hero: {
+    title: string;
+    subtitle: string;
+    description: string;
+    cta: string;
+    altCta: string;
+    email: string;
+  };
+}
+
+const lang = getLangFromUrl(Astro.url);
+const allData = import.meta.glob<IndexData>('../../data/*/indexData.json', { eager: true });
+const matchedEntry = Object.entries(allData).find(([path]) =>
+  path.includes(`/${lang}/`)
+);
+const indexData = matchedEntry?.[1];
+
+const title = indexData?.hero?.title
+const subtitle = indexData?.hero?.subtitle
+const description = indexData?.hero?.description
+const cta = indexData?.hero?.cta
+const altCta = indexData?.hero?.altCta
+const email = indexData?.hero?.email
 ---
 
 <section
@@ -27,32 +53,31 @@ const email = "info@aciduslabs.com";
           <h1
             class="textIntroHero text-base text-center font-bold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%]"
           >
-            Studio de Diseño & Desarrollo Web
+            {title}
           </h1>
         </div>
         <h2
           class="headingHero text-[#ddd] text-3xl leading-xs text-center py-2 text-medium"
         >
-          Construyamos el sitio web que tu negocio necesita para escalar
+          {subtitle}
         </h2>
         <p
           class="descriptionHero text-[#858585] text-center text-sm font-light"
         >
-          Proyectos a medida que combinan estética, funcionalidad y las mejores
-          practicas de conversión para superar tus objetivos.
+          {description}
         </p>
       </div>
       <div class="flex flex-col items-center gap-4">
         <CtaButton
-          text="Empieza tu sitio web hoy"
-          ariaLabel="Empieza tu sitio web hoy"
+          text={cta}
+          ariaLabel={cta}
           color="#0075C8"
           icon={WhatsappIcon}
         />
         <p
           class="text-[#858585] text-center text-sm flex flex-col items-center font-light"
         >
-          O enviame un correo directo a <a
+          {altCta} <a
             href="#"
             aria-label="Enviar correo electronico directo a info@aciduslabs.com"
             class="text-[#4DA2DA]">{email}</a

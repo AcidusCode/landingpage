@@ -1,80 +1,139 @@
 ---
 import InterSectionText from "../molecules/InterSectionText.astro";
 const email = "info@aciduslabs.com";
+
+
+import { getLangFromUrl } from "../../i18n/utils";
+
+interface ContactSection {
+  interSectionText: InterSectionText;
+  form: Form;
+  additionalInfo: AdditionalInfo;
+}
+
+interface InterSectionText {
+  title: string;
+  classTitle: string;
+  description: string;
+  padding: string;
+  classDesc: string;
+}
+
+interface Form {
+  action: string;
+  method: string;
+  fields: FormField[];
+  submitButton: SubmitButton;
+}
+
+interface FormField {
+  label: string;
+  for: string;
+  type: "text" | "email" | "textarea";
+  name: string;
+  id: string;
+  class: string;
+  required: boolean;
+  rows?: number; // only for textarea
+}
+
+interface SubmitButton {
+  type: "submit";
+  text: string;
+  class: string;
+}
+
+interface AdditionalInfo {
+  contactEmailText: string;
+  contactEmailLink: ContactEmailLink;
+  securityMessage: string;
+  copyrightYear: string;
+  copyrightText: string;
+}
+
+interface ContactEmailLink {
+  href: string;
+  ariaLabel: string;
+  class: string;
+  text: string;
+}
+interface IndexData {
+  contactSection: ContactSection;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const allData = import.meta.glob<IndexData>("../../data/*/indexData.json", {
+  eager: true,
+});
+const matchedEntry = Object.entries(allData).find(([path]) =>
+  path.includes(`/${lang}/`)
+);
+const indexData = matchedEntry?.[1];
 ---
 
 <section class="sectionContact mt-10" id="contactSection">
   <InterSectionText
-    title="El futuro de tu negocio comienza aquí."
-    classTitle="titleContact"
-    description="Ahora que conoces mi proceso, mi filosofía y mi trabajo, me encantaría conocer tu historia. Cuéntame tu idea sin compromiso y hablemos sobre cómo puedo ayudarte a construir tu éxito digital."
-    padding="40px"
-    classDesc="descContact"
+    title={indexData?.contactSection?.interSectionText?.title ?? ""}
+    classTitle={indexData?.contactSection?.interSectionText?.classTitle ?? ""}
+    description={indexData?.contactSection?.interSectionText?.description ?? ""}
+    padding={indexData?.contactSection?.interSectionText?.padding ?? ""}
+    classDesc={indexData?.contactSection?.interSectionText?.classDesc ?? ""}
   />
   <div class="formContact">
     <form
-      action="https://formspree.io/f/xzzvlaqr"
-      method="POST"
+      action={indexData?.contactSection?.form?.action ?? ""}
+      method={indexData?.contactSection?.form?.method ?? "POST"}
       class="flex flex-col gap-6 mx-8"
     >
-      <div class="flex flex-col gap-1">
-        <label class="text-[#0075c8] px-2 text-lg font-light" for="name"
-          >Nombre</label
-        >
-        <input
-          type="text"
-          name="name"
-          id="name"
-          class="bg-[rgba(50,50,50,1)] text-white px-4 py-4 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300"
-          required
-        />
-      </div>
-      <div class="flex flex-col gap-2">
-        <label class="text-[#0075c8] px-2 text-lg font-light" for="email"
-          >Correo electrónico</label
-        >
-        <input
-          type="email"
-          name="email"
-          id="email"
-          class="bg-[rgba(50,50,50,1)] text-white px-4 py-4 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300"
-          required
-        />
-      </div>
-      <div class="flex flex-col gap-2">
-        <label class="text-[#0075c8] px-2 text-lg font-light" for="message"
-          >Tu mensaje</label
-        >
-        <textarea
-          name="message"
-          id="message"
-          class="bg-[rgba(50,50,50,1)] text-white px-4 py-4 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300"
-          rows="4"
-          required></textarea>
-      </div>
+      {indexData?.contactSection?.form?.fields.map((field) => (
+        <div class="flex flex-col gap-2">
+          <label class="text-[#0075c8] px-2 text-lg font-light" for={field.for}>
+            {field.label}
+          </label>
+          {field.type === "textarea" ? (
+            <textarea
+              name={field.name}
+              id={field.id}
+              class={field.class}
+              rows={field.rows ?? 4}
+              required={field.required}
+            ></textarea>
+          ) : (
+            <input
+              type={field.type}
+              name={field.name}
+              id={field.id}
+              class={field.class}
+              required={field.required}
+            />
+          )}
+        </div>
+      ))}
       <button
-        type="submit"
-        class="bg-[#0075C8] text-white px-8 py-4 mb-4 rounded-full hover:bg-[#004080] transition-colors duration-300 font-light"
+        type={indexData?.contactSection?.form?.submitButton.type ?? "submit"}
+        class={indexData?.contactSection?.form?.submitButton.class ?? ""}
       >
-        Solicita tu cotización gratuita
+        {indexData?.contactSection?.form?.submitButton.text ?? ""}
       </button>
     </form>
-    <p
-      class="text-[#858585] text-center text-sm flex flex-col items-center font-light"
-    >
-      O enviame un correo directo a <a
-        href="#"
-        aria-label="Enviar correo electronico directo a info@aciduslabs.com"
-        class="text-[#4DA2DA]">{email}</a
+
+    <p class="text-[#858585] text-center text-sm flex flex-col items-center font-light">
+      {indexData?.contactSection?.additionalInfo?.contactEmailText}
+      <a
+        href={indexData?.contactSection?.additionalInfo?.contactEmailLink.href ?? "#"}
+        aria-label={indexData?.contactSection?.additionalInfo?.contactEmailLink.ariaLabel ?? ""}
+        class={indexData?.contactSection?.additionalInfo?.contactEmailLink.class ?? ""}
       >
+        {indexData?.contactSection?.additionalInfo?.contactEmailLink.text ?? ""}
+      </a>
     </p>
 
     <p class="text-center text-[#ddd] px-16 py-12 text-lg">
-      Tu idea es segura conmigo. Responderé a tu mensaje en menos de 24 horas.
+      {indexData?.contactSection?.additionalInfo?.securityMessage ?? ""}
     </p>
+
     <p class="flex justify-center flex-col md:flex-row text-center font-light text-sm text-[#858585] pt-4 pb-12">
-      <span>© 2025 AcidusLabs.</span> Todos los derechos reservados.
-    </p>
+      <span>{indexData?.contactSection?.additionalInfo?.copyrightYear ?? ""}</span> {indexData?.contactSection?.additionalInfo?.copyrightText}
   </div>
 </section>
 

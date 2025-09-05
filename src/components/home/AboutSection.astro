@@ -11,49 +11,120 @@ import laptopEmoji from "../../images/Emojis/laptop.png";
 import RocketIcon from "../icons/RocketIcon.astro";
 
 import CtaButton from "../atoms/CtaButton.astro";
+
+import { getLangFromUrl } from "../../i18n/utils";
+
+interface IndexData {
+  about: {
+    title: string;
+    subtitle: string;
+    titleClass: string;
+    subtitleClass: string;
+    padding: string,
+    philosophy: {
+      card1: {
+        title: string;
+        description: string;
+      };
+      card2: {
+        title: string;
+        description: string;
+      };
+      card3: {
+        title: string;
+        description: string;
+      };
+    };
+    highlightCard: {
+      heading: string;
+      subheading: string;
+      color: string;
+      textAlign: string;
+    };
+    cta: string;
+    ctaColor: string;
+  };
+}
+
+const lang = getLangFromUrl(Astro.url);
+const allData = import.meta.glob<IndexData>("../../data/*/indexData.json", {
+  eager: true,
+});
+const matchedEntry = Object.entries(allData).find(([path]) =>
+  path.includes(`/${lang}/`)
+);
+const indexData = matchedEntry?.[1];
+
+const title = indexData?.about?.title;
+const titleClass = indexData?.about?.titleClass;
+const subtitle = indexData?.about?.subtitle;
+const subtitleClass = indexData?.about?.subtitleClass;
+const padding = indexData?.about?.padding;
+const philosophy = {
+  card1: {
+    title: indexData?.about?.philosophy?.card1.title,
+    description: indexData?.about?.philosophy?.card1.description
+  },
+  card2: {
+    title: indexData?.about?.philosophy?.card2.title,
+    description: indexData?.about?.philosophy?.card2.description
+  },
+  card3: {
+    title: indexData?.about?.philosophy?.card3.title,
+    description: indexData?.about?.philosophy?.card3.description
+  },
+}
+const highlightCard = {
+  heading: indexData?.about?.highlightCard?.heading,
+  subheading: indexData?.about?.highlightCard?.subheading,
+  color: indexData?.about?.highlightCard?.color,
+  textAlign: indexData?.about?.highlightCard?.textAlign
+}
+const cta = indexData?.about?.cta;
+const ctaColor = indexData?.about?.ctaColor;
 ---
 
 <section class="sectionAbout md:pt-16" id="aboutSection">
   <InterSectionText
-    title="La mente detrás de los pixeles"
-    classTitle="titleAbout"
-    description="Diseñador. Desarrollador. Estratega. Buscando el balance entre estética y funcionalidad. Mi misión es ayudarte a construir experiencias digitales que no solo se vean increíbles, sino que también impulsen tus objetivos de negocio."
-    classDesc="descAbout"
-    padding="60px"
+    title={title}
+    classTitle={titleClass}
+    description={subtitle}
+    classDesc={subtitleClass}
+    padding={padding}
   />
   <div class="aboutme flex flex-col gap-16 pb-16 md:flex-row">
     <PhilosophyCard
       icon={BrushIcon}
-      title="Diseño con Propósito"
-      description="Cada decisión de diseño tiene una razón de ser, enfocada en la experiencia del usuario y en los objetivos de tu negocio."
+      title={philosophy.card1.title}
+      description={philosophy.card1.description}
     />
     <PhilosophyCard
       icon={PeopleIcon}
-      title="Socios, no Clientes"
-      description="Creo en un proceso de colaboración constante para que juntos podamos dar vida a una visión que te represente totalmente."
+      title={philosophy.card2.title}
+      description={philosophy.card2.description}
     />
     <PhilosophyCard
       icon={LensIcon}
-      title="Balance Perfecto"
-      description="Mi objetivo es crear un sitio web que sea visualmente impactante y, a la vez, una herramienta de conversión eficiente."
+      title={philosophy.card3.title}
+      description={philosophy.card3.description}
     />
   </div>
   <div class="mx-8 flex flex-col gap-8 md:items-center">
     <HighLightCard
-      heading="Construyamos algo sorprende juntos"
-      description="Cuéntame sobre tu proyecto y hagámoslo realidad."
+      heading={highlightCard.heading}
+      description={highlightCard.subheading}
       tag={false}
-      color="linear-gradient(204deg, #4DDC00 27.86%, #297600 73.45%)"
+      color={highlightCard.color}
       cover={laptopEmoji}
       footer={false}
-      textAlign="center"
+      textAlign={highlightCard.textAlign}
     />
     <div class="flex justify-center">
       <CtaButton
-        text="Contactame ahora"
-        ariaLabel="Enviame un mensaje"
+        text={cta}
+        ariaLabel={cta}
         icon={RocketIcon}
-        color="#297D00"
+        color={ctaColor}
       />
     </div>
   </div>

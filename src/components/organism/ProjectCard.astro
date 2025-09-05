@@ -16,6 +16,7 @@ const {
   icon: Icon,
   textAlign = "left",
   footer = true,
+  projectCta,
 } = Astro.props;
 ---
 
@@ -81,7 +82,7 @@ const {
           aria-label="Mostrar Proyecto"
         >
           <!--ExternalLinkIcon /-->
-          <span class="md:inline">Ver Proyecto</span>
+          <span class="md:inline">{projectCta}</span>
         </button>
       </div>
     )

@@ -3,63 +3,82 @@ import CtaButton from "../atoms/CtaButton.astro";
 import InterSectionText from "../molecules/InterSectionText.astro";
 import PricingCard from "../organism/PricingCard.astro";
 import PricingFeature from "../molecules/PricingFeature.astro";
+
+import { getLangFromUrl } from "../../i18n/utils";
+
+interface PricingCard {
+  packName: string;
+  packDescription: string;
+  packPrice: string;
+  packCta: string;
+  packNote: string;
+  ctaColor?: string;
+  colorStyle?: string;
+  scaleStyle?: string;
+  tag?: string;
+  features: string[];
+}
+
+interface InterSectionText {
+  title: string;
+  classTitle: string;
+  description: string;
+  classDesc: string;
+  padding: string;
+}
+
+interface PricingSection {
+  interSectionText: InterSectionText;
+  cards: {
+    card1: PricingCard;
+    card2: PricingCard;
+    card3: PricingCard;
+    // Puedes añadir más tarjetas si fuera necesario
+  };
+}
+
+interface IndexData {
+  pricing: PricingSection;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const allData = import.meta.glob<IndexData>("../../data/*/indexData.json", {
+  eager: true,
+});
+const matchedEntry = Object.entries(allData).find(([path]) =>
+  path.includes(`/${lang}/`)
+);
+const indexData = matchedEntry?.[1];
 ---
 
 <section class="pricingSection mx-6 mt-16 flex flex-col gap-4 md:gap-12 md:pt-16" id="pricingSection">
   <InterSectionText
-    title="Elige tu  plan ideal"
-    classTitle="titlePricing"
-    description="Todos incluyen: diseño 100% a medida · adaptable · carga ultra-rápida · SEO inicial · soporte post-lanzamiento."
-    classDesc="descPricing"
-    padding="20px"
+    title={indexData?.pricing?.interSectionText.title}
+    classTitle={indexData?.pricing?.interSectionText.classTitle}
+    description={indexData?.pricing?.interSectionText.description}
+    classDesc={indexData?.pricing?.interSectionText.classDesc}
+    padding={indexData?.pricing?.interSectionText.padding}
   />
   <div class="flex pricingCards flex-col items-center justify-center gap-12 md:flex-row">
-    <PricingCard
-      packName="Starter"
-      packDescription="Ideal para profesionales independientes y pequeños emprendedores"
-      packPrice="400"
-      packCta="Quiero mi web lista en 5 días"
-      packNote="Pago en 2 partes · Sin costos ocultos"
-    >
-      <PricingFeature featureText="Tu web lista en 5 días." />
-      <PricingFeature featureText="1-2 páginas esenciales para tu negocio." />
-      <PricingFeature featureText="Diseño personalizado a tu marca." />
-      <PricingFeature
-        featureText="SEO básico para que te encuentren en Google."
-      />
-    </PricingCard>
-    <PricingCard
-      packName="Business"
-      packDescription="Ideal para startups y PYMEs que quieren presencia fuerte"
-      packPrice="1200"
-      packCta="Elijo el plan ideal"
-      ctaColor="#008DCA"
-      packNote="Pago en 2-3 partes · Sin costos ocultos"
-      colorStyle="linear-gradient(199deg, #0066C5 1%, #001958 98.05%), #202020;"
-      scaleStyle="scale(1.08, 1.04)"
-      tag="true"
-    >
-      <PricingFeature featureText="Sitio de 5-7 páginas estratégicas." />
-      <PricingFeature featureText="Diseño avanzado para tu marca." />
-      <PricingFeature featureText="SEO intermedio para mejorar tu visibilidad." />
-      <PricingFeature
-        featureText="Formulario de contacto y Google Analytics."
-      />
-    </PricingCard>
-    <PricingCard
-      packName="Premium"
-      packDescription="Ideal para empresas en expansión o marcas que quieren destacar"
-      packPrice="3000"
-      packCta="Quiero mi web premium"
-      packNote="Pago en 2 partes · Sin costos ocultos"
-    >
-      <PricingFeature featureText="Sitio de 10+ páginas adaptadas a tus necesidades." />
-      <PricingFeature featureText="Diseño premium con animaciones." />
-      <PricingFeature featureText="SEO avanzado con keywords estratégicas para posicionarte mejor." />
-      <PricingFeature
-        featureText="Integraciones + automatizaciones para ahorrar tiempo."
-      />
-    </PricingCard>
+    {indexData?.pricing &&
+      Object.entries(indexData.pricing.cards).map(([key, card]) => (
+        <PricingCard
+          key={key}
+          packName={card.packName}
+          packDescription={card.packDescription}
+          packPrice={card.packPrice}
+          packCta={card.packCta}
+          ctaColor={card.ctaColor}
+          packNote={card.packNote}
+          colorStyle={card.colorStyle}
+          scaleStyle={card.scaleStyle}
+          tag={card.tag}
+        >
+          {card.features.map((feature, i) => (
+            <PricingFeature key={i} featureText={feature} />
+          ))}
+        </PricingCard>
+      ))}
   </div>
 </section>
 

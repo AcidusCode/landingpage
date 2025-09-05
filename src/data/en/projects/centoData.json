@@ -1,0 +1,81 @@
+{
+  "hero": {
+    "altHero": "CentoApp - Take control of your finances without stress",
+    "projectName": "CentoApp",
+    "projectTagline": "Take control of your finances without stress",
+    "viewProject": "View Project"
+  },
+  "theProblem": {
+    "title": "The Problem",
+    "text": "Personal finance apps often fall into two extremes: they’re either dull, unattractive, and overwhelming, or so simple they become ineffective. As a result, users quickly abandon them because managing expenses feels more like a punishment than a healthy habit."
+  },
+  "researchAndLearnings": {
+    "title": "Research & Insights",
+    "text": "By analyzing existing apps and listening to young, digital-savvy users, I identified three key needs:",
+    "items": [
+      {
+        "label": "Speed:",
+        "text": "“I want to log an expense in seconds.”"
+      },
+      {
+        "label": "Clarity:",
+        "text": "“I need to see my balance without digging through menus.”"
+      },
+      {
+        "label": "Style:",
+        "text": "“The app should feel modern, not like a disguised spreadsheet.”"
+      }
+    ]
+  },
+  "theIdea": {
+    "title": "The Idea",
+    "text": "CentoApp was born as a design concept aimed at solving this challenge: a financial experience that is clear, engaging, and so fast to use that logging an expense feels as natural as sending a message."
+  },
+  "designSolution": {
+    "title": "The Design Solution",
+    "features": [
+      "Optimized flow: reduced from 5 steps to just 2 to log an expense.",
+      "Two usage modes: quick (daily) and advanced (analytical).",
+      "Floating shortcuts: log income/expense with a single tap.",
+      "Visual dashboard: clear balance and simple graphs.",
+      "Dark mode: designed for nighttime comfort."
+    ]
+  },
+  "expectedImpact": {
+    "title": "Expected Impact (Simulated)",
+    "items": [
+      {
+        "value": "60%",
+        "description": "reduction in the number of steps to log an expense."
+      },
+      {
+        "value": "68%",
+        "description": "reduction in average time: 25s → 8s."
+      },
+      {
+        "value": "92%",
+        "description": "of test users completed the task in under 15 seconds."
+      },
+      {
+        "value": "38%",
+        "description": "increase in daily usage intent."
+      },
+      {
+        "value": "82",
+        "description": "(System Usability Score): Excellent."
+      }
+    ]
+  },
+  "learnings": {
+    "title": "What I Learned",
+    "items": [
+      "Perceived speed matters more than feature quantity.",
+      "Separating quick and advanced modes reduces cognitive load.",
+      "Immediate visual feedback builds trust and motivates users."
+    ]
+  },
+  "cta": {
+    "text": "I want a website like this",
+    "ariaLabel": "I want a website like this"
+  }
+}

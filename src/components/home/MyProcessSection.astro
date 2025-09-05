@@ -7,48 +7,127 @@ import step2 from "../../images/myprocess/step-two.png";
 import step3 from "../../images/myprocess/step-three.png";
 import step4 from "../../images/myprocess/step-four.png";
 import MyProcessCard from "../organism/MyProcessCard.astro";
+
+import { getLangFromUrl } from "../../i18n/utils";
+
+interface IndexData {
+  designProcess: {
+    title: string;
+    subtitle: string;
+    titleClass: string;
+    subtitleClass: string;
+    cta: string;
+    steps: {
+      step1: {
+        stepName: string,
+        title: string,
+        description: string,
+        color: string,
+      };
+      step2: {
+        stepName: string,
+        title: string,
+        description: string,
+        color: string,
+      };
+      step3: {
+        stepName: string,
+        title: string,
+        description: string,
+        color: string,
+      };
+      step4: {
+        stepName: string,
+        title: string,
+        description: string,
+        color: string,
+      };
+    };
+  };
+}
+
+const lang = getLangFromUrl(Astro.url);
+const allData = import.meta.glob<IndexData>("../../data/*/indexData.json", {
+  eager: true,
+});
+const matchedEntry = Object.entries(allData).find(([path]) =>
+  path.includes(`/${lang}/`)
+);
+const indexData = matchedEntry?.[1];
+
+const title = indexData?.designProcess?.title;
+const titleClass = indexData?.designProcess?.titleClass;
+const subtitle = indexData?.designProcess?.subtitle;
+const subtitleClass = indexData?.designProcess?.subtitleClass;
+const cta = indexData?.designProcess?.cta;
+const steps = {
+  step1: {
+    stepName: indexData?.designProcess?.steps?.step1?.stepName,
+    title: indexData?.designProcess?.steps?.step1?.title,
+    description: indexData?.designProcess?.steps?.step1?.description,
+    color: indexData?.designProcess?.steps?.step1?.color,
+  },
+  step2: {
+    stepName: indexData?.designProcess?.steps?.step2?.stepName,
+    title: indexData?.designProcess?.steps?.step2?.title,
+    description: indexData?.designProcess?.steps?.step2?.description,
+    color: indexData?.designProcess?.steps?.step2?.color,
+  },
+  step3: {
+    stepName: indexData?.designProcess?.steps?.step3?.stepName,
+    title: indexData?.designProcess?.steps?.step3?.title,
+    description: indexData?.designProcess?.steps?.step3?.description,
+    color: indexData?.designProcess?.steps?.step3?.color,
+  },
+  step4: {
+    stepName: indexData?.designProcess?.steps?.step4?.stepName,
+    title: indexData?.designProcess?.steps?.step4?.title,
+    description: indexData?.designProcess?.steps?.step4?.description,
+    color: indexData?.designProcess?.steps?.step4?.color,
+  }
+}
 ---
 
 <section class="sectionMyProcess md:pt-16" id="myproccessSection">
   <InterSectionText
-    title="Tu visión, paso a paso."
-    classTitle="titleMyProcess"
-    description="Una metodología clara y transparente para convertir tu idea en un sitio web de alto impacto, sin complicaciones ni sorpresas."
-    classDesc="descMyProcess"
+    title={title}
+    classTitle={titleClass}
+    description={subtitle}
+    classDesc={subtitleClass}
   />
   <div class="myprocess flex flex-col gap-18">
     <MyProcessCard
-      step="Paso 1"
-      title="Descubrimiento y Estrategia"
-      description="Comenzamos con una conversación profunda sobre tu visión, objetivos de negocio y público ideal. Aceleramos este proceso con el análisis de datos asistido por herramientas de IA para encontrar las mejores oportunidades y definir una estrategia sólida para tu sitio web."
+      step={steps.step1.stepName}
+      title={steps.step1.title}
+      description={steps.step1.description}
       image={step1}
     />
     <MyProcessCard
-      step="Paso 2"
-      title="Diseño y Prototipado"
-      description="Traducimos la estrategia en un diseño visualmente impactante y una experiencia de usuario intuitiva. Te presentamos prototipos interactivos para que veas cómo funcionará tu sitio y puedas dar feedback en cada etapa, asegurando que el resultado cumpla con tus expectativas."
+      step={steps.step2.stepName}
+      title={steps.step2.title}
+      description={steps.step2.description}
+      color={steps.step2.color}
       image={step2}
-      color="rgba(53,93,255,1)"
     />
     <MyProcessCard
-      step="Paso 3"
-      title="Desarrollo y Optimización"
-      description="Damos vida al diseño con código limpio y moderno. Tu sitio web será ultrarrápido, seguro y optimizado para el SEO fundamental, asegurando que te encuentren en los buscadores y que la experiencia de usuario sea impecable en todos los dispositivos."
+      step={steps.step3.stepName}
+      title={steps.step3.title}
+      description={steps.step3.description}
+      color={steps.step3.color}
       image={step3}
-      color="rgba(5,190,172,1)"
     />
     <MyProcessCard
-      step="Paso 4"
-      title="Lanzamiento y Acompañamiento"
-      description="Lanzamos tu sitio web al mundo y nos aseguramos de que todo funcione a la perfección. Nuestro trabajo no termina ahí; te brindamos soporte para cualquier duda, asegurando que tu presencia online se mantenga impecable y lista para crecer."
+      step={steps.step4.stepName}
+      title={steps.step4.title}
+      description={steps.step4.description}
+      color={steps.step4.color}
       image={step4}
-      color="rgba(140,190,57,1)"
     />
   </div>
   <div class="flex justify-center mt-8 mb-12">
     <CtaButton
-      text="Vamos paso a paso, empieza aquí"
-      ariaLabel="Empieza tu sitio web hoy"
+      text={cta}
+      ariaLabel={cta}
       color="#8100B1"
     />
   </div>

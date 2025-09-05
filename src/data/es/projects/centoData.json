@@ -1,0 +1,81 @@
+{
+  "hero": {
+    "altHero": "CentoApp - Controla tus finanzas sin estrés",
+    "projectName": "CentoApp",
+    "projectTagline": "Controla tus finanzas sin estrés",
+    "viewProject": "Ver Proyecto"
+  },
+  "theProblem": {
+    "title": "El problema",
+    "text": "Las apps de finanzas personales suelen caer en dos extremos: son aburridas, feas y abrumadoras, o tan simples que dejan de ser útiles. El resultado: los usuarios las abandonan rápido porque sienten que controlar sus gastos es más un castigo que un hábito saludable."
+  },
+  "researchAndLearnings": {
+    "title": "Investigación & aprendizajes",
+    "text": "Al analizar apps existentes y escuchar a usuarios jóvenes y digitales, identifiqué tres necesidades clave:",
+    "items": [
+      {
+        "label": "Rapidez:",
+        "text": "“Quiero registrar un gasto en segundos.”"
+      },
+      {
+        "label": "Claridad:",
+        "text": "“Necesito ver mi balance sin perderme en menús.”"
+      },
+      {
+        "label": "Estilo:",
+        "text": "“La app debería sentirse moderna, no como un Excel disfrazado.”"
+      }
+    ]
+  },
+  "theIdea": {
+    "title": "La idea",
+    "text": "CentoApp surge como un concepto de diseño que busca resolver este reto: una experiencia financiera clara, atractiva y tan rápida de usar que registrar un gasto sea tan natural como enviar un mensaje."
+  },
+  "designSolution": {
+    "title": "La solución de diseño",
+    "features": [
+      "Flujo optimizado: de 5 pasos a solo 2 para registrar gastos.",
+      "Dos modos de uso: rápido (diario) y avanzado (analítico).",
+      "Atajos flotantes: ingreso/gasto en un solo toque.",
+      "Dashboard visual: balance claro y gráficos simples.",
+      "Modo oscuro: diseñado para la comodidad nocturna."
+    ]
+  },
+  "expectedImpact": {
+    "title": "Impacto esperado (simulado)",
+    "items": [
+      {
+        "value": "60%",
+        "description": "reduccion de pasos en el flujo de registro."
+      },
+      {
+        "value": "68%",
+        "description": "reduccion de tiempo promedio: 25s → 8s."
+      },
+      {
+        "value": "92%",
+        "description": "de usuarios de prueba completaron la tarea en menos de 15s."
+      },
+      {
+        "value": "38%",
+        "description": "subió la intención de uso diario."
+      },
+      {
+        "value": "82",
+        "description": "(System Usability Score): Excelente."
+      }
+    ]
+  },
+  "learnings": {
+    "title": "Lo que aprendí",
+    "items": [
+      "La velocidad percibida importa más que la cantidad de funciones.",
+      "Separar modos rápido y avanzado reduce la carga cognitiva.",
+      "El feedback visual inmediato genera confianza y motiva al usuario."
+    ]
+  },
+  "cta": {
+    "text": "Quiero un sitio web como este",
+    "ariaLabel": "quiero un sitio web como este"
+  }
+}
