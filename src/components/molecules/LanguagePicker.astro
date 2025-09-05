@@ -3,7 +3,7 @@ import { languages } from "../../i18n/ui";
 import { getLangFromUrl } from "../../i18n/utils";
 const currentLang = getLangFromUrl(Astro.url);
 ---
-<ul class="flex items-center bg-[rgba(250,250,250,.1)] md:bg-[#151515] rounded-full p-2 ml-8 md:ml-0 max-w-24 md:max-w-16">
+<ul class="flex items-center bg-[rgba(250,250,250,.1)] md:bg-[#151515] rounded-full p-2 md:p-1 ml-8 md:ml-0 max-w-24 md:max-w-16">
   {
     Object.entries(languages).map(([lang, label]) => (
       <li>
