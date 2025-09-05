@@ -1,0 +1,41 @@
+{
+  "localBusiness": {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "AcidusLabs - Professional Web Design",
+    "image": "https://www.aciduslabs.com/images/og-image.jpg",
+    "url": "https://www.aciduslabs.com",
+    "telephone": "+57-300-000-0000",
+    "address": {
+      "streetAddress": "Calle 123 #45-67",
+      "addressLocality": "Bogotá",
+      "addressRegion": "Cundinamarca",
+      "postalCode": "110111",
+      "addressCountry": "CO"
+    },
+    "priceRange": "$$",
+    "sameAs": [
+      "https://facebook.com/tumarca",
+      "https://instagram.com/tumarca",
+      "https://linkedin.com/company/tumarca"
+    ]
+  },
+  "faq": [
+    {
+      "@type": "Question",
+      "name": "How much does professional web design cost in Colombia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our plans start at $400 USD, optimized for mobile and SEO."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to develop a website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Between 2 to 4 weeks, depending on the complexity of the project."
+      }
+    }
+  ]
+}

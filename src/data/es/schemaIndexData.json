@@ -1,0 +1,41 @@
+{
+  "localBusiness": {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "AcidusLabs - Diseño Web Profesional",
+    "image": "https://www.aciduslabs.com/images/og-image.jpg",
+    "url": "https://www.aciduslabs.com",
+    "telephone": "+57-300-000-0000",
+    "address": {
+      "streetAddress": "Calle 123 #45-67",
+      "addressLocality": "Bogotá",
+      "addressRegion": "Cundinamarca",
+      "postalCode": "110111",
+      "addressCountry": "CO"
+    },
+    "priceRange": "$$",
+    "sameAs": [
+      "https://facebook.com/tumarca",
+      "https://instagram.com/tumarca",
+      "https://linkedin.com/company/tumarca"
+    ]
+  },
+  "faq": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta un diseño web profesional en Colombia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nuestros planes inician desde $400 usd, optimizados para móviles y SEO."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo tarda el desarrollo de una página web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Entre 2 a 4 semanas según la complejidad del proyecto."
+      }
+    }
+  ]
+}
