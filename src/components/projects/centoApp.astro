@@ -35,6 +35,7 @@ import RocketIcon from "../icons/RocketIcon.astro";
 import {CentoAppInterface} from "../../data/interfaces/projects/centoAppInterface"
 
 import { getLangFromUrl } from "../../i18n/utils";
+import CheckIcon from "../icons/CheckIcon.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const allData = import.meta.glob<CentoAppInterface>("../../data/*/projects/centoData.json", {
@@ -111,7 +112,7 @@ const content = matchedEntry?.[1] as CentoAppInterface;
   </div>
 
   <!-- SOLUTION -->
-  <div class="flex flex-col gap-2 w-full">
+  <div class="flex flex-col gap-3 w-full">
     <h3 class="text-[#eee] font-semibold text-xl px-6">{content.designSolution.title}</h3>
     <ManualSlider
       features={[
@@ -140,7 +141,7 @@ const content = matchedEntry?.[1] as CentoAppInterface;
   </div>
 
   <!-- IMPACT -->
-  <div class="flex flex-col gap-2 px-10 w-full">
+  <div class="flex flex-col gap-3 px-10 w-full">
     <h3 class="text-[#eee] font-semibold text-xl">{content.expectedImpact.title}</h3>
     <ul class="text-[#959595] text-lg font-light flex flex-col gap-4">
       <div class="flex gap-4">
@@ -173,9 +174,9 @@ const content = matchedEntry?.[1] as CentoAppInterface;
   <!-- LEARNINGS -->
   <div class="flex flex-col gap-2 px-10 w-full">
     <h3 class="text-[#eee] font-semibold text-xl">{content.learnings.title}</h3>
-    <ul class="text-[#959595] text-lg font-light">
+    <ul class="text-[#959595] text-lg font-light flex flex-col gap-1">
       {content.learnings.items.map((item, index) => (
-        <li>{item}</li>
+        <li class="flex gap-2"><div class="pt-1.5"><CheckIcon /></div>{item}</li>
       ))}
     </ul>
   </div>

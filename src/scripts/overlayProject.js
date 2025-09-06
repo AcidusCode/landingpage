@@ -52,7 +52,7 @@ cerrarBtn.addEventListener("click", () => {
     ease: "power2.in",
     onComplete: () => {
       overlay.classList.add("hidden");
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = "";
       //detalle.innerHTML = ""; // limpiar contenido
     },
   });
