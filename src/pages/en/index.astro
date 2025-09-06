@@ -13,28 +13,21 @@ import Seo from "../../components/Seo.astro";
 import Schema from "../../components/Schema.astro";
 
 
-import {SeoInterface} from "../../data/interfaces/seoInterface"
-import {SchemaInterface} from "../../data/interfaces/schemaInterface"
 import { getLangFromUrl } from "../../i18n/utils";
 
+// 👇 Interfaces
+import type { SeoInterface } from "../../data/interfaces/seoInterface";
+import type { SchemaInterface } from "../../data/interfaces/schemaInterface";
+
+// 👇 Imports directos tipados
+import seoEn from "../../data/en/seoIndexData.json";
+import schemaEn from "../../data/en/schemaIndexData.json";
+
 const lang = getLangFromUrl(Astro.url);
-const seoData = import.meta.glob<SeoInterface>("../../data/*/seoIndexData.json", {
-  eager: true,
-});
-const matchedSeoEntry = Object.entries(seoData).find(([path]) =>
-  path.includes(`/${lang}/`)
-);
-const seoContent = matchedSeoEntry?.[1] as SeoInterface
 
-const schemaData = import.meta.glob<SchemaInterface>("../../data/*/schemaIndexData.json", {
-  eager: true,
-});
-
-const matchedSchemaEntry = Object.entries(schemaData).find(([path]) =>
-  path.includes(`/${lang}/`)
-);
-
-const schemaContent = matchedSchemaEntry?.[1] as SchemaInterface;
+// 👇 Casting a interfaces
+const seoContent: SeoInterface =  (seoEn as SeoInterface);
+const schemaContent: SchemaInterface =  (schemaEn as SchemaInterface);
 ---
 
 <BaseLayout>
