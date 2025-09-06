@@ -11,37 +11,16 @@ import ContactSection from "../../components/home/ContactSection.astro";
 import FaqSection from "../../components/home/FaqSection.astro";
 import Seo from "../../components/Seo.astro";
 import Schema from "../../components/Schema.astro";
-
-
-import { getLangFromUrl } from "../../i18n/utils";
-
-// 👇 Interfaces
-import type { SeoInterface } from "../../data/interfaces/seoInterface";
-import type { SchemaInterface } from "../../data/interfaces/schemaInterface";
-
-// 👇 Imports directos tipados
-import seoEn from "../../data/en/seoIndexData.json";
-import schemaEn from "../../data/en/schemaIndexData.json";
-
-const lang = getLangFromUrl(Astro.url);
-
-// 👇 Casting a interfaces
-const seoContent: SeoInterface =  (seoEn as SeoInterface);
-const schemaContent: SchemaInterface =  (schemaEn as SchemaInterface);
 ---
 
 <BaseLayout>
   <Fragment slot="SEO">
     <Seo
-      title={seoContent.title}
-      description={seoContent.description}
-      url={seoContent.url}
-      image={seoContent.image}
-      creator={seoContent.creator}
-    />
-    <Schema
-      localBusiness={schemaContent.localBusiness}
-      faq={schemaContent.faq}
+      title="Home | AcidusLabs"
+      description="We create modern, fast-loading websites in Colombia..."
+      url="https://www.aciduslabs.com"
+      image="https://www.aciduslabs.com/images/og-image.jpg"
+      creator="AcidusLabs"
     />
   </Fragment>
   <HeroSection/>
