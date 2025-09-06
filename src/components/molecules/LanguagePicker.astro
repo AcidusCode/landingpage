@@ -1,13 +1,20 @@
 ---
 import { languages } from "../../i18n/ui";
-import { getLangFromUrl } from "../../i18n/utils";
+import { getLangFromUrl, useTranslatedPath } from "../../i18n/utils";
 const currentLang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(currentLang);
 ---
-<ul class="flex items-center bg-[rgba(250,250,250,.1)] md:bg-[#151515] rounded-full p-2 md:p-1 ml-8 md:ml-0 max-w-24 md:max-w-16">
+
+<ul
+  class="flex items-center bg-[rgba(250,250,250,.1)] md:bg-[#151515] rounded-full p-2 md:p-1 ml-8 md:ml-0 max-w-24 md:max-w-16"
+>
   {
     Object.entries(languages).map(([lang, label]) => (
       <li>
-        <a class={`flex font-light text-md md:text-sm rounded-full w-10 h-10 md:w-7 md:h-7 justify-center items-center ${lang === currentLang ? 'bg-[rgba(250,250,250,.1)] text-[#4DA2DA]' : 'text-gray-400'}`} href={`/${lang}/`}>
+        <a
+          class={`flex font-light text-md md:text-sm rounded-full w-10 h-10 md:w-7 md:h-7 justify-center items-center ${lang === currentLang ? "bg-[rgba(250,250,250,.1)] text-[#4DA2DA]" : "text-gray-400"}`}
+          href={translatePath('/', lang)}
+        >
           {lang}
         </a>
       </li>

@@ -25,3 +25,5 @@ export const ui = {
     'nav.mobileStickyText': 'Solicita tu sitio web hoy',
   },
 };
+
+export const showDefaultLang = false;

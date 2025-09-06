@@ -1,4 +1,68 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/home/HeroSection.astro";
+import AdvantageSection from "../components/home/AdvantageSection.astro";
+import ProjectsSection from "../components/home/ProjectsSection.astro";
+import ServicesSection from "../components/home/ServicesSection.astro";
+import MyProcessSection from "../components/home/MyProcessSection.astro";
+import AboutSection from "../components/home/AboutSection.astro";
+import PricingSection from "../components/home/PricingSection.astro";
+import ContactSection from "../components/home/ContactSection.astro";
+import FaqSection from "../components/home/FaqSection.astro";
+import Seo from "../components/Seo.astro";
+import Schema from "../components/Schema.astro";
+
+
+import {SeoInterface} from "../data/interfaces/seoInterface"
+import {SchemaInterface} from "../data/interfaces/schemaInterface"
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const seoData = import.meta.glob<SeoInterface>("../data/*/seoIndexData.json", {
+  eager: true,
+});
+const matchedSeoEntry = Object.entries(seoData).find(([path]) =>
+  path.includes(`/${lang}/`)
+);
+const seoContent = matchedSeoEntry?.[1] as SeoInterface
+
+const schemaData = import.meta.glob<SchemaInterface>("../data/*/schemaIndexData.json", {
+  eager: true,
+});
+
+const matchedSchemaEntry = Object.entries(schemaData).find(([path]) =>
+  path.includes(`/${lang}/`)
+);
+
+const schemaContent = matchedSchemaEntry?.[1] as SchemaInterface;
 ---
 
-<meta http-equiv="refresh" content="0;url=/en/" />
+<BaseLayout>
+  <Fragment slot="SEO">
+    <Seo
+      title={seoContent.title}
+      description={seoContent.description}
+      url={seoContent.url}
+      image={seoContent.image}
+      creator={seoContent.creator}
+    />
+    <Schema
+      localBusiness={schemaContent.localBusiness}
+      faq={schemaContent.faq}
+    />
+  </Fragment>
+  <HeroSection />
+  <AdvantageSection />
+  <ProjectsSection />
+  <!--ServicesSection/-->
+  <MyProcessSection />
+  <AboutSection />
+  <PricingSection />
+  <FaqSection />
+  <ContactSection />
+</BaseLayout>
+
+<script>
+  import { initScrollSpy } from "../scripts/scrollSpy";
+  initScrollSpy();
+</script>

@@ -1,10 +1,13 @@
 ---
 import { toggleMenu } from "../scripts/menu.js";
-import { getLangFromUrl, useTranslations } from "../i18n/utils.js";
+import { getLangFromUrl, useTranslations, useTranslatedPath } from "../i18n/utils.js";
 import LanguagePicker from "./molecules/LanguagePicker.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const translatePath = useTranslatedPath(lang);
+
 ---
 
 <div
