@@ -125,7 +125,8 @@
           "1-2 páginas esenciales para tu negocio.",
           "Diseño personalizado a tu marca.",
           "SEO básico para que te encuentren en Google."
-        ]
+        ],
+        "auxiliarText": "Quiero conocer más beneficios"
       },
       "card2": {
         "packName": "Business",
@@ -142,7 +143,8 @@
           "Diseño avanzado para tu marca.",
           "SEO intermedio para mejorar tu visibilidad.",
           "Formulario de contacto y Google Analytics."
-        ]
+        ],
+        "auxiliarText": "Quiero conocer más beneficios"
       },
       "card3": {
         "packName": "Premium",
@@ -155,7 +157,8 @@
           "Diseño premium con animaciones.",
           "SEO avanzado con keywords estratégicas para posicionarte mejor.",
           "Integraciones + automatizaciones para ahorrar tiempo."
-        ]
+        ],
+        "auxiliarText": "Quiero conocer más beneficios"
       }
     }
   },

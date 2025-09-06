@@ -125,7 +125,8 @@
           "1-2 essential pages for your business.",
           "Custom design tailored to your brand.",
           "Basic SEO to help you get found on Google."
-        ]
+        ],
+        "auxiliarText": "I would like to learn more about the benefits"
       },
       "card2": {
         "packName": "Business",
@@ -142,7 +143,8 @@
           "Advanced design for your brand.",
           "Intermediate SEO to improve your visibility.",
           "Contact form and Google Analytics."
-        ]
+        ],
+        "auxiliarText": "I would like to learn more about the benefits"
       },
       "card3": {
         "packName": "Premium",
@@ -155,7 +157,8 @@
           "Premium design with animations.",
           "Advanced SEO with strategic keywords to rank better.",
           "Integrations + automations to save time."
-        ]
+        ],
+        "auxiliarText": "I would like to learn more about the benefits"
       }
     }
   },

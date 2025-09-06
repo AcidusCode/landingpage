@@ -17,6 +17,7 @@ interface PricingCard {
   scaleStyle?: string;
   tag?: string;
   features: string[];
+  auxiliarText: string;
 }
 
 interface InterSectionText {
@@ -73,6 +74,7 @@ const indexData = matchedEntry?.[1];
           colorStyle={card.colorStyle}
           scaleStyle={card.scaleStyle}
           tag={card.tag}
+          auxiliarText={card.auxiliarText}
         >
           {card.features.map((feature, i) => (
             <PricingFeature key={i} featureText={feature} />

@@ -10,6 +10,7 @@ const {
   colorStyle = "#202020",
   scaleStyle = "scale(.98)",
   tag=false,
+  auxiliarText,
 } = Astro.props;
 ---
 
@@ -35,7 +36,7 @@ const {
       <slot />
     </ul>
     <p class="text-sm text-[rgba(250,250,250,.5)] underline italic">
-      Quiero conocer más beneficios
+      {auxiliarText}
     </p>
   </div>
   <div class="flex flex-col gap-3 items-centermt-4">
