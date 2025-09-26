@@ -7,43 +7,31 @@ import step2 from "../../images/myprocess/step-two.png";
 import step3 from "../../images/myprocess/step-three.png";
 import step4 from "../../images/myprocess/step-four.png";
 import MyProcessCard from "../organism/MyProcessCard.astro";
+import MyProcessCard2 from "../organism/MyProcessCard2.astro";
 
 import { getLangFromUrl } from "../../i18n/utils";
+import Image from "astro/components/Image.astro";
 
 interface IndexData {
   designProcess: {
+    preheading?: string;
     title: string;
     subtitle: string;
     titleClass: string;
     subtitleClass: string;
     cta: string;
-    steps: {
-      step1: {
-        stepName: string,
-        title: string,
-        description: string,
-        color: string,
-      };
-      step2: {
-        stepName: string,
-        title: string,
-        description: string,
-        color: string,
-      };
-      step3: {
-        stepName: string,
-        title: string,
-        description: string,
-        color: string,
-      };
-      step4: {
-        stepName: string,
-        title: string,
-        description: string,
-        color: string,
-      };
-    };
+    steps: StepItem[];
   };
+}
+
+interface StepItem {
+  icon: string;
+  stepName: string;
+  title: string;
+  description: string;
+  color: string;
+  videoSrc: string;
+  coverSrc: string;
 }
 
 const lang = getLangFromUrl(Astro.url);
@@ -60,76 +48,37 @@ const titleClass = indexData?.designProcess?.titleClass;
 const subtitle = indexData?.designProcess?.subtitle;
 const subtitleClass = indexData?.designProcess?.subtitleClass;
 const cta = indexData?.designProcess?.cta;
-const steps = {
-  step1: {
-    stepName: indexData?.designProcess?.steps?.step1?.stepName,
-    title: indexData?.designProcess?.steps?.step1?.title,
-    description: indexData?.designProcess?.steps?.step1?.description,
-    color: indexData?.designProcess?.steps?.step1?.color,
-  },
-  step2: {
-    stepName: indexData?.designProcess?.steps?.step2?.stepName,
-    title: indexData?.designProcess?.steps?.step2?.title,
-    description: indexData?.designProcess?.steps?.step2?.description,
-    color: indexData?.designProcess?.steps?.step2?.color,
-  },
-  step3: {
-    stepName: indexData?.designProcess?.steps?.step3?.stepName,
-    title: indexData?.designProcess?.steps?.step3?.title,
-    description: indexData?.designProcess?.steps?.step3?.description,
-    color: indexData?.designProcess?.steps?.step3?.color,
-  },
-  step4: {
-    stepName: indexData?.designProcess?.steps?.step4?.stepName,
-    title: indexData?.designProcess?.steps?.step4?.title,
-    description: indexData?.designProcess?.steps?.step4?.description,
-    color: indexData?.designProcess?.steps?.step4?.color,
-  }
-}
 ---
 
 <section class="sectionMyProcess md:pt-16" id="myproccessSection">
-  <InterSectionText
-    title={title}
-    classTitle={titleClass}
-    description={subtitle}
-    classDesc={subtitleClass}
-  />
-  <div class="myprocess flex flex-col gap-18">
-    <MyProcessCard
-      step={steps.step1.stepName}
-      title={steps.step1.title}
-      description={steps.step1.description}
-      image={step1}
-    />
-    <MyProcessCard
-      step={steps.step2.stepName}
-      title={steps.step2.title}
-      description={steps.step2.description}
-      color={steps.step2.color}
-      image={step2}
-    />
-    <MyProcessCard
-      step={steps.step3.stepName}
-      title={steps.step3.title}
-      description={steps.step3.description}
-      color={steps.step3.color}
-      image={step3}
-    />
-    <MyProcessCard
-      step={steps.step4.stepName}
-      title={steps.step4.title}
-      description={steps.step4.description}
-      color={steps.step4.color}
-      image={step4}
+  <div class="md:w-[90%] lg:w-[80%] 2xl:w-[60%] mx-auto">s
+    <InterSectionText
+      preheading={indexData?.designProcess?.preheading}
+      title={title}
+      classTitle={titleClass}
+      description={subtitle}
+      classDesc={subtitleClass}
+      marginDesc="mx-10 md:mx-[10%]"
     />
   </div>
-  <div class="flex justify-center mt-8 mb-12">
-    <CtaButton
-      text={cta}
-      ariaLabel={cta}
-      color="#8100B1"
-    />
+  <div class="myprocess flex flex-col gap-14 px-4 md:w-[90%] lg:w-[80%] md:max-w-[1300px] md:mx-auto">
+    {
+      indexData?.designProcess.steps.map((item, i) => (
+        <MyProcessCard2
+          key={i}
+          icon={item.icon}
+          stepName={item.stepName}
+          title={item.title}
+          description={item.description}
+          color={item.color}
+          videoSrc={item.videoSrc}
+          coverSrc={item.coverSrc}
+        />
+      ))
+    }
+  </div>
+  <div class="flex justify-center mt-20 mb-12">
+    <CtaButton text={cta} ariaLabel={cta} color="#8100B1" />
   </div>
 </section>
 
@@ -152,23 +101,25 @@ const steps = {
     scale: 0.8,
     opacity: 0,
     ease: "sine.out",
-  }).from(
-    ".descMyProcess",
-    {
-      duration: 1,
-      scale: 0.9,
-      opacity: 0,
-      ease: "sine.out",
-    },
-    "-=.5"
-  ).from(
-    ".myprocess",
-    {
-      duration: 1.2,
-      y: 20,
-      opacity: 0,
-      ease: "sine.out",
-    },
-    "-=.5"
-  );
+  })
+    .from(
+      ".descMyProcess",
+      {
+        duration: 1,
+        scale: 0.9,
+        opacity: 0,
+        ease: "sine.out",
+      },
+      "-=.5"
+    )
+    .from(
+      ".myprocess",
+      {
+        duration: 1.2,
+        y: 20,
+        opacity: 0,
+        ease: "sine.out",
+      },
+      "-=.5"
+    );
 </script>

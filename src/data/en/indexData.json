@@ -6,23 +6,34 @@
     "services": "Servicios"
   },
   "hero": {
-    "title": "Web Design & Developer Agency",
-    "subtitle": "Together, we’ll create the website your business needs to thrive and scale.",
+    "title": "Web Design and Developer Agency",
+    "subtitle": "Websites that load fast and make your business fly.",
     "description": "Custom projects that combine aesthetics, functionality, and best conversion practices to help you exceed your goals.",
     "cta": "Launch your website today",
     "altCta": "Or feel free to email me directly at",
     "email": "info@aciduslabs.com"
   },
   "advantage": {
-    "first": {
-      "text": "Quick launch, hassle-free."
-    },
-    "second": {
-      "text": "Websites built to convert."
-    },
-    "third": {
-      "text": "Human, friendly support — no bots."
-    }
+    "preheading": "Features",
+    "title": "Powerful features that set us apart",
+    "description": "We deliver exceptional web solutions that combine speed, design, and performance to help your business stand out in the digital landscape.",
+    "advantages": [
+      {
+        "icon": "/icons/features/speed-icon.svg",
+        "title": "Speed optimization",
+        "text": "Lightning-fast websites that keep users engaged, reduce bounce, and improve search rankings."
+      },
+      {
+        "icon": "/icons/features/custom-typography-icon.svg",
+        "title": "Custom design",
+        "text": "Tailor-made designs that capture your brand’s essence and connect with your audience."
+      },
+      {
+        "icon": "/icons/features/conversion-path-icon.svg",
+        "title": "Conversion tracking",
+        "text": "Smart analytics that turn data into actionable insights to boost conversions."
+      }
+    ]
   },
   "projects": {
     "title": "Featured Projects",
@@ -44,37 +55,84 @@
     }
   },
   "designProcess": {
-    "title": "Your vision, step by step.",
+    "preheading": "Our Process",
+    "title": "Our collaborative approach to web design",
     "titleClass": "titleMyProcess",
-    "subtitle": "A clear and transparent methodology to turn your idea into a high-impact website — without complications or surprises.",
+    "subtitle": "We collaborate with you to design a website that fits your unique needs and helps your business thrive online.",
     "subtitleClass": "descMyProcess",
     "cta": "Let's take it step by step, start here",
-    "steps": {
-      "step1": {
-        "stepName": "Step 1",
+    "steps": [
+      {
+        "icon": "/icons/process/strategy-icon.svg",
+        "stepName": "1",
         "title": "Discovery & Strategy",
-        "description": "We start with an in-depth conversation about your vision, business goals, and ideal audience. We accelerate this process using AI-powered data analysis to uncover the best opportunities and define a solid strategy for your website.",
-        "color": "Let's take it step by step, start here"
+        "description": "We uncover your goals and create a roadmap for success.",
+        "color": "Let's take it step by step, start here",
+        "videoSrc": "/videos/video-step-1.mp4",
+        "coverSrc": "/videos/cover-step-1.png"
       },
-      "step2": {
-        "stepName": "Step 2",
+      {
+        "icon": "/icons/process/design-icon.svg",
+        "stepName": "2",
         "title": "Design & Prototyping",
-        "description": "We turn the strategy into a visually impactful design and an intuitive user experience. You'll receive interactive prototypes so you can see how your site will work and provide feedback at every stage, ensuring the final result meets your expectations.",
-        "color": "rgba(53,93,255,1)"
+        "description": "Visual concepts and interactive prototypes bring your vision to life.",
+        "color": "rgba(53,93,255,1)",
+        "videoSrc": "/videos/video-step-2.mp4",
+        "coverSrc": "/videos/cover-step-2.png"
       },
-      "step3": {
-        "stepName": "Step 3",
+      {
+        "icon": "/icons/process/analytics-icon.svg",
+        "stepName": "3",
         "title": "Development & Optimization",
-        "description": "We bring the design to life with clean, modern code. Your website will be lightning-fast, secure, and optimized with essential SEO so users can find you easily — and enjoy a seamless experience across all devices.",
-        "color": "rgba(5,190,172,1)"
+        "description": "High-performance coding and speed optimization for flawless results.",
+        "color": "rgba(5,190,172,1)",
+        "videoSrc": "/videos/video-step-3.mp4",
+        "coverSrc": "/videos/cover-step-3.png"
       },
-      "step4": {
-        "stepName": "Step 4",
+      {
+        "icon": "/icons/process/strategy-icon.svg",
+        "stepName": "4",
         "title": "Launch & Ongoing Support",
-        "description": "We launch your website to the world and ensure everything runs smoothly. But our work doesn’t stop there — we provide continued support to answer any questions and keep your online presence polished and ready to grow.",
-        "color": "rgba(140,190,57,1)"
+        "description": "A smooth launch followed by ongoing support to keep you growing.",
+        "color": "rgba(140,190,57,1)",
+        "videoSrc": "/videos/video-step-4.mp4",
+        "coverSrc": "/videos/cover-step-4.png"
       }
-    }
+    ]
+  },
+  "benefitsSection": {
+    "preheading": "Benefits",
+    "title": "Why choose us for your web design needs?",
+    "titleClass": "titleBenefits",
+    "subtitle": "We combine creativity, technology, and strategy to deliver websites that not only look stunning but also perform exceptionally well.",
+    "subtitleClass": "descBenefits",
+    "padding": "20px",
+    "benefits": [
+      {
+        "title": "Quality",
+        "description": "Websites crafted with precision to make your brand look professional and trustworthy.",
+        "icon": "/icons/quality-icon.svg",
+        "background": "bg-[#B028CC]"
+      },
+      {
+        "title": "Performance",
+        "description": "Websites optimized to handle growth, deliver seamless navigation, and perform under any demand.",
+        "icon": "/icons/flash-icon.svg",
+        "background": "bg-[#7F34F5]"
+      },
+      {
+        "title": "Personalization",
+        "description": "Tailor-made designs built around your goals, style, and audience to maximize impact and connection.",
+        "icon": "/icons/color-wand-icon.svg",
+        "background": "bg-[#B028CC]"
+      },
+      {
+        "title": "Support",
+        "description": "Continuous guidance and optimization to keep your website performing long after launch.",
+        "icon": "/icons/headset-icon.svg",
+        "background": "bg-[#7F34F5]"
+      }
+    ]
   },
   "about": {
     "title": "The mind behind the pixels",
@@ -107,7 +165,8 @@
   },
   "pricing": {
     "interSectionText": {
-      "title": "Choose Your Ideal Plan",
+      "preheading": "Pricing",
+      "title": "Choose the plan that fits your project",
       "classTitle": "titlePricing",
       "description": "All plans include: 100% custom design · responsive · ultra-fast loading · basic SEO · post-launch support.",
       "classDesc": "descPricing",
@@ -206,8 +265,8 @@
     "interSectionText": {
       "title": "The future of your business starts here.",
       "classTitle": "titleContact",
-      "description": "Now that you know my process, philosophy, and work, I would love to hear your story. Share your idea with no obligation, and let’s discuss how I can help you build your digital success.",
-      "padding": "40px",
+      "description": "Ready to bring your vision online? Let’s create the digital future of your business—starting today.",
+      "padding": "0px",
       "classDesc": "descContact"
     },
     "form": {
@@ -220,7 +279,7 @@
           "type": "text",
           "name": "name",
           "id": "name",
-          "class": "bg-[rgba(50,50,50,1)] text-white px-4 py-4 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300",
+          "class": "bg-[rgba(255,255,255,.03)] border-1 border-[rgba(255,255,255,0.13)] text-white px-4 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300",
           "required": true
         },
         {
@@ -229,7 +288,7 @@
           "type": "email",
           "name": "email",
           "id": "email",
-          "class": "bg-[rgba(50,50,50,1)] text-white px-4 py-4 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300",
+          "class": "bg-[rgba(255,255,255,.03)] border-1 border-[rgba(255,255,255,0.13)] text-white px-4 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300",
           "required": true
         },
         {
@@ -238,7 +297,7 @@
           "type": "textarea",
           "name": "message",
           "id": "message",
-          "class": "bg-[rgba(50,50,50,1)] text-white px-4 py-4 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300",
+          "class": "bg-[rgba(255,255,255,.03)] border-1 border-[rgba(255,255,255,0.13)] text-white px-4 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300",
           "rows": 4,
           "required": true
         }
@@ -246,7 +305,7 @@
       "submitButton": {
         "type": "submit",
         "text": "Request Your Free Quote",
-        "class": "bg-[#0075C8] text-white px-8 py-4 mb-4 rounded-full hover:bg-[#004080] transition-colors duration-300 font-light"
+        "class": "bg-[#1D4ED8] text-white px-8 py-4 mb-4 rounded-full hover:bg-[#004080] transition-colors duration-300 font-semibold"
       }
     },
     "additionalInfo": {
@@ -261,12 +320,6 @@
       "copyrightYear": "© 2025 AcidusLabs.",
       "copyrightText": "All rights reserved."
     }
-  },
-
-  "footer": {
-    "rights": "Todos los derechos reservados",
-    "privacy": "Política de privacidad",
-    "terms": "Términos y condiciones"
   },
   "common": {
     "loading": "Cargando...",

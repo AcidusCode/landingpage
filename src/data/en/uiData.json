@@ -1,0 +1,101 @@
+{
+  "nav": [
+    {
+      "name": "Home",
+      "ariaLabel": "Home",
+      "url": "#home"
+    },
+    {
+      "name": "Features",
+      "ariaLabel": "Features",
+      "url": "#features"
+    },
+    {
+      "name": "Design Process",
+      "ariaLabel": "Design Process",
+      "url": "#designProcess"
+    },
+    {
+      "name": "Benefits",
+      "ariaLabel": "Benefits",
+      "url": "#benefits"
+    },
+    {
+      "name": "Pricing",
+      "ariaLabel": "Pricing",
+      "url": "#pricing"
+    },
+    {
+      "name": "Contact",
+      "ariaLabel": "Contact",
+      "url": "#contact"
+    }
+  ],
+  "footer": {
+    "nav": [
+      {
+        "name": "Home",
+        "ariaLabel": "Home",
+        "url": "Home"
+      },
+      {
+        "name": "Projects",
+        "ariaLabel": "Projects",
+        "url": "Projects"
+      },
+      {
+        "name": "Blog",
+        "ariaLabel": "Blog",
+        "url": "Blog"
+      },
+      {
+        "name": "about us",
+        "ariaLabel": "about us",
+        "url": "about us"
+      }
+    ],
+    "additionalInfo": [
+      {
+        "name": "Cookie settings",
+        "ariaLabel": "Cookie settings",
+        "url": "Cookie settings"
+      },
+      {
+        "name": "Terms and conditions",
+        "ariaLabel": "Terms and conditions",
+        "url": "Terms and conditions"
+      },
+      {
+        "name": "Privacy policy",
+        "ariaLabel": "Privacy policy",
+        "url": "Privacy policy"
+      }
+    ],
+    "icons": [
+      {
+        "name": "X",
+        "url": "https://www.x.com/yourprofile",
+        "icon": "/icons/social/logo-twitter.svg",
+        "alt": "X Icon"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://www.github.com/yourprofile",
+        "icon": "/icons/social/logo-github.svg",
+        "alt": "GitHub Icon"
+      },
+      {
+        "name": "Behance",
+        "url": "https://www.behance.com/in/yourprofile",
+        "icon": "/icons/social/logo-behance.svg",
+        "alt": "Behance Icon"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://www.youtube.com/yourprofile",
+        "icon": "/icons/social/logo-youtube.svg",
+        "alt": "Youtube Icon"
+      }
+    ]
+  }
+}

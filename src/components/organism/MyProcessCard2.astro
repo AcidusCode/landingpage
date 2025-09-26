@@ -1,0 +1,109 @@
+---
+const {
+  icon = "/icons/process/strategy-icon.svg",
+  title,
+  description,
+  number,
+  videoSrc = "/videos/cover-step1.mp4",
+  coverSrc = "/videos/cover-step1.png",
+} = Astro.props;
+---
+
+<div
+  class="group-myprocess-video relative flex flex-col justify-end overflow-hidden rounded-2xl"
+>
+  <div
+    class="gradient-overlay absolute bg-gradient-to-r from-black/100 to-black/50 opacity-100 w-full h-full z-9 transition-opacity duration-300"
+  >
+  </div>
+  <div class="h-[210px] md:h-[450px] md:top-0">
+    <video
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      poster={coverSrc}
+      class="video-hover w-full object-bottom object-cover h-full"
+    >
+      <source src={videoSrc} type="video/mp4" />
+      Tu navegador no soporta el video HTML5.
+    </video>
+  </div>
+  <div
+    class="video-content flex absolute w-full justify-between items-end px-4 z-10 opacity-40 transiction-opacity duration-300"
+  >
+    <div class="pb-4 flex flex-col gap-2">
+      <img src={icon} alt={title} class="w-8 h-8 md:w-12 md:h-12"/>
+      <h3 class="text-[#fff] text-xl md:text-[40px] font-extrabold leading-[110%]">
+        {title}
+      </h3>
+      <p class="text-[#b9b9b9] text-sm md:text-xl font-normal leading-[150%]">
+        {description}
+      </p>
+    </div>
+    <p
+      class="text-[120px] leading-[100%] font-extrabold px-4 text-white opacity-[35%]"
+    >
+      {number}
+    </p>
+  </div>
+</div>
+
+<script>
+  import gsap from "gsap";
+
+  const components = document.querySelectorAll(".group-myprocess-video");
+
+  function onScroll() {
+    components.forEach((container) => {
+      const video = container.querySelector(".video-hover") as HTMLVideoElement;
+      const overlay = container.querySelector(
+        ".gradient-overlay"
+      ) as HTMLDivElement;
+      const content = container.querySelector(
+        ".video-content"
+      ) as HTMLDivElement;
+
+      if (!video || !overlay) return;
+
+      // Obtener posición del componente respecto al viewport
+      const rect = container.getBoundingClientRect();
+
+      // Calcular el centro vertical del viewport
+      const viewportCenter = window.innerHeight / 2 - 100;
+
+      // Calcular el centro vertical del componente
+      const componentCenter = rect.top + rect.height / 2;
+
+      // Definir rango de activación (ejemplo: +-100px alrededor del centro de la pantalla)
+      const activationRange = 120;
+
+      if (Math.abs(componentCenter - viewportCenter) < activationRange) {
+        // Componente está dentro del rango -> activarcontainer.addEventListener("mouseenter", () => {
+        gsap.to(container, {
+          boxShadow: "0 0 150px 15px rgba(156, 0, 170, 0.25)",
+          duration: 0.4,
+          ease: "power2.out",
+        });
+        gsap.to(overlay, { opacity: 0.45, duration: 0.3, ease: "expo.out" });
+        gsap.to(content, { opacity: 1, duration: 0.3, ease: "expo.out" });
+        video.play();
+      } else {
+        // Fuera del rango -> desactivar
+        gsap.to(container, {
+          boxShadow: "0 0 0 0 rgba(156, 0, 170, 0.0)", // o 'none' si prefieres
+          duration: 0.3,
+          ease: "power2.in",
+        });
+        gsap.to(overlay, { opacity: 1, duration: 0.3, ease: "expo.out" });
+        gsap.to(content, { opacity: 0.4, duration: 0.3, ease: "expo.out" });
+        video.pause();
+      }
+    });
+  }
+
+  // Agrega listener de scroll
+  window.addEventListener("scroll", onScroll);
+  // También chequea al cargar la página
+  window.addEventListener("load", onScroll);
+</script>

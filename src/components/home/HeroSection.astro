@@ -3,6 +3,7 @@ import Image from "astro/components/Image.astro";
 import smileEmoji from "../../images/Emojis/smile.png";
 import CtaButton from "../atoms/CtaButton.astro";
 import WhatsappIcon from "../icons/WhatsappIcon.astro";
+import LogoSmall from "../atoms/LogoSmall.astro";
 
 import { getLangFromUrl } from "../../i18n/utils";
 
@@ -18,71 +19,86 @@ interface IndexData {
 }
 
 const lang = getLangFromUrl(Astro.url);
-const allData = import.meta.glob<IndexData>('../../data/*/indexData.json', { eager: true });
+const allData = import.meta.glob<IndexData>("../../data/*/indexData.json", {
+  eager: true,
+});
 const matchedEntry = Object.entries(allData).find(([path]) =>
   path.includes(`/${lang}/`)
 );
 const indexData = matchedEntry?.[1];
 
-const title = indexData?.hero?.title
-const subtitle = indexData?.hero?.subtitle
-const description = indexData?.hero?.description
-const cta = indexData?.hero?.cta
-const altCta = indexData?.hero?.altCta
-const email = indexData?.hero?.email
+const title = indexData?.hero?.title;
+const subtitle = indexData?.hero?.subtitle;
+const description = indexData?.hero?.description;
+const cta = indexData?.hero?.cta;
+const altCta = indexData?.hero?.altCta;
+const email = indexData?.hero?.email;
 ---
 
 <section
-  class="sectionHero flex flex-col items-center justify-center gap-12 pt-12 pb-12 px-8 md:pt-28"
+  class="relative sectionHero overflow-hidden pt-20 md:pt-0"
   id="heroSection"
 >
-  <div class="flex flex-col items-center">
-    <div class="relative">
-      <div class="gradientEmojiHero bg-radial-blue absolute z-0 inset-0"></div>
-      <div class="emojiHero z-10 pb-4">
-        <Image
-          src={smileEmoji}
-          alt="Emoji de AcidusLabs sonriendo."
-          width="240"
-        />
-      </div>
+  <div
+    class="z-10 flex flex-col items-center justify-center gap-8 pt-6 pb-12 px-4 md:p-0 md:min-h-screen"
+  >
+    <div
+      class={`absolute -top-40 md:-top-[20] -right-40 md:-right-[20] w-[350px] md:w-[500px] h-[450px] md:h-[850px] md:rotate-[-65deg] bg-[conic-gradient(from_-5deg_at_50%_50%,_rgba(230,1,180,0.6)_2.18deg,_rgba(230,1,180,0.6)_72.05deg,_rgba(10,12,16,0.6)_91deg,_rgba(176,40,204,0.6)_117.7deg,_rgba(10,12,16,0.6)_227.56deg,_rgba(127,52,245,0.6)_287.44deg,_rgba(29,78,216,0.6)_360deg)] rounded-full blur-[125px] md:blur-[175px] opacity-100 z-0`}
+    >
     </div>
-    <div class="flex flex-col gap-12">
-      <div class="max-w-xl flex flex-col">
-        <div class="flex justify-center">
+    <img
+      src="/images/bg/blobs.png"
+      class="absolute -top-[0%] -right-[18%] w-[50vw] md:-top-[10%] md:w-[40vw] lg:-top-[28%] lg:-right-[8%] lg:w-[35vw] aspect-square object-contain"
+      alt="Blob"
+    />
+    <img
+      src="/images/bg/blobs.png"
+      class="hidden md:flex absolute top-[5%] -left-[10%] w-[50vw] md:-top-[20%] md:w-[35vw] lg:top-[50%] 2xl:top-[40%] lg:-left-[5%] lg:w-[35vw] aspect-square object-contain -rotate-130"
+      alt="Blob"
+    />
+
+    <div class="flex flex-col items-center">
+      <div class="flex flex-col gap-12">
+        <div
+          class="max-w-[1600px] md:w-[90%] mx-auto flex flex-col gap-6 md:gap-10 justify-center items-center"
+        >
+          <div class="flex justify-center">
+            <span
+              class="px-8 textIntroHero leading-[110%] text-2xl md:text-[40px] text-center font-extrabold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%]"
+            >
+              {title}
+            </span>
+          </div>
           <h1
-            class="textIntroHero text-base text-center font-bold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%]"
+            class="headingHero text-[#ddd] text-7xl md:text-[110px] leading-none font-extrabold text-center text-medium bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,255,255,.4)_100%)] bg-clip-text text-transparent bg-[length:100%_100%]"
           >
-            {title}
+            {subtitle}
           </h1>
-        </div>
-        <h2
-          class="headingHero text-[#ddd] text-3xl leading-xs text-center py-2 text-medium"
-        >
-          {subtitle}
-        </h2>
-        <p
-          class="descriptionHero text-[#858585] text-center text-sm font-light"
-        >
-          {description}
-        </p>
-      </div>
-      <div class="flex flex-col items-center gap-4">
-        <CtaButton
-          text={cta}
-          ariaLabel={cta}
-          color="#0075C8"
-          icon={WhatsappIcon}
-        />
-        <p
-          class="text-[#858585] text-center text-sm flex flex-col items-center font-light"
-        >
-          {altCta} <a
-            href="#"
-            aria-label="Enviar correo electronico directo a info@aciduslabs.com"
-            class="text-[#4DA2DA]">{email}</a
+          <p
+            class="descriptionHero text-[#7B7E80] text-center text-lg md:text-[22px] md:max-w-[45%] leading-[150%] font-light"
           >
-        </p>
+            {description}
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center gap-4">
+          <CtaButton
+            text={cta}
+            ariaLabel={cta}
+            color="#1D4ED8"
+            icon={WhatsappIcon}
+          />
+          <p
+            class="text-[#858585] text-center text-sm flex flex-col items-center font-light"
+          >
+            {altCta}
+            <a
+              href="#"
+              aria-label="Enviar correo electronico directo a info@aciduslabs.com"
+              class="text-[#4DA2DA]">{email}</a
+            >
+          </p>
+        </div>
       </div>
     </div>
   </div>

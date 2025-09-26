@@ -2,9 +2,9 @@
 const { title, description, classTitle, classDesc } = Astro.props;
 ---
 
-<div class="sectionTitle flex flex-col">
-  <h2 class={`${classTitle} heading text-[#ddd] text-2xl font-bold`}>{title}</h2>
-  <p class={`${classDesc} subheading text-[#858585] font-light`}>
+<div class="sectionTitle flex flex-col gap-1">
+  <h2 class={`${classTitle} heading text-[#fff] font-extrabold leading-[110%] text-2xl`}>{title}</h2>
+  <p class={`${classDesc} subheading text-[#B9B9B9] font-normal text-base leading-[150%]`}>
     {description}
   </p>
 </div>

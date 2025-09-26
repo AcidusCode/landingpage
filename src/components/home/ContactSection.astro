@@ -2,7 +2,6 @@
 import InterSectionText from "../molecules/InterSectionText.astro";
 const email = "info@aciduslabs.com";
 
-
 import { getLangFromUrl } from "../../i18n/utils";
 
 interface ContactSection {
@@ -71,69 +70,93 @@ const matchedEntry = Object.entries(allData).find(([path]) =>
 const indexData = matchedEntry?.[1];
 ---
 
-<section class="sectionContact mt-10" id="contactSection">
-  <InterSectionText
-    title={indexData?.contactSection?.interSectionText?.title ?? ""}
-    classTitle={indexData?.contactSection?.interSectionText?.classTitle ?? ""}
-    description={indexData?.contactSection?.interSectionText?.description ?? ""}
-    padding={indexData?.contactSection?.interSectionText?.padding ?? ""}
-    classDesc={indexData?.contactSection?.interSectionText?.classDesc ?? ""}
-  />
-  <div class="formContact">
-    <form
-      action={indexData?.contactSection?.form?.action ?? ""}
-      method={indexData?.contactSection?.form?.method ?? "POST"}
-      class="flex flex-col gap-6 mx-8"
-    >
-      {indexData?.contactSection?.form?.fields.map((field) => (
-        <div class="flex flex-col gap-2">
-          <label class="text-[#0075c8] px-2 text-lg font-light" for={field.for}>
-            {field.label}
-          </label>
-          {field.type === "textarea" ? (
-            <textarea
-              name={field.name}
-              id={field.id}
-              class={field.class}
-              rows={field.rows ?? 4}
-              required={field.required}
-            ></textarea>
-          ) : (
-            <input
-              type={field.type}
-              name={field.name}
-              id={field.id}
-              class={field.class}
-              required={field.required}
-            />
-          )}
-        </div>
-      ))}
-      <button
-        type={indexData?.contactSection?.form?.submitButton.type ?? "submit"}
-        class={indexData?.contactSection?.form?.submitButton.class ?? ""}
+<section
+  class="relative sectionContact mt-10 overflow-x-hidden pb-20"
+  id="contactSection"
+>
+  <div class="relative z-10">
+    <div class="max-w-[1600px] md:w-[90%] xl:w-[60%] mx-auto z-10">
+      <InterSectionText
+        title={indexData?.contactSection?.interSectionText?.title ?? ""}
+        classTitle={indexData?.contactSection?.interSectionText?.classTitle ??
+          ""}
+        description={indexData?.contactSection?.interSectionText?.description ??
+          ""}
+        padding={indexData?.contactSection?.interSectionText?.padding ?? ""}
+        classDesc={indexData?.contactSection?.interSectionText?.classDesc ?? ""}
+        marginDesc="mx-[8%] md:mx-[5%]"
+      />
+    </div>
+    <div class="formContact md:max-w-[50%] md:mx-auto z-15">
+      <form
+        action={indexData?.contactSection?.form?.action ?? ""}
+        method={indexData?.contactSection?.form?.method ?? "POST"}
+        class="flex flex-col gap-6 mx-8 z-10"
       >
-        {indexData?.contactSection?.form?.submitButton.text ?? ""}
-      </button>
-    </form>
+        {
+          indexData?.contactSection?.form?.fields.map((field) => (
+            <div class="flex flex-col gap-2">
+              <label
+                class="text-[#fff] px-2 text-base font-semibold leading-[150%]"
+                for={field.for}
+              >
+                {field.label}
+              </label>
+              {field.type === "textarea" ? (
+                <textarea
+                  name={field.name}
+                  id={field.id}
+                  class={field.class}
+                  rows={field.rows ?? 4}
+                  required={field.required}
+                />
+              ) : (
+                <input
+                  type={field.type}
+                  name={field.name}
+                  id={field.id}
+                  class={field.class}
+                  required={field.required}
+                />
+              )}
+            </div>
+          ))
+        }
+        <button
+          type={indexData?.contactSection?.form?.submitButton.type ?? "submit"}
+          class={indexData?.contactSection?.form?.submitButton.class ?? ""}
+        >
+          {indexData?.contactSection?.form?.submitButton.text ?? ""}
+        </button>
+      </form>
 
-    <p class="text-[#858585] text-center text-sm flex flex-col items-center font-light">
-      {indexData?.contactSection?.additionalInfo?.contactEmailText}
-      <a
-        href={indexData?.contactSection?.additionalInfo?.contactEmailLink.href ?? "#"}
-        aria-label={indexData?.contactSection?.additionalInfo?.contactEmailLink.ariaLabel ?? ""}
-        class={indexData?.contactSection?.additionalInfo?.contactEmailLink.class ?? ""}
+      <p
+        class="text-[#858585] text-center text-sm flex flex-col items-center font-light"
       >
-        {indexData?.contactSection?.additionalInfo?.contactEmailLink.text ?? ""}
-      </a>
-    </p>
+        {indexData?.contactSection?.additionalInfo?.contactEmailText}
+        <a
+          href={indexData?.contactSection?.additionalInfo?.contactEmailLink
+            .href ?? "#"}
+          aria-label={indexData?.contactSection?.additionalInfo
+            ?.contactEmailLink.ariaLabel ?? ""}
+          class={indexData?.contactSection?.additionalInfo?.contactEmailLink
+            .class ?? ""}
+        >
+          {
+            indexData?.contactSection?.additionalInfo?.contactEmailLink.text ??
+              ""
+          }
+        </a>
+      </p>
 
-    <p class="text-center text-[#ddd] px-16 py-12 text-lg">
-      {indexData?.contactSection?.additionalInfo?.securityMessage ?? ""}
-    </p>
-
-    <p class="flex justify-center flex-col md:flex-row text-center font-light text-sm text-[#858585] pt-4 pb-12">
-      <span>{indexData?.contactSection?.additionalInfo?.copyrightYear ?? ""}</span> {indexData?.contactSection?.additionalInfo?.copyrightText}
+      <p class="text-center text-[#ddd] px-16 py-12 text-lg">
+        {indexData?.contactSection?.additionalInfo?.securityMessage ?? ""}
+      </p>
+    </div>
+  </div>
+  <div
+    class={`absolute top-80 left-0 right-0 w-[500px] h-[380px] bg-[conic-gradient(from_-1deg_at_50%_50%,_#E601B4_8.8529deg,_#0A0C10_54.7722deg,_#1C0F24_120.7895deg,_#B028CC_175.0813deg,_#0A0C10_227.5661deg,_#1D4ED8_270.7618deg,_#0B0D11_304.1567deg)] rounded-full blur-[125px] opacity-100 z-0 rotate-[46deg]`}
+  >
   </div>
 </section>
 

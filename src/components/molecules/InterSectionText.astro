@@ -1,18 +1,18 @@
 ---
-const { preheading, title, description, padding = "80px", classTitle, classDesc } = Astro.props;
+const { preheading, title, description, padding = "40px", classTitle, classDesc, marginDesc = "md:mx-10" } = Astro.props;
 ---
 
-<div class="flex flex-col items-center py-10 gap-2">
-  {preheading && <span class="text-[#858585]">{preheading}</span>}
+<div class="flex flex-col items-center py-10 gap-4">
+  {preheading && <span class="text-xl md:text-[24px] font-extrabold leading-[110%] bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%]">{preheading}</span>}
   <h2
-    class={`${classTitle} text-4xl flex-grow-0 font-bold bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%] text-center`}
+    class={`${classTitle} text-5xl md:text-[92px] flex-grow-0 font-extrabold leading-[110%] bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,255,255,.4)_100%)] bg-clip-text text-transparent bg-[length:100%_100%] text-center`}
     style={{ paddingLeft: padding, paddingRight: padding }}
   >
     {title}
   </h2>
   {
     description && (
-      <p class={`${classDesc} text-center text-xl text-[#858585] px-10 font-light md:px-40`}>
+      <p class={`${classDesc} text-center text-lg text-[#858585] ${marginDesc} font-normal leading-[150%] md:px-40`}>
         {description}
       </p>
     )

@@ -7,22 +7,33 @@
   },
   "hero": {
     "title": "Agencia de Diseno & Desarrollo Web",
-    "subtitle": "Construyamos el sitio web que tu negocio necesita para escalar",
+    "subtitle": "Sitios web ultra rápidos que tu negocio necesita para escalar",
     "description": "Proyectos a medida que combinan estética, funcionalidad y las mejores practicas de conversión para superar tus objetivos.",
     "cta": "Empieza tu sitio web hoy",
     "altCta": "O enviame un correo directo a",
     "email": "info@aciduslabs.com"
   },
   "advantage": {
-    "first": {
-      "text": "Lanzamiento rápido sin dolores de cabeza"
-    },
-    "second": {
-      "text": "Sitios creados para convertir"
-    },
-    "third": {
-      "text": "Soporte humano y cercano, no bots"
-    }
+    "preheading": "Características",
+    "title": "Funciones poderosas que nos distinguen",
+    "description": "Ofrecemos soluciones web excepcionales que combinan velocidad, diseño y rendimiento para ayudar a que tu negocio destaque en el entorno digital.",
+    "advantages": [
+      {
+        "icon": "/icons/features/speed-icon.svg",
+        "title": "Optimización de velocidad",
+        "text": "Sitios web ultrarrápidos, reducen la tasa de rebote y mejoran el posicionamiento en buscadores."
+      },
+      {
+        "icon": "/icons/features/custom-typography-icon.svg",
+        "title": "Diseño personalizado",
+        "text": "Diseños a medida que capturan la esencia de tu marca y conectan con tu audiencia."
+      },
+      {
+        "icon": "/icons/features/conversion-path-icon.svg",
+        "title": "Seguimiento de conversiones",
+        "text": "Analítica inteligente que convierte datos en acciones para aumentar las conversiones."
+      }
+    ]
   },
   "projects": {
     "title": "Proyectos Destacados",
@@ -44,37 +55,84 @@
     }
   },
   "designProcess": {
-    "title": "Tu visión, paso a paso.",
+    "preheading": "Nuestro proceso",
+    "title": "Nuestro enfoque colaborativo en diseño web",
     "titleClass": "titleMyProcess",
-    "subtitle": "Una metodología clara y transparente para convertir tu idea en un sitio web de alto impacto, sin complicaciones ni sorpresas.",
+    "subtitle": "Colaboramos contigo para diseñar un sitio web que se adapte a tus necesidades únicas y ayude a que tu negocio prospere en línea.",
     "subtitleClass": "descMyProcess",
     "cta": "Vamos paso a paso, empieza aquí",
-    "steps": {
-      "step1": {
-        "stepName": "Paso 1",
-        "title": "Descubrimiento y Estrategia",
-        "description": "Comenzamos con una conversación profunda sobre tu visión, objetivos de negocio y público ideal. Aceleramos este proceso con el análisis de datos asistido por herramientas de IA para encontrar las mejores oportunidades y definir una estrategia sólida para tu sitio web.",
-        "color": ""
+    "steps": [
+      {
+        "icon": "/icons/process/strategy-icon.svg",
+        "stepName": "1",
+        "title": "Descubrimiento y estrategia",
+        "description": "Identificamos tus objetivos y creamos una hoja de ruta hacia el éxito.",
+        "color": "Let's take it step by step, start here",
+        "videoSrc": "/videos/video-step-1.mp4",
+        "coverSrc": "/videos/cover-step-1.png"
       },
-      "step2": {
-        "stepName": "Paso 2",
-        "title": "Diseño y Prototipado",
-        "description": "Traducimos la estrategia en un diseño visualmente impactante y una experiencia de usuario intuitiva. Te presentamos prototipos interactivos para que veas cómo funcionará tu sitio y puedas dar feedback en cada etapa, asegurando que el resultado cumpla con tus expectativas.",
-        "color": "rgba(53,93,255,1)"
+      {
+        "icon": "/icons/process/design-icon.svg",
+        "stepName": "2",
+        "title": "Diseño y prototipado",
+        "description": "Conceptos visuales y prototipos interactivos que dan vida a tu visión.",
+        "color": "rgba(53,93,255,1)",
+        "videoSrc": "/videos/video-step-2.mp4",
+        "coverSrc": "/videos/cover-step-2.png"
       },
-      "step3": {
-        "stepName": "Paso 3",
-        "title": "Desarrollo y Optimización",
-        "description": "Damos vida al diseño con código limpio y moderno. Tu sitio web será ultrarrápido, seguro y optimizado para el SEO fundamental, asegurando que te encuentren en los buscadores y que la experiencia de usuario sea impecable en todos los dispositivos.",
-        "color": "rgba(5,190,172,1)"
+      {
+        "icon": "/icons/process/analytics-icon.svg",
+        "stepName": "3",
+        "title": "Desarrollo y optimización",
+        "description": "Código de alto rendimiento y optimización de velocidad para resultados impecables.",
+        "color": "rgba(5,190,172,1)",
+        "videoSrc": "/videos/video-step-3.mp4",
+        "coverSrc": "/videos/cover-step-3.png"
       },
-      "step4": {
-        "stepName": "Paso 4",
-        "title": "Lanzamiento y Acompañamiento",
-        "description": "Lanzamos tu sitio web al mundo y nos aseguramos de que todo funcione a la perfección. Nuestro trabajo no termina ahí; te brindamos soporte para cualquier duda, asegurando que tu presencia online se mantenga impecable y lista para crecer.",
-        "color": "rgba(140,190,57,1)"
+      {
+        "icon": "/icons/process/strategy-icon.svg",
+        "stepName": "4",
+        "title": "Lanzamiento y soporte continuo",
+        "description": "Un lanzamiento fluido seguido de soporte continuo para ayudarte a crecer.",
+        "color": "rgba(140,190,57,1)",
+        "videoSrc": "/videos/video-step-4.mp4",
+        "coverSrc": "/videos/cover-step-4.png"
       }
-    }
+    ]
+  },
+  "benefitsSection": {
+    "preheading": "Beneficios",
+    "title": "¿Por qué elegirnos para tus necesidades de diseño web?",
+    "titleClass": "titleBenefits",
+    "subtitle": "Combinamos creatividad, tecnología y estrategia para ofrecer sitios web que no solo lucen increíbles, sino que también tienen un rendimiento excepcional.",
+    "subtitleClass": "descBenefits",
+    "padding": "20px",
+    "benefits": [
+      {
+        "title": "Calidad",
+        "description": "Sitios web creados con precisión para que tu marca luzca profesional y confiable.",
+        "icon": "/icons/quality-icon.svg",
+        "background": "bg-[#B028CC]"
+      },
+      {
+        "title": "Rendimiento",
+        "description": "Sitios optimizados para escalar, ofrecer navegación fluida y rendir bajo cualquier demanda.",
+        "icon": "/icons/flash-icon.svg",
+        "background": "bg-[#7F34F5]"
+      },
+      {
+        "title": "Personalización",
+        "description": "Diseños a medida construidos según tus objetivos, estilo y audiencia para maximizar impacto y conexión.",
+        "icon": "/icons/color-wand-icon.svg",
+        "background": "bg-[#B028CC]"
+      },
+      {
+        "title": "Soporte",
+        "description": "Asesoramiento continuo y optimización para mantener tu sitio web en alto rendimiento mucho después del lanzamiento.",
+        "icon": "/icons/headset-icon.svg",
+        "background": "bg-[#7F34F5]"
+      }
+    ]
   },
   "about": {
     "title": "La mente detrás de los pixeles",
@@ -167,7 +225,7 @@
       "title": "El futuro de tu negocio comienza aquí.",
       "classTitle": "titleContact",
       "description": "Ahora que conoces mi proceso, mi filosofía y mi trabajo, me encantaría conocer tu historia. Cuéntame tu idea sin compromiso y hablemos sobre cómo puedo ayudarte a construir tu éxito digital.",
-      "padding": "40px",
+      "padding": "0px",
       "classDesc": "descContact"
     },
     "form": {
@@ -180,7 +238,7 @@
           "type": "text",
           "name": "name",
           "id": "name",
-          "class": "bg-[rgba(50,50,50,1)] text-white px-4 py-4 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300",
+          "class": "bg-[rgba(255,255,255,.03)] border-1 border-[rgba(255,255,255,0.13)] text-white px-4 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300",
           "required": true
         },
         {
@@ -189,7 +247,7 @@
           "type": "email",
           "name": "email",
           "id": "email",
-          "class": "bg-[rgba(50,50,50,1)] text-white px-4 py-4 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300",
+          "class": "bg-[rgba(255,255,255,.03)] border-1 border-[rgba(255,255,255,0.13)] text-white px-4 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300",
           "required": true
         },
         {
@@ -198,7 +256,7 @@
           "type": "textarea",
           "name": "message",
           "id": "message",
-          "class": "bg-[rgba(50,50,50,1)] text-white px-4 py-4 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300",
+          "class": "bg-[rgba(255,255,255,.03)] border-1 border-[rgba(255,255,255,0.13)] text-white px-4 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#004080] transition-colors duration-300",
           "rows": 4,
           "required": true
         }
@@ -262,11 +320,7 @@
       }
     }
   },
-  "footer": {
-    "rights": "Todos los derechos reservados",
-    "privacy": "Política de privacidad",
-    "terms": "Términos y condiciones"
-  },
+
   "common": {
     "loading": "Cargando...",
     "error": "Error",

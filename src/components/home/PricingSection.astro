@@ -21,6 +21,7 @@ interface PricingCard {
 }
 
 interface InterSectionText {
+  preheading?: string;
   title: string;
   classTitle: string;
   description: string;
@@ -52,35 +53,46 @@ const matchedEntry = Object.entries(allData).find(([path]) =>
 const indexData = matchedEntry?.[1];
 ---
 
-<section class="pricingSection mx-6 mt-16 flex flex-col gap-4 md:gap-12 md:pt-16" id="pricingSection">
-  <InterSectionText
-    title={indexData?.pricing?.interSectionText.title}
-    classTitle={indexData?.pricing?.interSectionText.classTitle}
-    description={indexData?.pricing?.interSectionText.description}
-    classDesc={indexData?.pricing?.interSectionText.classDesc}
-    padding={indexData?.pricing?.interSectionText.padding}
-  />
-  <div class="flex pricingCards flex-col items-center justify-center gap-12 md:flex-row">
-    {indexData?.pricing &&
-      Object.entries(indexData.pricing.cards).map(([key, card]) => (
-        <PricingCard
-          key={key}
-          packName={card.packName}
-          packDescription={card.packDescription}
-          packPrice={card.packPrice}
-          packCta={card.packCta}
-          ctaColor={card.ctaColor}
-          packNote={card.packNote}
-          colorStyle={card.colorStyle}
-          scaleStyle={card.scaleStyle}
-          tag={card.tag}
-          auxiliarText={card.auxiliarText}
-        >
-          {card.features.map((feature, i) => (
-            <PricingFeature key={i} featureText={feature} />
-          ))}
-        </PricingCard>
-      ))}
+<section
+  class="pricingSection mx-6 mt-16 flex flex-col gap-4 md:gap-12 md:pt-16"
+  id="pricingSection"
+>
+  <div class="max-w-[1600px] md:w-[90%] lg:w-[70%] 2xl:w-[60%] md:mx-auto">
+    <InterSectionText
+      preheading={indexData?.pricing?.interSectionText.preheading}
+      title={indexData?.pricing?.interSectionText.title}
+      classTitle={indexData?.pricing?.interSectionText.classTitle}
+      description={indexData?.pricing?.interSectionText.description}
+      classDesc={indexData?.pricing?.interSectionText.classDesc}
+      padding={indexData?.pricing?.interSectionText.padding}
+      marginDesc="md:mx-[10%]"
+    />
+  </div>
+  <div
+    class="flex pricingCards flex-col items-center justify-center gap-12 md:flex-row"
+  >
+    {
+      indexData?.pricing &&
+        Object.entries(indexData.pricing.cards).map(([key, card]) => (
+          <PricingCard
+            key={key}
+            packName={card.packName}
+            packDescription={card.packDescription}
+            packPrice={card.packPrice}
+            packCta={card.packCta}
+            ctaColor={card.ctaColor}
+            packNote={card.packNote}
+            colorStyle={card.colorStyle}
+            scaleStyle={card.scaleStyle}
+            tag={card.tag}
+            auxiliarText={card.auxiliarText}
+          >
+            {card.features.map((feature, i) => (
+              <PricingFeature key={i} featureText={feature} />
+            ))}
+          </PricingCard>
+        ))
+    }
   </div>
 </section>
 
@@ -103,23 +115,25 @@ const indexData = matchedEntry?.[1];
     scale: 0.8,
     duration: 1,
     ease: "sine.out",
-  }).from(
-    ".descPricing",
-    {
-      opacity: 0,
-      scale: 0.9,
-      duration: 1,
-      ease: "sine.out",
-    },
-    "-=0.5"
-  ).from(
-    ".pricingCards",
-    {
-      opacity: 0,
-      y: 20,
-      duration: 1,
-      ease: "sine.out",
-    },
-    "-=0.5"
-  );;
+  })
+    .from(
+      ".descPricing",
+      {
+        opacity: 0,
+        scale: 0.9,
+        duration: 1,
+        ease: "sine.out",
+      },
+      "-=0.5"
+    )
+    .from(
+      ".pricingCards",
+      {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+        ease: "sine.out",
+      },
+      "-=0.5"
+    );
 </script>

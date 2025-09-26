@@ -1,0 +1,102 @@
+{
+  "nav": [
+    {
+      "name": "Inicio",
+      "ariaLabel": "Inicio",
+      "url": "#home"
+    },
+    {
+      "name": "Características",
+      "ariaLabel": "Características",
+      "url": "#features"
+    },
+    {
+      "name": "Proceso de diseño",
+      "ariaLabel": "Proceso de diseño",
+      "url": "#designProcess"
+    },
+    {
+      "name": "Beneficios",
+      "ariaLabel": "Beneficios",
+      "url": "#benefits"
+    },
+    {
+      "name": "Precios",
+      "ariaLabel": "Precios",
+      "url": "#pricing"
+    },
+    {
+      "name": "Contacto",
+      "ariaLabel": "Contacto",
+      "url": "#contact"
+    }
+  ],
+  "footer": {
+    "nav": [
+      {
+        "name": "Inicio",
+        "ariaLabel": "Inicio",
+        "url": "Home"
+      },
+      {
+        "name": "Proyectos",
+        "ariaLabel": "Proyectos",
+        "url": "Projects"
+      },
+      {
+        "name": "Blog",
+        "ariaLabel": "Blog",
+        "url": "Blog"
+      },
+      {
+        "name": "Sobre nosotros",
+        "ariaLabel": "Sobre nosotros",
+        "url": "about us"
+      }
+    ],
+    "additionalInfo": [
+      {
+        "name": "Configuración de cookies",
+        "ariaLabel": "Configuración de cookies",
+        "url": "Cookie settings"
+      },
+      {
+        "name": "Términos y condiciones",
+        "ariaLabel": "Términos y condiciones",
+        "url": "Terms and conditions"
+      },
+      {
+        "name": "Política de privacidad",
+        "ariaLabel": "Política de privacidad",
+        "url": "Privacy policy"
+      }
+    ],
+    "icons": [
+      {
+        "name": "X",
+        "url": "https://www.x.com/yourprofile",
+        "icon": "/icons/social/logo-twitter.svg",
+        "alt": "Icono de X"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://www.github.com/yourprofile",
+        "icon": "/icons/social/logo-github.svg",
+        "alt": "Icono de GitHub"
+      },
+      {
+        "name": "Behance",
+        "url": "https://www.behance.com/in/yourprofile",
+        "icon": "/icons/social/logo-behance.svg",
+        "alt": "Icono de Behance"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://www.youtube.com/yourprofile",
+        "icon": "/icons/social/logo-youtube.svg",
+        "alt": "Icono de YouTube"
+      }
+    ]
+  }
+}
+

@@ -22,7 +22,7 @@ interface FaqSection {
 }
 
 interface IndexData {
-  faqSection: FaqSection
+  faqSection: FaqSection;
 }
 
 const lang = getLangFromUrl(Astro.url);
@@ -37,36 +37,49 @@ const indexData = matchedEntry?.[1];
 const faq = indexData?.faqSection.faq ?? {};
 ---
 
-<div class="flex flex-col gap-8 mt-12 mx-8">
-  <SectionTitle
-    title={indexData?.faqSection?.title?.title}
-    description={indexData?.faqSection?.title?.subtitle}
-  />
-  <div class="flex flex-col gap-4">
-    {
-      Object.entries(faq).map(([key, item]) => (
-        <div
-          class="flex rounded-xl py-2 px-4 items-start border border-[#222]"
-          id={`faq-${key}`}
-        >
-          <button
-            class="pr-2 transition-all duration-300"
-            aria-label={`Abrir pregunta frecuente no ${key}`}
-            data-toggle={`faq-${key}`}
+<section class="relative overflow-x-hidden pb-40 md:pb-60">
+  <div class="relative flex flex-col gap-8 mt-12 mx-auto w-[90%] max-w-[1600px] md:mx-auto md:px-[10%]">
+    <SectionTitle
+      title={indexData?.faqSection?.title?.title}
+      description={indexData?.faqSection?.title?.subtitle}
+    />
+    <div class="flex flex-col gap-4 z-10">
+      {
+        Object.entries(faq).map(([key, item]) => (
+          <div
+            class="flex rounded-xl py-2 px-4 items-start border border-[rgba(255,255,255,0.13)] hover:border-[rgba(255,255,255,0.25)] transition-all duration-300 cursor-pointer"
+            id={`faq-${key}`}
           >
-            <RightArrow />
-          </button>
-          <div class="flex flex-col gap-2">
-            <h3 class="text-[#ddd] font-regular">{item.question}</h3>
-            <p class="hidden text-[#858585] pr-4 transition-all duration-300 text-md font-light">
-              {item.description}
-            </p>
+            <button
+              class="pr-2 transition-all duration-300"
+              aria-label={`Abrir pregunta frecuente no ${key}`}
+              data-toggle={`faq-${key}`}
+            >
+              <RightArrow />
+            </button>
+            <div class="flex flex-col gap-2">
+              <h3 class="text-[#eee] font-normal leading-[110%] text-base">
+                {item.question}
+              </h3>
+              <p class="hidden text-[#b9b9b9] pr-4 transition-all duration-300 text-sm font-normal leading-[150%]">
+                {item.description}
+              </p>
+            </div>
           </div>
-        </div>
-      ))
-    }
+        ))
+      }
+    </div>
   </div>
-</div>
+
+  <div
+    class={`absolute top-80 -left-40 w-[350px] h-[380px] bg-[conic-gradient(from_-5deg_at_50%_50%,_rgba(230,1,180,0.6)_2.18deg,_rgba(230,1,180,0.6)_72.05deg,_rgba(10,12,16,0.6)_91deg,_rgba(176,40,204,0.6)_117.7deg,_rgba(10,12,16,0.6)_227.56deg,_rgba(127,52,245,0.6)_287.44deg,_rgba(29,78,216,0.6)_360deg)] rounded-full blur-[125px] opacity-100 z-0 rotate-[46deg]`}
+  >
+  </div>
+  <div
+    class={`absolute top-65 -right-30 w-[350px] h-[380px] bg-[conic-gradient(from_-5deg_at_50%_50%,_rgba(230,1,180,0.6)_2.18deg,_rgba(230,1,180,0.6)_72.05deg,_rgba(10,12,16,0.6)_91deg,_rgba(176,40,204,0.6)_117.7deg,_rgba(10,12,16,0.6)_227.56deg,_rgba(127,52,245,0.6)_287.44deg,_rgba(29,78,216,0.6)_360deg)] rounded-full blur-[125px] opacity-100 z-0 rotate-[46deg]`}
+  >
+  </div>
+</section>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("button[data-toggle]").forEach((button) => {

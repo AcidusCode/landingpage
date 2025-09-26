@@ -30,9 +30,10 @@ const isProduction = import.meta.env.MODE === "production";
 )}
     <slot name="SEO" />
   </head>
-  <body class="flex flex-col max-w-[1080px] md:mx-auto pb-20">
+  <body class="flex flex-col max-w-[100vw] md:mx-auto pb-20">
     <Header />
     <slot />
+    <Footer />
     <script>
       import "../scripts/menu.js";
       import "../scripts/overlayProject.js";

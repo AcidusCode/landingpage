@@ -1,0 +1,125 @@
+---
+import InterSectionText from "../molecules/InterSectionText.astro";
+import CtaButton from "../atoms/CtaButton.astro";
+import BenefitsCard from "../organism/BenefitsCard.astro";
+import { getLangFromUrl } from "../../i18n/utils";
+
+interface IndexData {
+  benefitsSection: {
+    preheading?: string;
+    title: string;
+    subtitle: string;
+    titleClass: string;
+    subtitleClass: string;
+    padding?: string;
+    benefits: BenefitItem[];
+  };
+}
+
+interface BenefitItem {
+  icon: string;
+  title: string;
+  description: string;
+  background?: string;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const allData = import.meta.glob<IndexData>("../../data/*/indexData.json", {
+  eager: true,
+});
+const matchedEntry = Object.entries(allData).find(([path]) =>
+  path.includes(`/${lang}/`)
+);
+const indexData = matchedEntry?.[1];
+---
+
+<section class="benefitsSection relative overflow-hidden pb-16">
+  <div class="relative py-16 z-10">
+    <div class="md:w-[90%] lg:w-[70%] 2xl:w-[60%] mx-auto">
+      <InterSectionText
+        preheading={indexData?.benefitsSection?.preheading}
+        title="Why choose our web design agency"
+        classTitle="benefitsSectionTitle z-10"
+        description="We deliver exceptional web solutions that help your business stand out and succeed online."
+        classDesc="benefitsSectionDesc z-10"
+        padding="20px"
+        marginDesc="mx-10 md:mx-[10%]"
+      />
+    </div>
+    <div
+      class="flex flex-col items-center md:gap-16 md:max-w-[1600px] md:mx-auto"
+    >
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-12 py-12"
+      >
+        {
+          indexData?.benefitsSection.benefits.map((item, i) => (
+            <BenefitsCard
+              key={i}
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+              background={item.background}
+            />
+          ))
+        }
+      </section>
+      <CtaButton
+        text="Launch My Site Today"
+        ariaLabel="Launch My Site Today"
+        color="#1D4ED8"
+      />
+    </div>
+  </div>
+
+  <div
+    class={`absolute top-[150px] -right-[250px] z-0 blur-[125px] bg-[conic-gradient(from_-1deg_at_50%_50%,_#E601B4_8.8529deg,_#0A0C10_54.7722deg,_#1C0F24_120.7895deg,_#B028CC_175.0813deg,_#0A0C10_227.5661deg,_#1D4ED8_270.7618deg,_#0B0D11_304.1567deg)] w-[350px] h-[350px]`}
+  >
+  </div>
+  <div
+    class={`absolute rotate-[45deg] top-[1100px] -right-[50px] z-0 blur-[125px] bg-[conic-gradient(from_-1deg_at_50%_50%,_#E601B4_8.8529deg,_#0A0C10_54.7722deg,_#1C0F24_120.7895deg,_#B028CC_175.0813deg,_#0A0C10_227.5661deg,_#1D4ED8_270.7618deg,_#0B0D11_304.1567deg)] w-[350px] h-[350px]`}
+  >
+  </div>
+  <div
+    class={`absolute rotate-[45deg] top-[550px] -left-[250px] z-0 blur-[125px] bg-[conic-gradient(from_-1deg_at_50%_50%,_#E601B4_8.8529deg,_#0A0C10_54.7722deg,_#1C0F24_120.7895deg,_#B028CC_175.0813deg,_#0A0C10_227.5661deg,_#1D4ED8_270.7618deg,_#0B0D11_304.1567deg)] w-[350px] h-[350px]`}
+  >
+  </div>
+</section>
+<script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".benefitsSection",
+      start: "top 80%",
+      toggleActions: "restart none none reset",
+    },
+  });
+
+  tl.from(".benefitsSectionTitle", {
+    duration: 1,
+    scale: 0.8,
+    opacity: 0,
+    ease: "sine.out",
+  })
+    .from(
+      ".benefitsSectionDesc",
+      {
+        duration: 1,
+        scale: 0.9,
+        opacity: 0,
+        ease: "sine.out",
+      },
+      "-=.5"
+    )
+    .from(".benefitsCard", {
+      duration: 1.2,
+      y: 40,
+      opacity: 0,
+      ease: "sine.out",
+      stagger: 0.3,
+    });
+</script>

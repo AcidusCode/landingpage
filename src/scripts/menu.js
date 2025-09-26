@@ -31,7 +31,7 @@ tl.to(
 tl.from(
   links,
   {
-    x: 50,
+    y: 50,
     opacity: 0,
     stagger: 0.15,
     duration: 0.3,
