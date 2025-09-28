@@ -16,14 +16,14 @@ const {
     class="gradient-overlay absolute bg-gradient-to-r from-black/100 to-black/50 opacity-100 w-full h-full z-9 transition-opacity duration-300"
   >
   </div>
-  <div class="h-[210px] md:h-[450px] md:top-0">
+  <div class="h-[210px] md:h-[350px] md:top-0 xl:h-[400px] 2xl:h-[450px]">
     <video
       muted
       loop
       playsinline
       webkit-playsinline
       poster={coverSrc}
-      class="video-hover w-full object-bottom object-cover h-full"
+      class="video-hover w-full object-center object-cover h-full"
     >
       <source src={videoSrc} type="video/mp4" />
       Tu navegador no soporta el video HTML5.
