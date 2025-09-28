@@ -25,9 +25,9 @@ export function initScrollSpy() {
       const id = closest.getAttribute("id");
 
       navLinks.forEach(link => {
-        link.classList.remove("bg-[rgba(0,102,197,1)]", "text-[#eee]");
+        link.classList.remove("font-bold", "text-[#fff]");
         if (link.getAttribute("href") === `#${id}`) {
-          link.classList.add("bg-[rgba(0,102,197,1)]", "text-[#eee]");
+          link.classList.add("font-bold", "text-[#fff]");
         }
       });
     }

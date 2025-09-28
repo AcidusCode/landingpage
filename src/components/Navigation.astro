@@ -41,7 +41,7 @@ const navigationData = matchedEntry?.[1];
     navigationData?.nav.map((navigationItem) => (
       <a
         href={navigationItem.url}
-        class="nav-item py-2 rounded-full"
+        class="nav-item py-2 rounded-full text-center"
         aria-label={navigationItem.ariaLabel}
       >
         {navigationItem.name}
@@ -66,7 +66,7 @@ const navigationData = matchedEntry?.[1];
       navigationData?.nav.map((navigationItem) => (
         <a
           href={navigationItem.url}
-          class="nav-item-desktop py-2 rounded-full transition-all duration-300 ease-in-out"
+          class="nav-item-desktop py-2 rounded-full transition-all duration-300 ease-in-out flex items-center text-center"
           aria-label={navigationItem.ariaLabel}
         >
           {navigationItem.name}
