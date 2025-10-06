@@ -40,9 +40,9 @@ const indexData = matchedEntry?.[1];
     <div class="md:w-[90%] lg:w-[70%] 2xl:w-[60%] mx-auto">
       <InterSectionText
         preheading={indexData?.benefitsSection?.preheading}
-        title="Why choose our web design agency"
+        title={indexData?.benefitsSection?.title}
         classTitle="benefitsSectionTitle z-10"
-        description="We deliver exceptional web solutions that help your business stand out and succeed online."
+        description={indexData?.benefitsSection?.subtitle}
         classDesc="benefitsSectionDesc z-10"
         padding="20px"
         marginDesc="mx-10 md:mx-[10%]"
