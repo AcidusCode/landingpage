@@ -14,9 +14,9 @@
     "email": "info@aciduslabs.com"
   },
   "advantage": {
-    "preheading": "Características",
-    "title": "Funciones poderosas que nos distinguen",
-    "description": "Ofrecemos soluciones web excepcionales que combinan velocidad, diseño y rendimiento para ayudar a que tu negocio destaque en el entorno digital.",
+    "preheading": "Tu Sitio, Mejorado",
+    "title": "Convierte tu Web en una Máquina de Escalar",
+    "description": "No solo construimos; optimizamos cada detalle. Estas son las ventajas que garantizan que tu web no solo funcione, sino que supere a la competencia.",
     "advantages": [
       {
         "icon": "/icons/features/speed-icon.svg",
@@ -36,11 +36,11 @@
     ]
   },
   "projects": {
+    "preheading": "Prueba el poder de la estrategia:",
     "title": "Proyectos Destacados",
     "classTitle": "titleProjects",
     "subtitle": "Convirtiendo ideas en experiencias digitales",
     "subtitleClass": "descProjects",
-    "padding": "20px",
     "cta": "Transformemos tu presencia digital",
     "project1": {
       "title": "CentoApp",
@@ -55,10 +55,10 @@
     }
   },
   "designProcess": {
-    "preheading": "Nuestro proceso",
+    "preheading": "Así alcanzamos esos resultados",
     "title": "Nuestro enfoque colaborativo en diseño web",
     "titleClass": "titleMyProcess",
-    "subtitle": "Colaboramos contigo para diseñar un sitio web que se adapte a tus necesidades únicas y ayude a que tu negocio prospere en línea.",
+    "subtitle": "La transparencia es clave. Te llevamos de la idea al lanzamiento con un proceso de 4 pasos diseñado para minimizar el estrés y maximizar el impacto.",
     "subtitleClass": "descMyProcess",
     "cta": "Vamos paso a paso, empieza aquí",
     "steps": [
@@ -101,12 +101,13 @@
     ]
   },
   "benefitsSection": {
-    "preheading": "Beneficios",
-    "title": "¿Por qué elegirnos para tus necesidades de diseño web?",
+    "preheading": "El Valor Detrás del Proceso",
+    "title": "¿Por qué AcidusLabs es tu mejor inversión?",
     "titleClass": "titleBenefits",
     "subtitle": "Combinamos creatividad, tecnología y estrategia para ofrecer sitios web que no solo lucen increíbles, sino que también tienen un rendimiento excepcional.",
     "subtitleClass": "descBenefits",
     "padding": "20px",
+    "cta": "Lanza mi sitio hoy",
     "benefits": [
       {
         "title": "Calidad",
@@ -139,7 +140,6 @@
     "titleClass": "titleAbout",
     "subtitle": "Diseñador. Desarrollador. Estratega. Buscando el balance entre estética y funcionalidad. Mi misión es ayudarte a construir experiencias digitales que no solo se vean increíbles, sino que también impulsen tus objetivos de negocio.",
     "subtitleClass": "descAbout",
-    "padding": "60px",
     "philosophy": {
       "card1": {
         "title": "Diseño con Propósito",
@@ -165,6 +165,7 @@
   },
   "pricing": {
     "interSectionText": {
+      "preheading": "Nuestro Planes",
       "title": "Elige tu plan ideal",
       "classTitle": "titlePricing",
       "description": "Todos incluyen: diseño 100% a medida · adaptable · carga ultra-rápida · SEO inicial · soporte post-lanzamiento.",
@@ -222,6 +223,7 @@
   },
   "contactSection": {
     "interSectionText": {
+      "preheading": "Da el siguiente paso",
       "title": "El futuro de tu negocio comienza aquí.",
       "classTitle": "titleContact",
       "description": "Ahora que conoces mi proceso, mi filosofía y mi trabajo, me encantaría conocer tu historia. Cuéntame tu idea sin compromiso y hablemos sobre cómo puedo ayudarte a construir tu éxito digital.",

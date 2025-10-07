@@ -20,7 +20,7 @@ interface IndexData {
     subtitle: string;
     titleClass: string;
     subtitleClass: string;
-    padding: string,
+    padding: string;
     philosophy: {
       card1: {
         title: string;
@@ -63,111 +63,116 @@ const padding = indexData?.about?.padding;
 const philosophy = {
   card1: {
     title: indexData?.about?.philosophy?.card1.title,
-    description: indexData?.about?.philosophy?.card1.description
+    description: indexData?.about?.philosophy?.card1.description,
   },
   card2: {
     title: indexData?.about?.philosophy?.card2.title,
-    description: indexData?.about?.philosophy?.card2.description
+    description: indexData?.about?.philosophy?.card2.description,
   },
   card3: {
     title: indexData?.about?.philosophy?.card3.title,
-    description: indexData?.about?.philosophy?.card3.description
+    description: indexData?.about?.philosophy?.card3.description,
   },
-}
+};
 const highlightCard = {
   heading: indexData?.about?.highlightCard?.heading,
   subheading: indexData?.about?.highlightCard?.subheading,
   color: indexData?.about?.highlightCard?.color,
-  textAlign: indexData?.about?.highlightCard?.textAlign
-}
+  textAlign: indexData?.about?.highlightCard?.textAlign,
+};
 const cta = indexData?.about?.cta;
 const ctaColor = indexData?.about?.ctaColor;
 ---
 
-<section class="sectionAbout md:pt-16" id="aboutSection">
-  <InterSectionText
-    title={title}
-    classTitle={titleClass}
-    description={subtitle}
-    classDesc={subtitleClass}
-    padding={padding}
-  />
-  <div class="aboutme flex flex-col gap-16 pb-16 md:flex-row">
-    <PhilosophyCard
-      icon={BrushIcon}
-      title={philosophy.card1.title}
-      description={philosophy.card1.description}
-    />
-    <PhilosophyCard
-      icon={PeopleIcon}
-      title={philosophy.card2.title}
-      description={philosophy.card2.description}
-    />
-    <PhilosophyCard
-      icon={LensIcon}
-      title={philosophy.card3.title}
-      description={philosophy.card3.description}
+<section
+  class="sectionAbout max-w-[1600px] mx-auto md:overflow-x-hidden lg:overflow-x-visible pb-16 md:pb-24"
+  id="about"
+>
+  <div class="md:w-[90%] lg:w-[80%] 2xl:w-[60%] mx-auto">
+    <InterSectionText
+      title={title}
+      classTitle={titleClass}
+      description={subtitle}
+      classDesc={subtitleClass}
+      padding={padding}
+      marginDesc="mx-10 md:mx-[20px]"
     />
   </div>
-  <div class="mx-8 flex flex-col gap-8 md:items-center">
-    <HighLightCard
-      heading={highlightCard.heading}
-      description={highlightCard.subheading}
-      tag={false}
-      color={highlightCard.color}
-      cover={laptopEmoji}
-      footer={false}
-      textAlign={highlightCard.textAlign}
-    />
-    <div class="flex justify-center">
-      <CtaButton
-        text={cta}
-        ariaLabel={cta}
-        icon={RocketIcon}
-        color={ctaColor}
+  <div class="mx-8 flex flex-col justify-center md:gap-8 md:items-center">
+    <div
+      class="aboutme flex flex-col md:flex-row gap-12 p-6 md:p-16 pb-16 md:pb-24 items-center justify-center"
+    >
+      <PhilosophyCard
+        icon={BrushIcon}
+        title={philosophy.card1.title}
+        description={philosophy.card1.description}
+      />
+      <PhilosophyCard
+        icon={PeopleIcon}
+        title={philosophy.card2.title}
+        description={philosophy.card2.description}
+      />
+      <PhilosophyCard
+        icon={LensIcon}
+        title={philosophy.card3.title}
+        description={philosophy.card3.description}
       />
     </div>
+      <HighLightCard
+        heading={highlightCard.heading}
+        description={highlightCard.subheading}
+        tag={false}
+        color="#333"
+        cover={laptopEmoji}
+        footer={false}
+        textAlign={highlightCard.textAlign}
+        cta={cta}
+      />
   </div>
+
+  <!--div class="flex justify-center pt-10">
+    <CtaButton text={cta} ariaLabel={cta} icon={RocketIcon} color="#1D4ED8" />
+  </div-->
+
+  <script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".sectionAbout",
+        start: "top 80%",
+        toggleActions: "restart none none reset",
+      },
+    });
+
+    tl.from(".titleAbout", {
+      duration: 1,
+      scale: 0.8,
+      opacity: 0,
+      ease: "sine.out",
+    })
+      .from(
+        ".descAbout",
+        {
+          duration: 1,
+          scale: 0.9,
+          opacity: 0,
+          ease: "sine.out",
+        },
+        "-=.5"
+      )
+      .from(
+        ".aboutme",
+        {
+          duration: 1.2,
+          y: 20,
+          opacity: 0,
+          ease: "sine.out",
+        },
+        "-=.5"
+      );
+  </script>
 </section>
-
-<script>
-  import gsap from "gsap";
-  import ScrollTrigger from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".sectionAbout",
-      start: "top 80%",
-      toggleActions: "restart none none reset",
-    },
-  });
-
-  tl.from(".titleAbout", {
-    duration: 1,
-    scale: 0.8,
-    opacity: 0,
-    ease: "sine.out",
-  })
-    .from(
-      ".descAbout",
-      {
-        duration: 1,
-        scale: 0.9,
-        opacity: 0,
-        ease: "sine.out",
-      },
-      "-=.5"
-    )
-    .from(
-      ".aboutme",
-      {
-        duration: 1.2,
-        y: 20,
-        opacity: 0,
-        ease: "sine.out",
-      },
-      "-=.5"
-    );
-</script>

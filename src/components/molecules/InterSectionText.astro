@@ -3,7 +3,7 @@ const { preheading, title, description, padding = "40px", classTitle, classDesc,
 ---
 
 <div class="flex flex-col items-center py-10 gap-4">
-  {preheading && <span class="text-xl md:text-[24px] font-extrabold leading-[110%] bg-[linear-gradient(90deg,_#00CFFF_0%,_#FF00C8_100%)] bg-clip-text text-transparent bg-[length:100%_100%]">{preheading}</span>}
+  {preheading && <span class="text-xl md:text-[24px] font-semibold leading-[110%] text-[#3B82F6]">{preheading}</span>}
   <h2
     class={`${classTitle} text-5xl md:text-[92px] flex-grow-0 font-extrabold leading-[110%] bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,255,255,.4)_100%)] bg-clip-text text-transparent bg-[length:100%_100%] text-center`}
     style={{ paddingLeft: padding, paddingRight: padding }}

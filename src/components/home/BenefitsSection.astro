@@ -13,6 +13,7 @@ interface IndexData {
     subtitleClass: string;
     padding?: string;
     benefits: BenefitItem[];
+    cta: string;
   };
 }
 
@@ -67,8 +68,8 @@ const indexData = matchedEntry?.[1];
         }
       </section>
       <CtaButton
-        text="Launch My Site Today"
-        ariaLabel="Launch My Site Today"
+        text={indexData?.benefitsSection.cta}
+        ariaLabel={indexData?.benefitsSection.cta}
         color="#1D4ED8"
       />
     </div>

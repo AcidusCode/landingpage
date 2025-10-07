@@ -40,7 +40,6 @@
     "titleClass": "titleProjects",
     "subtitle": "Turning ideas into digital experiences",
     "subtitleClass": "descProjects",
-    "padding": "20px",
     "cta": "Let's transform your digital presence.",
     "project1": {
       "title": "CentoApp",
@@ -107,6 +106,7 @@
     "subtitle": "We combine creativity, technology, and strategy to deliver websites that not only look stunning but also perform exceptionally well.",
     "subtitleClass": "descBenefits",
     "padding": "20px",
+    "cta": "Launch My Site Today",
     "benefits": [
       {
         "title": "Quality",
@@ -139,7 +139,6 @@
     "titleClass": "titleAbout",
     "subtitle": "Designer. Developer. Strategist. Always seeking the balance between aesthetics and functionality. My mission is to help you build digital experiences that not only look amazing but also drive your business goals.",
     "subtitleClass": "descAbout",
-    "padding": "40px",
     "philosophy": {
       "card1": {
         "title": "Design with Purpose",

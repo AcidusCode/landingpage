@@ -6,9 +6,9 @@
       "url": "#home"
     },
     {
-      "name": "Características",
-      "ariaLabel": "Características",
-      "url": "#features"
+      "name": "Proyectos",
+      "ariaLabel": "Proyectos",
+      "url": "#projects"
     },
     {
       "name": "Proceso de diseño",
@@ -19,6 +19,11 @@
       "name": "Beneficios",
       "ariaLabel": "Beneficios",
       "url": "#benefits"
+    },
+    {
+      "name": "Nosotros",
+      "ariaLabel": "Nosotros",
+      "url": "#about"
     },
     {
       "name": "Precios",

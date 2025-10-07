@@ -11,6 +11,7 @@ import { getLangFromUrl } from "../../i18n/utils";
 
 interface IndexData {
   projects: {
+    preheading?: string;
     title: string;
     titleClass: string;
     subtitle: string;
@@ -55,20 +56,23 @@ const projects = {
   tag: indexData?.projects?.project1?.tag,
   color: indexData?.projects?.project1?.color,
   cta: indexData?.projects?.project1?.cta,
-}
+};
 ---
 
 <section
-  class="sectionProjects flex flex-col py-8 gap-6 md:items-center md:pt-16"
-  id="projectSection"
+  class="sectionProjects flex flex-col py-8 gap-6 md:items-center md:pt-16 max-w-[1600px] mx-auto md:overflow-x-hidden lg:overflow-x-visible pb-30"
+  id="projects"
 >
-  <InterSectionText
-    title={title}
-    classTitle={titleClass}
-    description={subtitle}
-    classDesc={subtitleClass}
-    padding={padding}
-  />
+  <div class="md:w-[90%] lg:w-[80%] 2xl:w-[65%] mx-auto">
+    <InterSectionText
+      preheading={indexData?.projects?.preheading}
+      title={title}
+      classTitle={titleClass}
+      description={subtitle}
+      classDesc={subtitleClass}
+      marginDesc="mx-10 md:mx-[0%]"
+    />
+  </div>
   <div class="cardProjects flex px-6 w-full justify-center">
     <ProjectCard
       id="projectCard"
@@ -83,12 +87,8 @@ const projects = {
       projectCta={projects.cta}
     />
   </div>
-  <div class="flex justify-center">
-    <CtaButton
-      text={cta}
-      ariaLabel={cta}
-      color="#5105B5"
-    />
+  <div class="flex justify-center pt-8">
+    <CtaButton text={cta} ariaLabel={cta} color="#5105B5" />
   </div>
 </section>
 
