@@ -79,27 +79,27 @@
     "icons": [
       {
         "name": "X",
-        "url": "https://www.x.com/yourprofile",
+        "url": "https://x.com/aciduslabs",
         "icon": "/icons/social/logo-twitter.svg",
-        "alt": "Icono de X"
-      },
-      {
-        "name": "GitHub",
-        "url": "https://www.github.com/yourprofile",
-        "icon": "/icons/social/logo-github.svg",
-        "alt": "Icono de GitHub"
-      },
-      {
-        "name": "Behance",
-        "url": "https://www.behance.com/in/yourprofile",
-        "icon": "/icons/social/logo-behance.svg",
-        "alt": "Icono de Behance"
+        "alt": "X Icon"
       },
       {
         "name": "Instagram",
-        "url": "https://www.youtube.com/aciduslabs",
+        "url": "https://www.instagram.com/aciduslabs/",
+        "icon": "/icons/social/logo-instagram.svg",
+        "alt": "GitHub Icon"
+      },
+      {
+        "name": "TiktTok",
+        "url": "https://www.tiktok.com/@aciduslabs",
+        "icon": "/icons/social/logo-tiktok.svg",
+        "alt": "Behance Icon"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://www.youtube.com/@Acidus-Labs",
         "icon": "/icons/social/logo-youtube.svg",
-        "alt": "Icono de YouTube"
+        "alt": "Youtube Icon"
       }
     ]
   }

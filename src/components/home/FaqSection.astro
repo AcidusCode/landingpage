@@ -79,19 +79,5 @@ const faq = indexData?.faqSection.faq ?? {};
   </div>
 </section>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("button[data-toggle]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const id = button.getAttribute("data-toggle");
-        const arrow = button.querySelector("svg");
-        const faq = document.querySelector(`#${id} p`);
-        if (faq && arrow) {
-          arrow.classList.add("transition-all");
-          arrow.classList.add("duration-300");
-          arrow.classList.toggle("rotate-90");
-          faq.classList.toggle("hidden");
-        }
-      });
-    });
-  });
+
 </script>
