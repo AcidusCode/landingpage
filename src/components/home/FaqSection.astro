@@ -38,34 +38,32 @@ const faq = indexData?.faqSection.faq ?? {};
 ---
 
 <section class="relative overflow-x-hidden pb-40 md:pb-60">
-  <div class="relative flex flex-col gap-8 mt-12 mx-auto w-[90%] max-w-[1600px] md:mx-auto md:px-[10%]">
+  <div
+    class="relative flex flex-col gap-8 mt-12 mx-auto w-[90%] max-w-[1600px] md:mx-auto md:px-[10%]"
+  >
     <SectionTitle
       title={indexData?.faqSection?.title?.title}
       description={indexData?.faqSection?.title?.subtitle}
     />
     <div class="flex flex-col gap-4 z-10">
       {
-        Object.entries(faq).map(([key, item]) => (
-          <div
-            class="flex rounded-xl py-2 px-4 items-start border border-[rgba(255,255,255,0.13)] hover:border-[rgba(255,255,255,0.25)] transition-all duration-300 cursor-pointer"
-            id={`faq-${key}`}
-          >
-            <button
-              class="pr-2 transition-all duration-300"
-              aria-label={`Abrir pregunta frecuente no ${key}`}
-              data-toggle={`faq-${key}`}
+        Object.entries(faq).map(([id, item]) => (
+          <details class="group rounded-xl px-4 py-2 border border-[rgba(255,255,255,0.13)] hover:border-[rgba(255,255,255,0.25)] transition-all duration-300">
+            <summary
+              class="flex items-center gap-2 cursor-pointer list-none"
+              aria-label={`Abrir pregunta frecuente ${id}`}
             >
-              <RightArrow />
-            </button>
-            <div class="flex flex-col gap-2">
+              <span class="transition-transform group-open:rotate-90">
+                <RightArrow />
+              </span>
               <h3 class="text-[#eee] font-normal leading-[110%] text-base">
                 {item.question}
               </h3>
-              <p class="hidden text-[#b9b9b9] pr-4 transition-all duration-300 text-sm font-normal leading-[150%]">
-                {item.description}
-              </p>
+            </summary>
+            <div class="text-[#b9b9b9] pr-4 mt-2 text-sm font-normal leading-[150%]">
+              {item.description}
             </div>
-          </div>
+          </details>
         ))
       }
     </div>
