@@ -67,7 +67,7 @@
         "title": "Discovery & Strategy",
         "description": "We uncover your goals and create a roadmap for success.",
         "color": "Let's take it step by step, start here",
-        "videoSrc": "/videos/video-step-1.webm",
+        "videoSrc": "/videos/video-step-1.mp4",
         "coverSrc": "/videos/cover-step-1.webp"
       },
       {
@@ -76,7 +76,7 @@
         "title": "Design & Prototyping",
         "description": "Visual concepts and interactive prototypes bring your vision to life.",
         "color": "rgba(53,93,255,1)",
-        "videoSrc": "/videos/video-step-2.webm",
+        "videoSrc": "/videos/video-step-2.mp4",
         "coverSrc": "/videos/cover-step-2.webp"
       },
       {
@@ -85,7 +85,7 @@
         "title": "Development & Optimization",
         "description": "High-performance coding and speed optimization for flawless results.",
         "color": "rgba(5,190,172,1)",
-        "videoSrc": "/videos/video-step-3.webm",
+        "videoSrc": "/videos/video-step-3.mp4",
         "coverSrc": "/videos/cover-step-3.webp"
       },
       {
@@ -94,7 +94,7 @@
         "title": "Launch & Ongoing Support",
         "description": "A smooth launch followed by ongoing support to keep you growing.",
         "color": "rgba(140,190,57,1)",
-        "videoSrc": "/videos/video-step-4.webm",
+        "videoSrc": "/videos/video-step-4.mp4",
         "coverSrc": "/videos/cover-step-4.webp"
       }
     ]
