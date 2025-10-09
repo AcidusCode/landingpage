@@ -15,7 +15,7 @@
   },
   "advantage": {
     "preheading": "Features",
-    "title": "Powerful features that set us apart",
+    "title": "Powerful features \n that set us apart",
     "description": "We deliver exceptional web solutions that combine speed, design, and performance to help your business stand out in the digital landscape.",
     "advantages": [
       {
@@ -55,7 +55,7 @@
   },
   "designProcess": {
     "preheading": "Our Process",
-    "title": "Our collaborative approach to web design",
+    "title": "Our collaborative \n approach to web design",
     "titleClass": "titleMyProcess",
     "subtitle": "We collaborate with you to design a website that fits your unique needs and helps your business thrive online.",
     "subtitleClass": "descMyProcess",
@@ -165,7 +165,7 @@
   "pricing": {
     "interSectionText": {
       "preheading": "Pricing",
-      "title": "Choose the plan that fits your project",
+      "title": "Choose the plan that \n fits your project",
       "classTitle": "titlePricing",
       "description": "All plans include: 100% custom design · responsive · ultra-fast loading · basic SEO · post-launch support.",
       "classDesc": "descPricing",
@@ -262,7 +262,7 @@
   },
   "contactSection": {
     "interSectionText": {
-      "title": "The future of your business starts here.",
+      "title": "The future of your \n business starts here.",
       "classTitle": "titleContact",
       "description": "Ready to bring your vision online? Let’s create the digital future of your business—starting today.",
       "padding": "0px",

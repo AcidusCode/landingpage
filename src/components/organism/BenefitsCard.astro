@@ -3,16 +3,16 @@ const { icon, title, description, background = "bg-[#B028CC]"} = Astro.props;
 ---
 
 <div
-  class="benefitsCard relative overflow-hidden flex py-6 px-6 flex-col items-center gap-6 rounded-3xl border-1 border-[rgba(255,255,255,0.13)] bg-[rgba(255,255,255,0.03)] backdrop-blur-[75px] basis-full md:basis-1/2"
+  class="benefitsCard relative overflow-hidden flex py-6 px-6 flex-col items-center gap-6 rounded-3xl border-1 border-[rgba(255,255,255,0.13)] bg-[rgba(255,255,255,0.03)] backdrop-blur-[75px] basis-full md:basis-1/2 max-w-[280px]"
 >
   <div class="z-10 flex flex-col gap-6 items-center">
-    <img src={icon} alt={title} class="w-12 h-12" />
+    <img src={icon} alt={title} class="w-14 h-14" />
     <div class="flex flex-col gap-4">
       <h3 class="text-white text-xl font-extrabold leading-[110%] text-center">
         { title }
       </h3>
       <p
-        class="text-[#B9B9B9] text-center text-sm md:text-lg font-normal leading-[150%]"
+        class="text-[#B9B9B9] text-center text-sm md:text-md font-normal leading-[150%]"
       >
         { description }
       </p>

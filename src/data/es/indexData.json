@@ -7,7 +7,7 @@
   },
   "hero": {
     "title": "Agencia de Diseno & Desarrollo Web",
-    "subtitle": "Sitios web ultra rápidos que tu negocio necesita para escalar",
+    "subtitle": "Sitios web ultra rápidos que \n tu negocio necesita para escalar",
     "description": "Proyectos a medida que combinan estética, funcionalidad y las mejores practicas de conversión para superar tus objetivos.",
     "cta": "Empieza tu sitio web hoy",
     "altCta": "O enviame un correo directo a",
@@ -15,7 +15,7 @@
   },
   "advantage": {
     "preheading": "Tu Sitio, Mejorado",
-    "title": "Convierte tu Web en una Máquina de Escalar",
+    "title": "Convierte tu Web en una \n Máquina de Escalar",
     "description": "No solo construimos; optimizamos cada detalle. Estas son las ventajas que garantizan que tu web no solo funcione, sino que supere a la competencia.",
     "advantages": [
       {
@@ -56,7 +56,7 @@
   },
   "designProcess": {
     "preheading": "Así alcanzamos esos resultados",
-    "title": "Nuestro enfoque colaborativo en diseño web",
+    "title": "Nuestro enfoque colaborativo \n en diseño web",
     "titleClass": "titleMyProcess",
     "subtitle": "La transparencia es clave. Te llevamos de la idea al lanzamiento con un proceso de 4 pasos diseñado para minimizar el estrés y maximizar el impacto.",
     "subtitleClass": "descMyProcess",
@@ -102,7 +102,7 @@
   },
   "benefitsSection": {
     "preheading": "El Valor Detrás del Proceso",
-    "title": "¿Por qué AcidusLabs es tu mejor inversión?",
+    "title": "¿Por qué AcidusLabs es \n tu mejor inversión?",
     "titleClass": "titleBenefits",
     "subtitle": "Combinamos creatividad, tecnología y estrategia para ofrecer sitios web que no solo lucen increíbles, sino que también tienen un rendimiento excepcional.",
     "subtitleClass": "descBenefits",
@@ -136,7 +136,7 @@
     ]
   },
   "about": {
-    "title": "La mente detrás de los pixeles",
+    "title": "La mente detrás \n de los pixeles",
     "titleClass": "titleAbout",
     "subtitle": "Diseñador. Desarrollador. Estratega. Buscando el balance entre estética y funcionalidad. Mi misión es ayudarte a construir experiencias digitales que no solo se vean increíbles, sino que también impulsen tus objetivos de negocio.",
     "subtitleClass": "descAbout",
@@ -224,7 +224,7 @@
   "contactSection": {
     "interSectionText": {
       "preheading": "Da el siguiente paso",
-      "title": "El futuro de tu negocio comienza aquí.",
+      "title": "El futuro de tu \n negocio comienza aquí.",
       "classTitle": "titleContact",
       "description": "Ahora que conoces mi proceso, mi filosofía y mi trabajo, me encantaría conocer tu historia. Cuéntame tu idea sin compromiso y hablemos sobre cómo puedo ayudarte a construir tu éxito digital.",
       "padding": "0px",
