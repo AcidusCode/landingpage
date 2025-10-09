@@ -68,8 +68,8 @@
         "title": "Descubrimiento y estrategia",
         "description": "Identificamos tus objetivos y creamos una hoja de ruta hacia el éxito.",
         "color": "Let's take it step by step, start here",
-        "videoSrc": "/videos/video-step-1.mp4",
-        "coverSrc": "/videos/cover-step-1.png"
+        "videoSrc": "/videos/video-step-1.webm",
+        "coverSrc": "/videos/cover-step-1.webp"
       },
       {
         "icon": "/icons/process/design-icon.svg",
@@ -77,8 +77,8 @@
         "title": "Diseño y prototipado",
         "description": "Conceptos visuales y prototipos interactivos que dan vida a tu visión.",
         "color": "rgba(53,93,255,1)",
-        "videoSrc": "/videos/video-step-2.mp4",
-        "coverSrc": "/videos/cover-step-2.png"
+        "videoSrc": "/videos/video-step-2.webm",
+        "coverSrc": "/videos/cover-step-2.webp"
       },
       {
         "icon": "/icons/process/analytics-icon.svg",
@@ -86,8 +86,8 @@
         "title": "Desarrollo y optimización",
         "description": "Código de alto rendimiento y optimización de velocidad para resultados impecables.",
         "color": "rgba(5,190,172,1)",
-        "videoSrc": "/videos/video-step-3.mp4",
-        "coverSrc": "/videos/cover-step-3.png"
+        "videoSrc": "/videos/video-step-3.webm",
+        "coverSrc": "/videos/cover-step-3.webp"
       },
       {
         "icon": "/icons/process/strategy-icon.svg",
@@ -95,8 +95,8 @@
         "title": "Lanzamiento y soporte continuo",
         "description": "Un lanzamiento fluido seguido de soporte continuo para ayudarte a crecer.",
         "color": "rgba(140,190,57,1)",
-        "videoSrc": "/videos/video-step-4.mp4",
-        "coverSrc": "/videos/cover-step-4.png"
+        "videoSrc": "/videos/video-step-4.webm",
+        "coverSrc": "/videos/cover-step-4.webp"
       }
     ]
   },
